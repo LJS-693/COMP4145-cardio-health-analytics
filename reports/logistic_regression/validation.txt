@@ -1,0 +1,6 @@
+PASS: only train.csv read; feature whitelist excludes target and metadata.
+PASS: each development record receives exactly one held-out prediction.
+PASS: no predictor-profile group overlaps between training/validation folds.
+PASS: preprocessing fitted inside each fold; all six fits converged.
+PASS: exported prediction counts reconcile with confusion matrix.
+PASS: saved model reload reproduces predictions.

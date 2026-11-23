@@ -1,0 +1,359 @@
+{
+  "generated_at_utc": "2026-11-22T17:30:43.204236+00:00",
+  "python_version": "3.12.14",
+  "source_sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c",
+  "policy": {
+    "policy_version": "1.0",
+    "note": "Project quality-control assumptions, not diagnostic cutoffs. Inclusive bounds. Excluded rows are quarantined, never deleted from the source. No thresholds are fitted to the data or target.",
+    "bounds": {
+      "age": [
+        1,
+        43830
+      ],
+      "height": [
+        100,
+        250
+      ],
+      "weight": [
+        20,
+        300
+      ],
+      "ap_hi": [
+        50,
+        300
+      ],
+      "ap_lo": [
+        30,
+        200
+      ]
+    },
+    "allowed_categories": {
+      "gender": [
+        1,
+        2
+      ],
+      "cholesterol": [
+        1,
+        2,
+        3
+      ],
+      "gluc": [
+        1,
+        2,
+        3
+      ],
+      "smoke": [
+        0,
+        1
+      ],
+      "alco": [
+        0,
+        1
+      ],
+      "active": [
+        0,
+        1
+      ],
+      "cardio": [
+        0,
+        1
+      ]
+    },
+    "require_systolic_above_diastolic": true,
+    "bmi_review_bounds": [
+      10,
+      70
+    ],
+    "test_fraction": 0.2,
+    "split_seed": "COMP4145-cardio-v1"
+  },
+  "missing_by_field": {
+    "id": 0,
+    "age": 0,
+    "gender": 0,
+    "height": 0,
+    "weight": 0,
+    "ap_hi": 0,
+    "ap_lo": 0,
+    "cholesterol": 0,
+    "gluc": 0,
+    "smoke": 0,
+    "alco": 0,
+    "active": 0,
+    "cardio": 0
+  },
+  "duplicate_id_excess_rows": 0,
+  "exact_duplicate_excess_rows": 0,
+  "same_profile_and_label_excess_rows_ignoring_id": 24,
+  "before": {
+    "rows": 70000,
+    "label_counts": {
+      "0": 35021,
+      "1": 34979
+    },
+    "valid_label_records": 70000,
+    "positive_fraction": 0.4997,
+    "numeric_summary": {
+      "age": {
+        "min": 10798.0,
+        "q1": 17664.0,
+        "median": 19703.0,
+        "q3": 21327.0,
+        "max": 23713.0,
+        "mean": 19468.865814285713
+      },
+      "height": {
+        "min": 55.0,
+        "q1": 159.0,
+        "median": 165.0,
+        "q3": 170.0,
+        "max": 250.0,
+        "mean": 164.35922857142856
+      },
+      "weight": {
+        "min": 10.0,
+        "q1": 65.0,
+        "median": 72.0,
+        "q3": 82.0,
+        "max": 200.0,
+        "mean": 74.20569
+      },
+      "ap_hi": {
+        "min": -150.0,
+        "q1": 120.0,
+        "median": 120.0,
+        "q3": 140.0,
+        "max": 16020.0,
+        "mean": 128.8172857142857
+      },
+      "ap_lo": {
+        "min": -70.0,
+        "q1": 80.0,
+        "median": 80.0,
+        "q3": 90.0,
+        "max": 11000.0,
+        "mean": 96.63041428571428
+      }
+    }
+  },
+  "after": {
+    "rows": 68651,
+    "label_counts": {
+      "0": 34687,
+      "1": 33964
+    },
+    "valid_label_records": 68651,
+    "positive_fraction": 0.49473423548091067,
+    "numeric_summary": {
+      "age": {
+        "min": 10798.0,
+        "q1": 17658.0,
+        "median": 19702.0,
+        "q3": 21324.0,
+        "max": 23713.0,
+        "mean": 19464.75119080567
+      },
+      "height": {
+        "min": 100.0,
+        "q1": 159.0,
+        "median": 165.0,
+        "q3": 170.0,
+        "max": 250.0,
+        "mean": 164.39566794365706
+      },
+      "weight": {
+        "min": 21.0,
+        "q1": 65.0,
+        "median": 72.0,
+        "q3": 82.0,
+        "max": 200.0,
+        "mean": 74.1166173835778
+      },
+      "ap_hi": {
+        "min": 60.0,
+        "q1": 120.0,
+        "median": 120.0,
+        "q3": 140.0,
+        "max": 240.0,
+        "mean": 126.67566386505659
+      },
+      "ap_lo": {
+        "min": 30.0,
+        "q1": 80.0,
+        "median": 80.0,
+        "q3": 90.0,
+        "max": 182.0,
+        "mean": 81.30315654542541
+      },
+      "age_years": {
+        "min": 29.563313,
+        "q1": 48.344969,
+        "median": 53.941136,
+        "q3": 58.38193,
+        "max": 64.922656,
+        "mean": 53.291584366680745
+      },
+      "bmi": {
+        "min": 7.022248,
+        "q1": 23.875115,
+        "median": 26.346494,
+        "q3": 30.119376,
+        "max": 152.551775,
+        "mean": 27.471951600049525
+      }
+    }
+  },
+  "excluded_rows": 1349,
+  "excluded_fraction": 0.01927142857142857,
+  "rule_counts_overlapping": {
+    "outside_qc_bounds:height": 29,
+    "outside_qc_bounds:ap_lo": 1006,
+    "systolic_not_above_diastolic": 1236,
+    "outside_qc_bounds:ap_hi": 228,
+    "outside_qc_bounds:weight": 2
+  },
+  "first_exclusion_counts": {
+    "outside_qc_bounds:height": 29,
+    "outside_qc_bounds:ap_lo": 989,
+    "systolic_not_above_diastolic": 103,
+    "outside_qc_bounds:ap_hi": 226,
+    "outside_qc_bounds:weight": 2
+  },
+  "retained_review_flag_rows": 15,
+  "matching_predictor_groups_retained": 41,
+  "train": {
+    "rows": 54887,
+    "label_counts": {
+      "0": 27823,
+      "1": 27064
+    },
+    "valid_label_records": 54887,
+    "positive_fraction": 0.49308579445041634,
+    "numeric_summary": {
+      "age": {
+        "min": 10798.0,
+        "q1": 17688.0,
+        "median": 19705.0,
+        "q3": 21321.0,
+        "max": 23713.0,
+        "mean": 19469.848506932423
+      },
+      "height": {
+        "min": 104.0,
+        "q1": 159.0,
+        "median": 165.0,
+        "q3": 170.0,
+        "max": 250.0,
+        "mean": 164.40587024249822
+      },
+      "weight": {
+        "min": 23.0,
+        "q1": 65.0,
+        "median": 72.0,
+        "q3": 82.0,
+        "max": 200.0,
+        "mean": 74.10971140707271
+      },
+      "ap_hi": {
+        "min": 60.0,
+        "q1": 120.0,
+        "median": 120.0,
+        "q3": 140.0,
+        "max": 240.0,
+        "mean": 126.64177309745477
+      },
+      "ap_lo": {
+        "min": 30.0,
+        "q1": 80.0,
+        "median": 80.0,
+        "q3": 90.0,
+        "max": 180.0,
+        "mean": 81.2860240129721
+      },
+      "age_years": {
+        "min": 29.563313,
+        "q1": 48.427105,
+        "median": 53.94935,
+        "q3": 58.373717,
+        "max": 64.922656,
+        "mean": 53.305540056971594
+      },
+      "bmi": {
+        "min": 9.331007,
+        "q1": 23.875115,
+        "median": 26.346494,
+        "q3": 30.116213,
+        "max": 152.551775,
+        "mean": 27.465386409022173
+      }
+    }
+  },
+  "test": {
+    "rows": 13764,
+    "label_counts": {
+      "0": 6864,
+      "1": 6900
+    },
+    "valid_label_records": 13764,
+    "positive_fraction": 0.5013077593722755,
+    "numeric_summary": {
+      "age": {
+        "min": 14275.0,
+        "q1": 17591.0,
+        "median": 19688.0,
+        "q3": 21337.0,
+        "max": 23678.0,
+        "mean": 19444.4245132229
+      },
+      "height": {
+        "min": 100.0,
+        "q1": 159.0,
+        "median": 165.0,
+        "q3": 170.0,
+        "max": 198.0,
+        "mean": 164.35498401627433
+      },
+      "weight": {
+        "min": 21.0,
+        "q1": 65.0,
+        "median": 72.0,
+        "q3": 82.0,
+        "max": 180.0,
+        "mean": 74.14415649520488
+      },
+      "ap_hi": {
+        "min": 80.0,
+        "q1": 120.0,
+        "median": 120.0,
+        "q3": 140.0,
+        "max": 220.0,
+        "mean": 126.8108108108108
+      },
+      "ap_lo": {
+        "min": 30.0,
+        "q1": 80.0,
+        "median": 80.0,
+        "q3": 90.0,
+        "max": 182.0,
+        "mean": 81.37147631502471
+      },
+      "age_years": {
+        "min": 39.08282,
+        "q1": 48.161533,
+        "median": 53.902806,
+        "q3": 58.417522,
+        "max": 64.826831,
+        "mean": 53.23593295916885
+      },
+      "bmi": {
+        "min": 7.022248,
+        "q1": 23.875115,
+        "median": 26.365603,
+        "q3": 30.222222,
+        "max": 86.0,
+        "mean": 27.498131754068584
+      }
+    }
+  },
+  "split_method": "Deterministic SHA256 by original predictor profile; approximately 80/20; target-independent; not exact stratification."
+}

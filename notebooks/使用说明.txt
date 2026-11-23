@@ -1,0 +1,2 @@
+此处用于后续存放本组的描述性分析、模型训练和评估Notebook。
+先使用data/processed/train.csv开展探索与调参，test.csv保留最终评估。

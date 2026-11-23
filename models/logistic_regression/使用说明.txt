@@ -1,0 +1,23 @@
+逻辑回归完整特征基线
+
+模型：logistic_pipeline.joblib
+这是字典，包含pipeline、features、threshold、target和feature_set。
+pipeline已在全部开发数据上重新拟合，包含标准化、类别编码与逻辑回归。
+
+输入字段顺序
+age_years, gender, bmi, smoke, alco, active, ap_hi, ap_lo, cholesterol, gluc
+年龄单位年；BMI为kg/m²；血压为mmHg；类别编码沿用原始定义。
+不要将id、cardio、split或profile_group加入输入矩阵。
+
+评分代码
+bundle = joblib.load("models/logistic_regression/logistic_pipeline.joblib")
+scores = bundle["pipeline"].predict_proba(X)[:, 1]
+predictions = (scores >= bundle["threshold"]).astype(int)
+X必须是按bundle["features"]排列的二维数值矩阵。
+
+结果说明
+reports/logistic_regression中的结果来自开发集五折分组OOF预测，未评估最终测试集。
+OOF为每条开发记录由未见该记录及相同资料组的模型作出的预测。
+保存的全开发集模型与各折验证模型不同，不能将其训练集预测当成OOF结果。
+门槛为0.5，未调参或调整门槛。
+复现依赖版本见requirements_logistic_locked.txt；来源校验值和参数见model_metadata.json。

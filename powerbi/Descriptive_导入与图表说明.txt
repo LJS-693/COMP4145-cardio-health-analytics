@@ -1,0 +1,40 @@
+Cardio Descriptive Power BI 使用说明
+
+方式一 推荐：导入开发集明细
+获取数据 > 文本/CSV > data/processed/train.csv。
+将表命名为Cardio；确认cardio为整数，其余数值字段为数值类型。
+建立以下Measures：
+
+Record Count = COUNTROWS(Cardio)
+Positive Records = SUM(Cardio[cardio])
+Disease Label Rate = DIVIDE([Positive Records], [Record Count])
+Displayed Label Rate = IF([Record Count] >= 100, [Disease Label Rate], BLANK())
+
+将比例Measures格式设为百分比。展示标签比例时使用Displayed Label Rate，工具提示中放Record Count。
+人口概况：记录数、标签1数量、标签1比例、年龄及BMI分布。
+分组图：年龄组、BMI组、胆固醇、血糖、吸烟、饮酒、身体活动，各组使用相同分母定义。
+交叉分析：Matrix行放age_group、列放bmi_band，值放Displayed Label Rate，工具提示放Record Count。
+gender仅显示Code 1/Code 2，本地README没有明确性别映射。
+记录少于100条时不显示比例，不能把小组样本极端比例作为稳定发现。
+原始明细支持年龄、性别等交叉筛选。没有现成.pbix文件；此说明用于组员搭建报告。
+
+方式二：导入现成汇总表
+outputs/descriptive/tables/powerbi_group_rates.csv。
+表名GroupRates。先用dimension筛选单一维度，再画category与比例。
+
+Group Records = SUM(GroupRates[records])
+Group Positive Records = SUM(GroupRates[cardio_1])
+Group Label Rate = DIVIDE([Group Positive Records], [Group Records])
+Displayed Group Rate = IF([Group Records] >= 100, [Group Label Rate], BLANK())
+
+比例必须由数量重新计算，不能直接平均positive_rate列。
+此长表每个记录会出现在不同维度的汇总中，不能跨dimension汇总人数。
+汇总表不能重建任意年龄×性别交叉筛选；需要交互分析时使用方式一。
+age_bmi.csv可直接用于固定的年龄×BMI热力图；display_eligible=0的格子应隐藏比例。
+
+图表现成文件
+outputs/figures/descriptive内有9组PNG和SVG，可插入PPT。
+完整自包含网页报告：reports/descriptive/descriptive_report.html。
+中文解读：reports/descriptive/descriptive_report_zh.txt。
+
+数据和图表结论均限定在开发集，不应与整个清洗样本或真实总体患病率混称。

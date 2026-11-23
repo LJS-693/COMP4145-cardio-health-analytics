@@ -1,0 +1,89 @@
+{
+  "feature_set": "complete_logistic_bmi_only",
+  "features": [
+    "age_years",
+    "gender",
+    "bmi",
+    "smoke",
+    "alco",
+    "active",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc"
+  ],
+  "records": 54887,
+  "target": "cardio",
+  "threshold": 0.5,
+  "cv": "5-fold StratifiedGroupKFold",
+  "random_state": 4145,
+  "pooled_oof_metrics": {
+    "accuracy": 0.7287335799005229,
+    "precision": 0.756218696073067,
+    "recall": 0.6638708247117943,
+    "specificity": 0.7918269057973619,
+    "f1": 0.7070420872439643,
+    "roc_auc": 0.7922707660335714,
+    "average_precision": 0.7696764019281213,
+    "tn": 22031,
+    "fp": 5792,
+    "fn": 9097,
+    "tp": 17967
+  },
+  "majority_baseline_metrics": {
+    "accuracy": 0.5069142055495837,
+    "precision": 0.0,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "average_precision": 0.49308579445041634,
+    "tn": 27823,
+    "fp": 0,
+    "fn": 27064,
+    "tp": 0
+  },
+  "fold_convergence": [
+    {
+      "fold": 1,
+      "iterations": 17
+    },
+    {
+      "fold": 2,
+      "iterations": 15
+    },
+    {
+      "fold": 3,
+      "iterations": 15
+    },
+    {
+      "fold": 4,
+      "iterations": 15
+    },
+    {
+      "fold": 5,
+      "iterations": 16
+    }
+  ],
+  "final_refit_iterations": 17,
+  "parameters": {
+    "solver": "lbfgs",
+    "C": 1.0,
+    "max_iter": 1000,
+    "class_weight": null
+  },
+  "categorical_encoding": "gender, cholesterol and gluc: one-hot; reference level 1",
+  "scaling": "age_years,bmi,ap_hi,ap_lo standardized inside each training fold",
+  "training_source": "data/processed/train.csv",
+  "training_sha256": "5fb4786f552b9fae96c3e4cbd5c25f12bad4ba31ca057d122a54a2b62c802ccb",
+  "feature_config_sha256": "6935bf664c6d066b103acf6cba17be6ddf7bf66f6af8f3ba53ed17cf5d149937",
+  "test_evaluated": false,
+  "hyperparameter_tuning": false,
+  "threshold_tuning": false,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}

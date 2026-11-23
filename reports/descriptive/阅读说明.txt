@@ -1,0 +1,31 @@
+Cardio Descriptive Analytics
+
+先打开 descriptive_report.html：自包含网页，内嵌全部9张图及统计表，复制单个HTML即可分享。
+中文纯文字解读：descriptive_report_zh.txt。
+PPT内容建议：presentation_notes_zh.txt；这是讲稿与页面建议，不是已经生成的PPT文件。
+数据核验：validation.txt；来源校验值和图表清单：analysis_manifest.json。
+
+数据范围
+仅使用data/processed/train.csv中的54,887条开发记录；没有用test.csv开展探索。
+指标是疾病标签比例，不是未来发病风险，也不代表总体患病率。
+小于100条的组不展示比例，原始汇总数量仍可复核。
+类别编码与清洗规则保持原版本，所有数据源文件不变。
+
+文件位置
+outputs/figures/descriptive：9组PNG和SVG。PNG便于PPT，SVG支持矢量缩放。
+outputs/descriptive/tables：14个UTF-8 BOM CSV文件，比例以0–1数值存储。
+notebooks/descriptive_analysis.ipynb：可逐段运行的分析入口，调用正式脚本并展示结果。
+src/descriptive_analysis.py：统计、制图、中文报告、验证的完整实现。
+powerbi/Descriptive_导入与图表说明.txt：导入方式、DAX和汇总表使用限制。
+
+复现
+在项目根目录安装 requirements_descriptive.txt 中的依赖：
+python3 -m pip install -r requirements_descriptive.txt
+运行：
+python3 src/descriptive_analysis.py
+也可在Jupyter中打开notebooks/descriptive_analysis.ipynb，从上到下运行。
+Notebook本身未执行，附带的CSV、图表和报告由正式脚本实际运行生成并验证。
+
+脚本可从任何工作目录执行，默认按脚本位置找到项目根目录。
+重跑将覆盖本次描述性分析生成的对应输出文件，不修改清洗数据。
+图表用英文轴标签便于组员放入英文PPT；报告与讲解用中文。

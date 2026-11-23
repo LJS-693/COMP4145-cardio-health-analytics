@@ -1,0 +1,1 @@
+Reviewed final 3 PNG charts: stratified lifestyle labels, standardization legend, BP/cholesterol axes and heatmap values. Footer and labels separated; no clipped text observed.

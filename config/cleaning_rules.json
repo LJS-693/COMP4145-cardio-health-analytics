@@ -1,0 +1,19 @@
+{
+  "policy_version": "1.0",
+  "note": "Project quality-control assumptions, not diagnostic cutoffs. Inclusive bounds. Excluded rows are quarantined, never deleted from the source. No thresholds are fitted to the data or target.",
+  "bounds": {
+    "age": [1, 43830],
+    "height": [100, 250],
+    "weight": [20, 300],
+    "ap_hi": [50, 300],
+    "ap_lo": [30, 200]
+  },
+  "allowed_categories": {
+    "gender": [1, 2], "cholesterol": [1, 2, 3], "gluc": [1, 2, 3],
+    "smoke": [0, 1], "alco": [0, 1], "active": [0, 1], "cardio": [0, 1]
+  },
+  "require_systolic_above_diastolic": true,
+  "bmi_review_bounds": [10, 70],
+  "test_fraction": 0.2,
+  "split_seed": "COMP4145-cardio-v1"
+}

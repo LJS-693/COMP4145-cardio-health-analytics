@@ -1,0 +1,6 @@
+PASS: only development train.csv read.
+PASS: age strata and BP/cholesterol counts reconcile with the full development sample.
+PASS: one common standard population and weights sum to 1.
+PASS: six standardized rates independently verified using record-level weighting.
+PASS: exported CSV round-trip values match computed tables.
+PASS: three PNGs decode; visual inspection performed separately.
