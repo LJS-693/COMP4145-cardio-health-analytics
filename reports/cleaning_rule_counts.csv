@@ -1,6 +1,0 @@
-﻿rule,rows_matching_rule,rows_first_excluded_by_rule
-outside_qc_bounds:height,29,29
-outside_qc_bounds:ap_lo,1006,989
-systolic_not_above_diastolic,1236,103
-outside_qc_bounds:ap_hi,228,226
-outside_qc_bounds:weight,2,2

@@ -1,5 +1,0 @@
-PASS: exported CSVs reloaded successfully.
-PASS: retained + excluded = source; all annotated rows preserved.
-PASS: unique retained IDs; no train/test ID or predictor-profile overlap.
-PASS: ranges, categories, required fields, BP order and all derived numeric values checked.
-PASS: no target-based feature engineering or learned preprocessing.

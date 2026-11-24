@@ -783,16 +783,60 @@ This comprehensive data cleaning pipeline has successfully:
 - ✅ Generated 3 high-quality datasets ready for ML
 - ✅ Documented every decision with medical justification
 - ✅ Validated all quality metrics
+- ✅ Preserved original IDs for traceability (v1.1)
+- ✅ Exported denormalization parameters (v1.1)
 
 **The dataset is now ready for modeling with high confidence in data quality and clinical validity.**
 
 ---
 
-**Report Generated**: November 23, 2024  
-**Pipeline Version**: 1.0  
+## 🔄 Version 1.1 Updates (November 24, 2024)
+
+### Enhancements Made
+
+**1. ID Column Preservation**
+- Original row IDs now included as first column in all CSV files
+- Enables traceability back to source data
+- Useful for investigating specific cases or errors
+
+**2. Denormalization Support**
+- New `denormalization_params.json` file created
+- Contains min/max values for all normalized features
+- Includes formulas and units for easy conversion
+- Enables interpretation of normalized values in original scale
+
+**3. Documentation Improvements**
+- Added comparison analysis with alternative cleaning approaches
+- Enhanced README with denormalization examples
+- Updated code comments for clarity
+- Added version tracking
+
+**4. Data Quality**
+- Removed duplicate/conflicting cleaned datasets
+- Single source of truth for cleaned data
+- Consistent structure across all files
+
+### Files Updated
+- `data_cleaning_code.py` - v1.1 with ID preservation and denorm export
+- `cardio_fully_cleaned.csv` - Now includes ID column (20 columns total)
+- `cardio_train_80.csv` - Now includes ID column (20 columns total)
+- `cardio_test_20.csv` - Now includes ID column (20 columns total)
+- `README_CLEANING.md` - Enhanced with v1.1 features
+- `data_cleaning_report.md` - This document
+
+### Files Added
+- `denormalization_params.json` - Min/max values for feature denormalization
+- `cleaning_stats.json` - Machine-readable cleaning statistics
+- `../../../CLEANING_COMPARISON_ANALYSIS.md` - Comparison with alternative approaches
+
+---
+
+**Report Generated**: November 24, 2024  
+**Pipeline Version**: 1.1 (Enhanced)  
 **Data Quality Score**: ⭐⭐⭐⭐⭐ (5/5)  
 **Clinical Validity**: ✅ Verified  
-**Reproducibility**: ✅ Guaranteed (random_state=42)
+**Reproducibility**: ✅ Guaranteed (random_state=42)  
+**Traceability**: ✅ ID preservation enabled
 
 ---
 

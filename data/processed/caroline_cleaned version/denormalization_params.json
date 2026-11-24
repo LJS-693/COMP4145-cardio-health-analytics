@@ -1,0 +1,42 @@
+{
+  "age_years": {
+    "min": 29.56331279945243,
+    "max": 64.92265571526352,
+    "formula": "age_years_original = age_years_normalized * (64.92265571526352 - 29.56331279945243) + 29.56331279945243"
+  },
+  "height": {
+    "min": 130.0,
+    "max": 207.0,
+    "formula": "height_original = height_normalized * (207.0 - 130.0) + 130.0"
+  },
+  "weight": {
+    "min": 30.0,
+    "max": 200.0,
+    "formula": "weight_original = weight_normalized * (200.0 - 30.0) + 30.0"
+  },
+  "ap_hi": {
+    "min": 70.0,
+    "max": 240.0,
+    "formula": "ap_hi_original = ap_hi_normalized * (240.0 - 70.0) + 70.0"
+  },
+  "ap_lo": {
+    "min": 40.0,
+    "max": 150.0,
+    "formula": "ap_lo_original = ap_lo_normalized * (150.0 - 40.0) + 40.0"
+  },
+  "bmi": {
+    "min": 12.254472882602151,
+    "max": 69.53473910339758,
+    "formula": "bmi_original = bmi_normalized * (69.53473910339758 - 12.254472882602151) + 12.254472882602151"
+  },
+  "pulse_pressure": {
+    "min": 5.0,
+    "max": 140.0,
+    "formula": "pulse_pressure_original = pulse_pressure_normalized * (140.0 - 5.0) + 5.0"
+  },
+  "map": {
+    "min": 50.0,
+    "max": 173.33333333333334,
+    "formula": "map_original = map_normalized * (173.33333333333334 - 50.0) + 50.0"
+  }
+}

@@ -6,20 +6,23 @@ This script implements a comprehensive, medically-informed data cleaning approac
 for the cardiovascular disease prediction dataset.
 
 Author: Data Cleaning Team
-Date: 2024-11-23
-Version: 1.0
+Date: 2024-11-24
+Version: 1.1
 
 Methodology:
 - Domain-driven filtering using clinical guidelines (WHO, AHA)
 - Conservative outlier removal (only impossible/extreme values)
 - Feature engineering with medical relevance
 - Reproducible with fixed random seeds
+- ID preservation for traceability
+- Denormalization parameters export
 
 Input: original_work/cardio_train.csv
 Outputs:
-  - cardio_fully_cleaned.csv (complete cleaned dataset)
-  - cardio_train_80.csv (80% training split)
-  - cardio_test_20.csv (20% test split)
+  - cardio_fully_cleaned.csv (complete cleaned dataset with IDs)
+  - cardio_train_80.csv (80% training split with IDs)
+  - cardio_test_20.csv (20% test split with IDs)
+  - denormalization_params.json (min/max values for reversing normalization)
   - data_cleaning_report.md (detailed statistics)
 """
 
@@ -44,10 +47,14 @@ print("="*80)
 print("\n📁 STAGE 0: Loading Data...")
 print("-"*80)
 
-df = pd.read_csv('original_work/cardio_train.csv', sep=';')
+df = pd.read_csv('../../data/raw/cardio_train.csv', sep=';')
 initial_rows = len(df)
 print(f"✓ Loaded {initial_rows:,} rows with {len(df.columns)} columns")
 print(f"  Columns: {list(df.columns)}")
+
+# Preserve original IDs for traceability
+original_ids = df['id'].copy()
+print(f"✓ Preserved {len(original_ids):,} original IDs for traceability")
 
 # Create age in years for easier interpretation
 df['age_years'] = df['age'] / 365.25
@@ -69,31 +76,31 @@ df_stage1 = df.copy()
 
 # 1.1 Negative blood pressure (physically impossible)
 mask_negative_bp = (df_stage1['ap_hi'] < 0) | (df_stage1['ap_lo'] < 0)
-removed_negative_bp = mask_negative_bp.sum()
+removed_negative_bp = int(mask_negative_bp.sum())
 print(f"  - Negative BP values: {removed_negative_bp} rows")
 cleaning_stats['removed']['negative_bp'] = removed_negative_bp
 
 # 1.2 Diastolic >= Systolic (physiologically impossible)
 mask_bp_inverted = df_stage1['ap_lo'] >= df_stage1['ap_hi']
-removed_bp_inverted = mask_bp_inverted.sum()
+removed_bp_inverted = int(mask_bp_inverted.sum())
 print(f"  - Diastolic ≥ Systolic: {removed_bp_inverted} rows")
 cleaning_stats['removed']['bp_inverted'] = removed_bp_inverted
 
 # 1.3 Extreme heights (outside human range)
 mask_extreme_height = (df_stage1['height'] < 100) | (df_stage1['height'] > 230)
-removed_extreme_height = mask_extreme_height.sum()
+removed_extreme_height = int(mask_extreme_height.sum())
 print(f"  - Extreme heights (<100 or >230 cm): {removed_extreme_height} rows")
 cleaning_stats['removed']['extreme_height'] = removed_extreme_height
 
 # 1.4 Extreme weights (outside survivable range)
 mask_extreme_weight = (df_stage1['weight'] < 30) | (df_stage1['weight'] > 300)
-removed_extreme_weight = mask_extreme_weight.sum()
+removed_extreme_weight = int(mask_extreme_weight.sum())
 print(f"  - Extreme weights (<30 or >300 kg): {removed_extreme_weight} rows")
 cleaning_stats['removed']['extreme_weight'] = removed_extreme_weight
 
 # 1.5 Age outside adult range
 mask_extreme_age = (df_stage1['age_years'] < 18) | (df_stage1['age_years'] > 100)
-removed_extreme_age = mask_extreme_age.sum()
+removed_extreme_age = int(mask_extreme_age.sum())
 print(f"  - Ages outside 18-100 years: {removed_extreme_age} rows")
 cleaning_stats['removed']['extreme_age'] = removed_extreme_age
 
@@ -127,20 +134,20 @@ mask_bp_outliers = (
     (df_stage2['ap_hi'] < 70) | (df_stage2['ap_hi'] > 250) |
     (df_stage2['ap_lo'] < 40) | (df_stage2['ap_lo'] > 150)
 )
-removed_bp_outliers = mask_bp_outliers.sum()
+removed_bp_outliers = int(mask_bp_outliers.sum())
 print(f"  - BP outliers (sys <70 or >250, dia <40 or >150): {removed_bp_outliers} rows")
 cleaning_stats['removed']['bp_outliers'] = removed_bp_outliers
 
 # 2.2 Calculate BMI and remove extreme outliers
 df_stage2['bmi_temp'] = df_stage2['weight'] / ((df_stage2['height']/100) ** 2)
 mask_bmi_outliers = (df_stage2['bmi_temp'] < 12) | (df_stage2['bmi_temp'] > 70)
-removed_bmi_outliers = mask_bmi_outliers.sum()
+removed_bmi_outliers = int(mask_bmi_outliers.sum())
 print(f"  - BMI outliers (<12 or >70): {removed_bmi_outliers} rows")
 cleaning_stats['removed']['bmi_outliers'] = removed_bmi_outliers
 
 # 2.3 Height outliers (more refined)
 mask_height_outliers = (df_stage2['height'] < 130) | (df_stage2['height'] > 220)
-removed_height_outliers = mask_height_outliers.sum()
+removed_height_outliers = int(mask_height_outliers.sum())
 print(f"  - Height outliers (<130 or >220 cm): {removed_height_outliers} rows")
 cleaning_stats['removed']['height_outliers'] = removed_height_outliers
 
@@ -238,16 +245,30 @@ features_to_keep = [
 scaler = MinMaxScaler(feature_range=(0, 1))
 df_stage5[features_to_normalize] = scaler.fit_transform(df_stage5[features_to_normalize])
 
+# Save denormalization parameters for future reference
+denorm_params = {}
+for i, feature in enumerate(features_to_normalize):
+    denorm_params[feature] = {
+        'min': float(scaler.data_min_[i]),
+        'max': float(scaler.data_max_[i]),
+        'formula': f'{feature}_original = {feature}_normalized * ({scaler.data_max_[i]} - {scaler.data_min_[i]}) + {scaler.data_min_[i]}'
+    }
+
 print(f"  ✓ Normalized {len(features_to_normalize)} continuous features to [0, 1]")
 print(f"    Features: {features_to_normalize}")
 print(f"  ✓ Kept {len(features_to_keep)} binary/categorical features as-is")
+print(f"  ✓ Saved denormalization parameters for reversing normalization")
 
-# Create final cleaned dataset with selected columns
-final_columns = features_to_normalize + features_to_keep
+# Add ID column back for traceability
+df_stage5['id'] = original_ids
+
+# Create final cleaned dataset with selected columns (ID first, then features)
+final_columns = ['id'] + features_to_normalize + features_to_keep
 df_cleaned = df_stage5[final_columns].copy()
 
 print(f"\n✓ Stage 5 Complete: All features normalized")
 print(f"  Final dataset shape: {df_cleaned.shape}")
+print(f"  ID column preserved for traceability")
 
 # =============================================================================
 # STAGE 6: Train-Test Split (80-20)
@@ -255,7 +276,7 @@ print(f"  Final dataset shape: {df_cleaned.shape}")
 print("\n✂️  STAGE 6: Train-Test Split (80-20)...")
 print("-"*80)
 
-# Separate features and target
+# Separate features and target (keep ID with features for now)
 X = df_cleaned.drop('cardio', axis=1)
 y = df_cleaned['cardio']
 
@@ -293,15 +314,16 @@ print("\n💾 STAGE 7: Saving Output Files...")
 print("-"*80)
 
 # Save fully cleaned dataset
-df_cleaned.to_csv('cardio_fully_cleaned.csv', index=False)
+output_dir = '../../data/processed/caroline_cleaned version/'
+df_cleaned.to_csv(output_dir + 'cardio_fully_cleaned.csv', index=False)
 print(f"  ✓ Saved: cardio_fully_cleaned.csv ({len(df_cleaned):,} rows, {len(df_cleaned.columns)} columns)")
 
 # Save train set
-df_train.to_csv('cardio_train_80.csv', index=False)
+df_train.to_csv(output_dir + 'cardio_train_80.csv', index=False)
 print(f"  ✓ Saved: cardio_train_80.csv ({len(df_train):,} rows)")
 
 # Save test set
-df_test.to_csv('cardio_test_20.csv', index=False)
+df_test.to_csv(output_dir + 'cardio_test_20.csv', index=False)
 print(f"  ✓ Saved: cardio_test_20.csv ({len(df_test):,} rows)")
 
 # =============================================================================
@@ -374,8 +396,9 @@ print(f"  Class 1 (CVD):     {(y==1).sum():,} ({(y==1).sum()/len(y)*100:.2f}%)")
 print(f"\n🔧 Feature Summary:")
 print(f"  Original features:     {len(df.columns) - 1}")  # -1 for target
 print(f"  Engineered features:   4 (BMI, Pulse Pressure, MAP, Age in years)")
-print(f"  After encoding:        {len(df_cleaned.columns) - 1}")  # -1 for target
-print(f"  Total features:        {len(df_cleaned.columns) - 1}")
+print(f"  After encoding:        {len(df_cleaned.columns) - 2}")  # -2 for target and id
+print(f"  Total features:        {len(df_cleaned.columns) - 2}")  # -2 for target and id
+print(f"  ID column:             Preserved for traceability")
 
 print(f"\n✨ Pipeline Complete!")
 print(f"   Ready for modeling and evaluation.")
@@ -390,9 +413,15 @@ cleaning_stats['class_distribution'] = {
     'class_0': int((y==0).sum()),
     'class_1': int((y==1).sum())
 }
+cleaning_stats['denormalization'] = denorm_params
 
 # Export stats for report generation
 import json
-with open('cleaning_stats.json', 'w') as f:
+with open(output_dir + 'cleaning_stats.json', 'w') as f:
     json.dump(cleaning_stats, f, indent=2)
 print("\n📊 Cleaning statistics saved to: cleaning_stats.json")
+
+# Export denormalization parameters separately
+with open(output_dir + 'denormalization_params.json', 'w') as f:
+    json.dump(denorm_params, f, indent=2)
+print("📊 Denormalization parameters saved to: denormalization_params.json")

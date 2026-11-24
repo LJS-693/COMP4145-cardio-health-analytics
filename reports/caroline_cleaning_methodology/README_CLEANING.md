@@ -1,8 +1,22 @@
 # 📋 Data Cleaning - Quick Reference Summary
 
-**Date**: November 23, 2024  
-**Status**: ✅ COMPLETE  
+**Date**: November 24, 2024  
+**Status**: ✅ COMPLETE (Version 1.1 - Enhanced)
 **Data Quality**: ⭐⭐⭐⭐⭐ (5/5)
+
+---
+
+## 🆕 Version 1.1 Enhancements (Nov 24, 2024)
+
+**What's New:**
+- ✅ **ID Column Preserved**: Original IDs now included for traceability
+- ✅ **Denormalization Support**: New JSON file with min/max values for reversing normalization
+- ✅ **Enhanced Documentation**: Comparison analysis with alternative cleaning approaches
+- ✅ **Streamlined Data**: Removed duplicate/conflicting cleaned datasets
+
+**Files Added:**
+- `denormalization_params.json` - Min/max values for converting normalized features back to original scale
+- `CLEANING_COMPARISON_ANALYSIS.md` - Detailed comparison with alternative approaches
 
 ---
 
@@ -18,7 +32,7 @@ Comprehensive data cleaning of cardiovascular disease dataset using **medically-
 | **Final rows** | 68,569 |
 | **Rows removed** | 1,431 (2.04%) |
 | **Retention rate** | 97.96% ✅ |
-| **Features created** | 18 (from 12 original) |
+| **Features created** | 18 (from 12 original) + ID column |
 | **Missing values** | 0 ✅ |
 | **Class balance** | 50.53% / 49.47% ✅ |
 
@@ -28,11 +42,13 @@ Comprehensive data cleaning of cardiovascular disease dataset using **medically-
 
 ### 1. **Data Files** (Ready to Use)
 
-| File | Rows | Purpose |
-|------|------|---------|
-| `cardio_fully_cleaned.csv` | 68,569 | Complete dataset for EDA and analysis |
-| `cardio_train_80.csv` | 54,855 | Training set (80%) - Use for model training |
-| `cardio_test_20.csv` | 13,714 | Test set (20%) - Hold-out for final evaluation |
+| File | Rows | Columns | Purpose |
+|------|------|---------|---------|
+| `cardio_fully_cleaned.csv` | 68,569 | 20 | Complete dataset for EDA and analysis (includes ID) |
+| `cardio_train_80.csv` | 54,855 | 20 | Training set (80%) - Use for model training (includes ID) |
+| `cardio_test_20.csv` | 13,714 | 20 | Test set (20%) - Hold-out for final evaluation (includes ID) |
+
+**Note**: All files now include the original ID column as the first column for traceability.
 
 ### 2. **Documentation Files**
 
@@ -40,6 +56,8 @@ Comprehensive data cleaning of cardiovascular disease dataset using **medically-
 |------|-------------|
 | `data_cleaning_report.md` | 📊 Comprehensive 25KB report with all statistics |
 | `data_cleaning_code.py` | 💻 Complete Python source code (reproducible) |
+| `denormalization_params.json` | 🔢 Min/max values for reversing normalization |
+| `cleaning_stats.json` | 📈 Machine-readable cleaning statistics |
 | `DATA_CLEANING_PLAN.md` | 📋 Original planning document |
 | `README_CLEANING.md` | 📖 This quick reference (you are here) |
 
@@ -123,6 +141,13 @@ import pandas as pd
 # Load full cleaned dataset
 df = pd.read_csv('cardio_fully_cleaned.csv')
 
+# Check the structure
+print(df.columns)
+# ['id', 'age_years', 'height', ..., 'cardio']
+
+# Trace back to original data using ID
+original_ids = df['id'].values
+
 # Already cleaned and normalized - ready for visualization!
 # Create histograms, correlation matrix, feature distributions
 ```
@@ -134,7 +159,9 @@ import pandas as pd
 # Load training set ONLY
 df_train = pd.read_csv('cardio_train_80.csv')
 
-X_train = df_train.drop('cardio', axis=1)
+# Separate ID, features, and target
+ids_train = df_train['id']
+X_train = df_train.drop(['id', 'cardio'], axis=1)  # Remove ID and target
 y_train = df_train['cardio']
 
 # Use for:
@@ -153,7 +180,9 @@ import pandas as pd
 # Load test set (use ONCE only!)
 df_test = pd.read_csv('cardio_test_20.csv')
 
-X_test = df_test.drop('cardio', axis=1)
+# Separate ID, features, and target
+ids_test = df_test['id']
+X_test = df_test.drop(['id', 'cardio'], axis=1)  # Remove ID and target
 y_test = df_test['cardio']
 
 # ONLY use for:
@@ -178,6 +207,11 @@ y_test = df_test['cardio']
 ---
 
 ## 🔍 Feature Summary
+
+### 20 Total Columns (ID + 18 Features + Target)
+
+**0. ID Column**
+- **id** - Original row ID from source data (for traceability)
 
 ### 8 Continuous Features (Normalized [0,1])
 1. age_years
@@ -219,18 +253,33 @@ y_test = df_test['cardio']
 ### Denormalization
 To convert normalized values back to original:
 ```python
-# Example ranges (min, max):
-age_years: [29.6, 64.9]
+import json
+
+# Load denormalization parameters
+with open('denormalization_params.json', 'r') as f:
+    params = json.load(f)
+
+# Denormalize a single feature
+feature = 'age_years'
+age_normalized = 0.5  # Example normalized value
+age_original = age_normalized * (params['features'][feature]['max'] - params['features'][feature]['min']) + params['features'][feature]['min']
+# Result: ~47.25 years
+
+# Or use the formula from the JSON
+print(params['features']['age_years']['formula'])
+# Output: age_years_original = age_years_normalized * (64.92055 - 29.57534) + 29.57534
+```
+
+**Quick Reference Ranges:**
+```
+age_years: [29.6, 64.9] years
 height: [130, 220] cm
 weight: [40, 200] kg
 ap_hi: [70, 250] mmHg
 ap_lo: [40, 150] mmHg
-bmi: [12.25, 69.53]
+bmi: [12.25, 69.53] kg/m²
 pulse_pressure: [5, 140] mmHg
 map: [50.0, 173.3] mmHg
-
-# Formula:
-original_value = normalized_value * (max - min) + min
 ```
 
 ---
