@@ -1,0 +1,52 @@
+XGBoost 多指标联合调参
+
+开发集 54,855 条；保留 10 项输入，沿用相同五折分组。
+learning_rate=[0.02,0.05,0.1] × n_estimators=[150,300,600,1000]：12 种组合、60 次 CV 拟合。
+另外重放选中组合的五折预测 5 次，生成 OOF 混淆矩阵；GridSearchCV 全开发集重拟合 1 次，总计 66 次。
+固定：max_depth=3、min_child_weight=10、subsample=1、colsample_bytree=0.8、reg_lambda=1。
+选优规则：五折验证 AUC、Accuracy、Precision、Recall、F1 各自排名，等权平均；平均名次越小越好。
+各指标相同分数采用相同的最小名次；综合同分时依次优先较高 AUC、较少树、较低学习率。
+Specificity 和 Average Precision 为辅助报告指标；混淆矩阵以计数形式报告，不与比率混合打分。
+这些指标存在重叠，等权排名是公开的项目折中规则，不是临床效用函数；名次差不代表差异显著或实际收益大小。
+训练指标仅诊断过拟合，不参与选优；分类阈值固定 0.5，未启用提前停止。
+选中组合：{"classifier__learning_rate": 0.02, "classifier__n_estimators": 1000}
+综合平均名次：3.800。
+
+选中组合五折验证均值：
+roc_auc: 0.802402
+accuracy: 0.737508
+precision: 0.757805
+recall: 0.689907
+f1: 0.722254
+specificity: 0.784112
+average_precision: 0.782755
+
+各折训练准确率均值：74.105%。
+与第二轮结果比较：
+roc_auc: 0.802289 -> 0.802402，差值 +0.000112
+accuracy: 0.736779 -> 0.737508，差值 +0.000729
+precision: 0.758219 -> 0.757805，差值 -0.000414
+recall: 0.687032 -> 0.689907，差值 +0.002874
+f1: 0.720859 -> 0.722254，差值 +0.001395
+
+各单项指标的最佳候选：
+roc_auc: learning_rate=0.02, n_estimators=1000, score=0.802402
+accuracy: learning_rate=0.1, n_estimators=300, score=0.737946
+precision: learning_rate=0.02, n_estimators=150, score=0.766575
+recall: learning_rate=0.1, n_estimators=1000, score=0.692744
+f1: learning_rate=0.1, n_estimators=300, score=0.723093
+specificity: learning_rate=0.02, n_estimators=150, score=0.801717
+average_precision: learning_rate=0.02, n_estimators=1000, score=0.782755
+
+解释与验证
+旧组合 learning_rate=0.05/n_estimators=300 包含在本轮搜索，已精确复现第二轮全部五项验证指标。
+选中组合的 OOF 重放已逐折复现网格搜索的七项指标；重放不是新的独立评估。
+曲线标注合并 OOF AUC；选参表格采用五折 AUC 算术均值，数值可能略有差别。
+旧模型在前两轮按 AUC 选择，本轮主动改为多指标折中；不要把规则改变直接解释为模型整体更强。
+反复使用相同开发折选参，且此前查看过全量描述性图，结果是探索性开发成绩；未做嵌套 CV。
+本轮没有读取最终测试 CSV 或全量清洗 CSV，没有最终测试预测成绩。
+旧模型与旧报告保留；新模型已全开发集重拟合并通过 Pipeline/原生 booster 重载核验。
+
+复现：python3 src/tune_xgboost_multimetric.py；依赖沿用 requirements_tree_models_locked.txt。
+评分：python3 src/predict_logistic.py --model models/xgboost_multimetric_gridsearch/model_pipeline.joblib --input INPUT.csv --output predictions.csv
+ChatGPT 协助编写及运行代码；所有统计由本地计算并核验。

@@ -1,0 +1,6 @@
+PASS: canonical data, feature whitelist, exact baseline grouped folds; final test CSV not opened.
+PASS: each fold scaler fitted on training portion only; all six SVM fits converged.
+PASS: all development records have exactly one OOF score; exports reconcile with metrics.
+PASS: saved Pipeline reload reproduces margins and labels; outputs are margins, not probabilities.
+PASS: previous model artifacts preserved.
+PASS: prediction CLI scored 100 development rows with matching IDs, finite margins and consistent labels.

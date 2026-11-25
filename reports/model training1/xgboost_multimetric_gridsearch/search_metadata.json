@@ -1,0 +1,124 @@
+{
+  "experiment": "joint learning_rate/n_estimators multi-metric search",
+  "records": 54855,
+  "features": [
+    "age_years",
+    "gender",
+    "bmi",
+    "smoke",
+    "alco",
+    "active",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc"
+  ],
+  "training_source": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+  "training_sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
+  "previous_round2_metadata_sha256": "4099984cc1167f14b757e3b92c3c4c38e443df54d959f7b612c8f9e8f1fda3a7",
+  "parameter_grid": {
+    "classifier__learning_rate": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "classifier__n_estimators": [
+      150,
+      300,
+      600,
+      1000
+    ]
+  },
+  "fixed_parameters": {
+    "subsample": 1.0,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "tree_method": "hist",
+    "random_state": 4145,
+    "n_jobs": 4,
+    "max_depth": 3,
+    "min_child_weight": 10
+  },
+  "best_params": {
+    "classifier__learning_rate": 0.02,
+    "classifier__n_estimators": 1000
+  },
+  "selected_full_parameters": {
+    "n_estimators": 1000,
+    "learning_rate": 0.02,
+    "subsample": 1.0,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "tree_method": "hist",
+    "random_state": 4145,
+    "n_jobs": 4,
+    "max_depth": 3,
+    "min_child_weight": 10
+  },
+  "selection_rule": "minimize equally weighted mean of five validation-metric ranks; tie: higher AUC, fewer trees, lower learning_rate",
+  "selection_metrics": [
+    "roc_auc",
+    "accuracy",
+    "precision",
+    "recall",
+    "f1"
+  ],
+  "metric_weights": {
+    "roc_auc": 0.2,
+    "accuracy": 0.2,
+    "precision": 0.2,
+    "recall": 0.2,
+    "f1": 0.2
+  },
+  "tie_rank_method": "minimum rank for exact ties (GridSearchCV rank_test_*); differences not significance-tested",
+  "selected_mean_rank": 3.8,
+  "selected_cv_fold_means": {
+    "roc_auc": 0.8024015214959471,
+    "accuracy": 0.7375080411707151,
+    "precision": 0.7578045749535398,
+    "recall": 0.6899067125140149,
+    "f1": 0.7222537983341919,
+    "specificity": 0.7841117028380243,
+    "average_precision": 0.7827549860283368
+  },
+  "pooled_oof_metrics": {
+    "accuracy": 0.7375079755719625,
+    "precision": 0.7577916295636687,
+    "recall": 0.6899067693554926,
+    "specificity": 0.7841114077494769,
+    "f1": 0.7222575854020794,
+    "roc_auc": 0.8023491209455967,
+    "average_precision": 0.7822515987871844,
+    "tn": 21734,
+    "fp": 5984,
+    "fn": 8415,
+    "tp": 18722
+  },
+  "mean_training_accuracy": 0.7410536886008232,
+  "cv": "exact same five original StratifiedGroupKFold partitions",
+  "candidate_configurations": 12,
+  "grid_cv_fits": 60,
+  "selected_oof_replay_fits": 5,
+  "full_development_refits": 1,
+  "total_fits": 66,
+  "threshold": 0.5,
+  "threshold_tuning": false,
+  "early_stopping": false,
+  "test_evaluated": false,
+  "test_csv_read_this_run": false,
+  "fully_cleaned_csv_read_this_run": false,
+  "evaluation_limit": "Exploratory repeated development selection with a newly declared composite criterion; no nested CV or independent final evaluation. Full-cohort descriptive results have previously been viewed.",
+  "composite_limit": "Metrics overlap; equal rank weights are a transparent project convention, not a clinical utility function. Rank gaps do not measure practical or statistical effect size.",
+  "training_code_sha256": "c0cdf38b2def42a823e5af7b93f0a3539ac5d42d3759cdb067d4a1a71bc11661",
+  "loader_code_sha256": "09fee62187256996d2e386bf5b63509721f7b2bf72b0e474a73ad349059972fb",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1",
+    "xgboost": "3.4.1"
+  }
+}

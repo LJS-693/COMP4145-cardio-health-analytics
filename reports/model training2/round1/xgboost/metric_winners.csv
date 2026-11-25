@@ -1,0 +1,8 @@
+﻿metric,candidate_index,score,parameters,selected
+roc_auc,5,0.8005793658557103,"{""max_depth"": 3, ""min_child_weight"": 5}",True
+accuracy,4,0.7358491305072548,"{""max_depth"": 3, ""min_child_weight"": 1}",False
+precision,8,0.755774206926766,"{""max_depth"": 4, ""min_child_weight"": 5}",False
+recall,3,0.694107507713758,"{""max_depth"": 2, ""min_child_weight"": 10}",False
+f1,5,0.7217129444904973,"{""max_depth"": 3, ""min_child_weight"": 5}",True
+specificity,8,0.782957282158978,"{""max_depth"": 4, ""min_child_weight"": 5}",False
+average_precision,5,0.7817096761963152,"{""max_depth"": 3, ""min_child_weight"": 5}",True

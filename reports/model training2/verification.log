@@ -1,0 +1,10 @@
+PASS baseline logistic_regression parameters, OOF, folds and inheritance
+PASS baseline random_forest parameters, OOF, folds and inheritance
+PASS baseline xgboost parameters, OOF, folds and inheritance
+PASS round1 logistic_regression parameters, OOF, folds and inheritance
+PASS round1 random_forest parameters, OOF, folds and inheritance
+PASS round1 xgboost parameters, OOF, folds and inheritance
+PASS round2 random_forest parameters, OOF, folds and inheritance
+PASS round2 xgboost parameters, OOF, folds and inheritance
+PASS round3 xgboost parameters, OOF, folds and inheritance
+PASS: 9 models, 55 candidates, 45 folds; original data and training1 only read; no fit or test evaluation.

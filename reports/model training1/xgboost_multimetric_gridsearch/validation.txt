@@ -1,0 +1,9 @@
+PASS: source hash, features and exact baseline grouped folds retained.
+PASS: 12 candidates / 60 grid CV fits; rank rule and tie breaks reconcile with selection.
+PASS: original 0.05/300 configuration reproduces all five previous validation metrics.
+PASS: selected five-fold OOF replay reproduces all seven search metrics; 66 total fits.
+PASS: exported OOF probabilities, labels and confusion matrix reconcile.
+PASS: saved Pipeline and native booster reload predictions and parameters verified.
+PASS: previous model and metadata hashes unchanged; test CSV not opened.
+PASS: independently recomputed all five metric ranks and tie-break selection from CSV; selected candidate is Pareto-efficient.
+PASS: scoring CLI processes 100 development records with consistent IDs, probabilities and labels.

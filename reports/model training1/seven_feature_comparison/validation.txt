@@ -1,0 +1,4 @@
+PASS: two seven-feature models completed; ten total CV fits plus two full-development refits.
+PASS: identical development records and folds; all selected original hyperparameters retained.
+PASS: original round-2 model and metadata hashes unchanged.
+PASS: all individual-model OOF exports and saved-model checks passed.

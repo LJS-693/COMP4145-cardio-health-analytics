@@ -1,0 +1,38 @@
+random_forest 七项特征实验
+
+开发集 54,855 条；固定该模型第二轮选中参数。
+输入：age_years, gender, bmi, ap_hi, ap_lo, cholesterol, gluc
+删除：smoke、alco、active。
+参数：{"n_estimators": 300, "max_depth": 14, "min_samples_leaf": 10, "max_features": "sqrt", "class_weight": null, "random_state": 4145, "n_jobs": 4, "bootstrap": true, "max_samples": 0.6}
+保留相同记录、原始资料分组、五折划分、类别编码和 0.5 分类阈值；没有再次调参。
+7 项原始特征经 one-hot 编码后为 9 列；10 项对照经编码后为 12 列。
+采样比例等参数保持原值，候选特征数随删除变量而改变。
+
+七项特征五折验证均值：
+roc_auc: 0.799488
+accuracy: 0.734992
+precision: 0.757527
+recall: 0.682905
+f1: 0.718276
+specificity: 0.785988
+average_precision: 0.781263
+
+与十项特征的同口径对比：
+roc_auc: 0.801720 -> 0.799488，差值 -0.002232
+accuracy: 0.736742 -> 0.734992，差值 -0.001750
+precision: 0.756516 -> 0.757527，差值 +0.001011
+recall: 0.689907 -> 0.682905，差值 -0.007002
+f1: 0.721672 -> 0.718276，差值 -0.003396
+
+说明
+十项结果来自已保存的第二轮五折均值，本次核对了源数据哈希、全部参数、输入和逐条折号。
+ROC 图标注合并 OOF AUC；表格采用五折 AUC 算术均值，两者略有差别。
+新模型在全部开发记录重拟合保存；模型重载及参数已核验。
+本次未读取测试 CSV 或全量清洗 CSV；没有对最终测试集计算预测成绩。
+特征方案受此前全量描述图启发，且重复使用开发折比较，因此属于探索性开发结果，不能称独立最终测试成绩。
+没有进行嵌套交叉验证；小幅指标差异不代表稳定或显著改善。
+十项模型、调参结果及其他模型均保留。
+
+复现：python3 src/train_seven_feature_models.py；依赖沿用 requirements_tree_models_locked.txt。
+评分：python3 src/predict_logistic.py --model models/svg/model_pipeline.joblib --input INPUT.csv --output predictions.csv
+ChatGPT 协助编写及运行；所有数值由本地计算并核验。

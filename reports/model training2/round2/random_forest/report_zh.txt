@@ -1,0 +1,25 @@
+model training2 / round2 / random_forest
+
+七项特征：age_years, gender, bmi, ap_hi, ap_lo, cholesterol, gluc。开发记录：54,855。
+参数：{"n_estimators": 300, "max_depth": 10, "min_samples_leaf": 30, "max_features": "sqrt", "max_samples": 0.8, "bootstrap": true, "class_weight": null, "random_state": 4145, "n_jobs": 4}
+选择规则：highest mean validation ROC-AUC; exact ties use grid order
+五折验证均值：
+roc_auc: 0.800125
+accuracy: 0.736287
+precision: 0.760190
+recall: 0.682131
+f1: 0.719041
+specificity: 0.789307
+average_precision: 0.781467
+
+各折训练准确率均值：74.297%。
+所有阶段保持原始资料分组及同样五折；标准化仅用于逻辑回归且在训练折内拟合。
+网格中的 test 字样表示验证折；并非最终测试集。表格用折均值，ROC 图用合并 OOF AUC。
+选中配置的五折预测重新生成并与网格逐折核对；不是独立的新验证。
+分类阈值固定 0.5；未做阈值优化、提前停止或类别重采样。
+本次从七项输入重新选择每轮参数，没有照搬十项实验的最优解。
+保存模型在全部开发集重拟合；模型重载及原生 booster 预测已核对（如适用）。
+此前已查看全量描述图，且重复使用开发折选参，因此结果属于探索性开发比较；未做嵌套 CV。
+未读取最终测试 CSV 或全量清洗 CSV；不改动 model training1。
+预测目标是现有 cardio 状态标签；评分未被验证为临床紧急程度或未来发病概率。
+ChatGPT 协助编写与运行；所有统计由本地计算并核验。

@@ -1,0 +1,8 @@
+﻿metric,candidate_index,score,parameters,selected
+roc_auc,3,0.8007828891726149,"{""learning_rate"": 0.02, ""n_estimators"": 600}",False
+accuracy,7,0.7363412907059722,"{""learning_rate"": 0.05, ""n_estimators"": 600}",True
+precision,1,0.7647015064478241,"{""learning_rate"": 0.02, ""n_estimators"": 150}",False
+recall,7,0.6906435575065528,"{""learning_rate"": 0.05, ""n_estimators"": 600}",True
+f1,7,0.7215765517056564,"{""learning_rate"": 0.05, ""n_estimators"": 600}",True
+specificity,1,0.7988673493003279,"{""learning_rate"": 0.02, ""n_estimators"": 150}",False
+average_precision,6,0.7820782562831458,"{""learning_rate"": 0.05, ""n_estimators"": 300}",False

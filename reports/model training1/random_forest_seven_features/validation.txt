@@ -1,0 +1,7 @@
+PASS: exact original records, canonical inputs and fold assignments retained.
+PASS: only smoke/alco/active removed; seven named inputs become nine encoded columns.
+PASS: all selected round-2 classifier parameters unchanged; no new tuning or threshold selection.
+PASS: every development record has one OOF probability; exported labels, folds and metrics reconcile.
+PASS: model reload probabilities and saved parameters verified.
+PASS: test and fully-cleaned CSV not opened in this run; original outputs preserved.
+PASS: existing scoring CLI successfully processed 100 development records with seven-feature model; IDs, probabilities and labels reconcile.

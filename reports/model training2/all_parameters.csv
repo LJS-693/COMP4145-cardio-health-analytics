@@ -1,0 +1,246 @@
+﻿stage,model,parameter,value,source
+baseline,logistic_regression,C,1.0,explicit selected parameter
+baseline,logistic_regression,class_weight,None,explicit selected parameter
+baseline,logistic_regression,dual,False,estimator default; None may delegate to backend
+baseline,logistic_regression,fit_intercept,True,estimator default; None may delegate to backend
+baseline,logistic_regression,intercept_scaling,1,estimator default; None may delegate to backend
+baseline,logistic_regression,l1_ratio,0.0,estimator default; None may delegate to backend
+baseline,logistic_regression,max_iter,1000,explicit selected parameter
+baseline,logistic_regression,n_jobs,None,estimator default; None may delegate to backend
+baseline,logistic_regression,penalty,deprecated,estimator default; None may delegate to backend
+baseline,logistic_regression,random_state,4145,explicit selected parameter
+baseline,logistic_regression,solver,lbfgs,explicit selected parameter
+baseline,logistic_regression,tol,0.0001,estimator default; None may delegate to backend
+baseline,logistic_regression,verbose,0,estimator default; None may delegate to backend
+baseline,logistic_regression,warm_start,False,estimator default; None may delegate to backend
+baseline,random_forest,bootstrap,True,explicit selected parameter
+baseline,random_forest,ccp_alpha,0.0,estimator default; None may delegate to backend
+baseline,random_forest,class_weight,None,explicit selected parameter
+baseline,random_forest,criterion,gini,estimator default; None may delegate to backend
+baseline,random_forest,max_depth,None,explicit selected parameter
+baseline,random_forest,max_features,sqrt,explicit selected parameter
+baseline,random_forest,max_leaf_nodes,None,estimator default; None may delegate to backend
+baseline,random_forest,max_samples,None,explicit selected parameter
+baseline,random_forest,min_impurity_decrease,0.0,estimator default; None may delegate to backend
+baseline,random_forest,min_samples_leaf,1,explicit selected parameter
+baseline,random_forest,min_samples_split,2,estimator default; None may delegate to backend
+baseline,random_forest,min_weight_fraction_leaf,0.0,estimator default; None may delegate to backend
+baseline,random_forest,monotonic_cst,None,estimator default; None may delegate to backend
+baseline,random_forest,n_estimators,300,explicit selected parameter
+baseline,random_forest,n_jobs,4,explicit selected parameter
+baseline,random_forest,oob_score,False,estimator default; None may delegate to backend
+baseline,random_forest,random_state,4145,explicit selected parameter
+baseline,random_forest,verbose,0,estimator default; None may delegate to backend
+baseline,random_forest,warm_start,False,estimator default; None may delegate to backend
+baseline,xgboost,base_score,None,estimator default; None may delegate to backend
+baseline,xgboost,booster,None,estimator default; None may delegate to backend
+baseline,xgboost,callbacks,None,estimator default; None may delegate to backend
+baseline,xgboost,colsample_bylevel,None,estimator default; None may delegate to backend
+baseline,xgboost,colsample_bynode,None,estimator default; None may delegate to backend
+baseline,xgboost,colsample_bytree,1.0,explicit selected parameter
+baseline,xgboost,device,None,estimator default; None may delegate to backend
+baseline,xgboost,early_stopping_rounds,None,estimator default; None may delegate to backend
+baseline,xgboost,enable_categorical,True,estimator default; None may delegate to backend
+baseline,xgboost,eval_metric,logloss,explicit selected parameter
+baseline,xgboost,feature_types,None,estimator default; None may delegate to backend
+baseline,xgboost,feature_weights,None,estimator default; None may delegate to backend
+baseline,xgboost,gamma,None,estimator default; None may delegate to backend
+baseline,xgboost,grow_policy,None,estimator default; None may delegate to backend
+baseline,xgboost,importance_type,None,estimator default; None may delegate to backend
+baseline,xgboost,interaction_constraints,None,estimator default; None may delegate to backend
+baseline,xgboost,learning_rate,0.05,explicit selected parameter
+baseline,xgboost,max_bin,None,estimator default; None may delegate to backend
+baseline,xgboost,max_cat_threshold,None,estimator default; None may delegate to backend
+baseline,xgboost,max_cat_to_onehot,None,estimator default; None may delegate to backend
+baseline,xgboost,max_delta_step,None,estimator default; None may delegate to backend
+baseline,xgboost,max_depth,3,explicit selected parameter
+baseline,xgboost,max_leaves,None,estimator default; None may delegate to backend
+baseline,xgboost,min_child_weight,1,explicit selected parameter
+baseline,xgboost,missing,nan,estimator default; None may delegate to backend
+baseline,xgboost,monotone_constraints,None,estimator default; None may delegate to backend
+baseline,xgboost,multi_strategy,None,estimator default; None may delegate to backend
+baseline,xgboost,n_estimators,300,explicit selected parameter
+baseline,xgboost,n_jobs,4,explicit selected parameter
+baseline,xgboost,num_parallel_tree,None,estimator default; None may delegate to backend
+baseline,xgboost,objective,binary:logistic,explicit selected parameter
+baseline,xgboost,random_state,4145,explicit selected parameter
+baseline,xgboost,reg_alpha,None,estimator default; None may delegate to backend
+baseline,xgboost,reg_lambda,1.0,explicit selected parameter
+baseline,xgboost,sampling_method,None,estimator default; None may delegate to backend
+baseline,xgboost,scale_pos_weight,None,estimator default; None may delegate to backend
+baseline,xgboost,subsample,1.0,explicit selected parameter
+baseline,xgboost,tree_method,hist,explicit selected parameter
+baseline,xgboost,validate_parameters,None,estimator default; None may delegate to backend
+baseline,xgboost,verbosity,None,estimator default; None may delegate to backend
+round1,logistic_regression,C,100.0,explicit selected parameter
+round1,logistic_regression,class_weight,None,explicit selected parameter
+round1,logistic_regression,dual,False,estimator default; None may delegate to backend
+round1,logistic_regression,fit_intercept,True,estimator default; None may delegate to backend
+round1,logistic_regression,intercept_scaling,1,estimator default; None may delegate to backend
+round1,logistic_regression,l1_ratio,0.0,estimator default; None may delegate to backend
+round1,logistic_regression,max_iter,1000,explicit selected parameter
+round1,logistic_regression,n_jobs,None,estimator default; None may delegate to backend
+round1,logistic_regression,penalty,deprecated,estimator default; None may delegate to backend
+round1,logistic_regression,random_state,4145,explicit selected parameter
+round1,logistic_regression,solver,lbfgs,explicit selected parameter
+round1,logistic_regression,tol,0.0001,estimator default; None may delegate to backend
+round1,logistic_regression,verbose,0,estimator default; None may delegate to backend
+round1,logistic_regression,warm_start,False,estimator default; None may delegate to backend
+round1,random_forest,bootstrap,True,explicit selected parameter
+round1,random_forest,ccp_alpha,0.0,estimator default; None may delegate to backend
+round1,random_forest,class_weight,None,explicit selected parameter
+round1,random_forest,criterion,gini,estimator default; None may delegate to backend
+round1,random_forest,max_depth,10,explicit selected parameter
+round1,random_forest,max_features,sqrt,explicit selected parameter
+round1,random_forest,max_leaf_nodes,None,estimator default; None may delegate to backend
+round1,random_forest,max_samples,None,explicit selected parameter
+round1,random_forest,min_impurity_decrease,0.0,estimator default; None may delegate to backend
+round1,random_forest,min_samples_leaf,30,explicit selected parameter
+round1,random_forest,min_samples_split,2,estimator default; None may delegate to backend
+round1,random_forest,min_weight_fraction_leaf,0.0,estimator default; None may delegate to backend
+round1,random_forest,monotonic_cst,None,estimator default; None may delegate to backend
+round1,random_forest,n_estimators,300,explicit selected parameter
+round1,random_forest,n_jobs,4,explicit selected parameter
+round1,random_forest,oob_score,False,estimator default; None may delegate to backend
+round1,random_forest,random_state,4145,explicit selected parameter
+round1,random_forest,verbose,0,estimator default; None may delegate to backend
+round1,random_forest,warm_start,False,estimator default; None may delegate to backend
+round1,xgboost,base_score,None,estimator default; None may delegate to backend
+round1,xgboost,booster,None,estimator default; None may delegate to backend
+round1,xgboost,callbacks,None,estimator default; None may delegate to backend
+round1,xgboost,colsample_bylevel,None,estimator default; None may delegate to backend
+round1,xgboost,colsample_bynode,None,estimator default; None may delegate to backend
+round1,xgboost,colsample_bytree,1.0,explicit selected parameter
+round1,xgboost,device,None,estimator default; None may delegate to backend
+round1,xgboost,early_stopping_rounds,None,estimator default; None may delegate to backend
+round1,xgboost,enable_categorical,True,estimator default; None may delegate to backend
+round1,xgboost,eval_metric,logloss,explicit selected parameter
+round1,xgboost,feature_types,None,estimator default; None may delegate to backend
+round1,xgboost,feature_weights,None,estimator default; None may delegate to backend
+round1,xgboost,gamma,None,estimator default; None may delegate to backend
+round1,xgboost,grow_policy,None,estimator default; None may delegate to backend
+round1,xgboost,importance_type,None,estimator default; None may delegate to backend
+round1,xgboost,interaction_constraints,None,estimator default; None may delegate to backend
+round1,xgboost,learning_rate,0.05,explicit selected parameter
+round1,xgboost,max_bin,None,estimator default; None may delegate to backend
+round1,xgboost,max_cat_threshold,None,estimator default; None may delegate to backend
+round1,xgboost,max_cat_to_onehot,None,estimator default; None may delegate to backend
+round1,xgboost,max_delta_step,None,estimator default; None may delegate to backend
+round1,xgboost,max_depth,3,explicit selected parameter
+round1,xgboost,max_leaves,None,estimator default; None may delegate to backend
+round1,xgboost,min_child_weight,5,explicit selected parameter
+round1,xgboost,missing,nan,estimator default; None may delegate to backend
+round1,xgboost,monotone_constraints,None,estimator default; None may delegate to backend
+round1,xgboost,multi_strategy,None,estimator default; None may delegate to backend
+round1,xgboost,n_estimators,300,explicit selected parameter
+round1,xgboost,n_jobs,4,explicit selected parameter
+round1,xgboost,num_parallel_tree,None,estimator default; None may delegate to backend
+round1,xgboost,objective,binary:logistic,explicit selected parameter
+round1,xgboost,random_state,4145,explicit selected parameter
+round1,xgboost,reg_alpha,None,estimator default; None may delegate to backend
+round1,xgboost,reg_lambda,1.0,explicit selected parameter
+round1,xgboost,sampling_method,None,estimator default; None may delegate to backend
+round1,xgboost,scale_pos_weight,None,estimator default; None may delegate to backend
+round1,xgboost,subsample,1.0,explicit selected parameter
+round1,xgboost,tree_method,hist,explicit selected parameter
+round1,xgboost,validate_parameters,None,estimator default; None may delegate to backend
+round1,xgboost,verbosity,None,estimator default; None may delegate to backend
+round2,random_forest,bootstrap,True,explicit selected parameter
+round2,random_forest,ccp_alpha,0.0,estimator default; None may delegate to backend
+round2,random_forest,class_weight,None,explicit selected parameter
+round2,random_forest,criterion,gini,estimator default; None may delegate to backend
+round2,random_forest,max_depth,10,explicit selected parameter
+round2,random_forest,max_features,sqrt,explicit selected parameter
+round2,random_forest,max_leaf_nodes,None,estimator default; None may delegate to backend
+round2,random_forest,max_samples,0.8,explicit selected parameter
+round2,random_forest,min_impurity_decrease,0.0,estimator default; None may delegate to backend
+round2,random_forest,min_samples_leaf,30,explicit selected parameter
+round2,random_forest,min_samples_split,2,estimator default; None may delegate to backend
+round2,random_forest,min_weight_fraction_leaf,0.0,estimator default; None may delegate to backend
+round2,random_forest,monotonic_cst,None,estimator default; None may delegate to backend
+round2,random_forest,n_estimators,300,explicit selected parameter
+round2,random_forest,n_jobs,4,explicit selected parameter
+round2,random_forest,oob_score,False,estimator default; None may delegate to backend
+round2,random_forest,random_state,4145,explicit selected parameter
+round2,random_forest,verbose,0,estimator default; None may delegate to backend
+round2,random_forest,warm_start,False,estimator default; None may delegate to backend
+round2,xgboost,base_score,None,estimator default; None may delegate to backend
+round2,xgboost,booster,None,estimator default; None may delegate to backend
+round2,xgboost,callbacks,None,estimator default; None may delegate to backend
+round2,xgboost,colsample_bylevel,None,estimator default; None may delegate to backend
+round2,xgboost,colsample_bynode,None,estimator default; None may delegate to backend
+round2,xgboost,colsample_bytree,0.8,explicit selected parameter
+round2,xgboost,device,None,estimator default; None may delegate to backend
+round2,xgboost,early_stopping_rounds,None,estimator default; None may delegate to backend
+round2,xgboost,enable_categorical,True,estimator default; None may delegate to backend
+round2,xgboost,eval_metric,logloss,explicit selected parameter
+round2,xgboost,feature_types,None,estimator default; None may delegate to backend
+round2,xgboost,feature_weights,None,estimator default; None may delegate to backend
+round2,xgboost,gamma,None,estimator default; None may delegate to backend
+round2,xgboost,grow_policy,None,estimator default; None may delegate to backend
+round2,xgboost,importance_type,None,estimator default; None may delegate to backend
+round2,xgboost,interaction_constraints,None,estimator default; None may delegate to backend
+round2,xgboost,learning_rate,0.05,explicit selected parameter
+round2,xgboost,max_bin,None,estimator default; None may delegate to backend
+round2,xgboost,max_cat_threshold,None,estimator default; None may delegate to backend
+round2,xgboost,max_cat_to_onehot,None,estimator default; None may delegate to backend
+round2,xgboost,max_delta_step,None,estimator default; None may delegate to backend
+round2,xgboost,max_depth,3,explicit selected parameter
+round2,xgboost,max_leaves,None,estimator default; None may delegate to backend
+round2,xgboost,min_child_weight,5,explicit selected parameter
+round2,xgboost,missing,nan,estimator default; None may delegate to backend
+round2,xgboost,monotone_constraints,None,estimator default; None may delegate to backend
+round2,xgboost,multi_strategy,None,estimator default; None may delegate to backend
+round2,xgboost,n_estimators,300,explicit selected parameter
+round2,xgboost,n_jobs,4,explicit selected parameter
+round2,xgboost,num_parallel_tree,None,estimator default; None may delegate to backend
+round2,xgboost,objective,binary:logistic,explicit selected parameter
+round2,xgboost,random_state,4145,explicit selected parameter
+round2,xgboost,reg_alpha,None,estimator default; None may delegate to backend
+round2,xgboost,reg_lambda,1.0,explicit selected parameter
+round2,xgboost,sampling_method,None,estimator default; None may delegate to backend
+round2,xgboost,scale_pos_weight,None,estimator default; None may delegate to backend
+round2,xgboost,subsample,0.6,explicit selected parameter
+round2,xgboost,tree_method,hist,explicit selected parameter
+round2,xgboost,validate_parameters,None,estimator default; None may delegate to backend
+round2,xgboost,verbosity,None,estimator default; None may delegate to backend
+round3,xgboost,base_score,None,estimator default; None may delegate to backend
+round3,xgboost,booster,None,estimator default; None may delegate to backend
+round3,xgboost,callbacks,None,estimator default; None may delegate to backend
+round3,xgboost,colsample_bylevel,None,estimator default; None may delegate to backend
+round3,xgboost,colsample_bynode,None,estimator default; None may delegate to backend
+round3,xgboost,colsample_bytree,0.8,explicit selected parameter
+round3,xgboost,device,None,estimator default; None may delegate to backend
+round3,xgboost,early_stopping_rounds,None,estimator default; None may delegate to backend
+round3,xgboost,enable_categorical,True,estimator default; None may delegate to backend
+round3,xgboost,eval_metric,logloss,explicit selected parameter
+round3,xgboost,feature_types,None,estimator default; None may delegate to backend
+round3,xgboost,feature_weights,None,estimator default; None may delegate to backend
+round3,xgboost,gamma,None,estimator default; None may delegate to backend
+round3,xgboost,grow_policy,None,estimator default; None may delegate to backend
+round3,xgboost,importance_type,None,estimator default; None may delegate to backend
+round3,xgboost,interaction_constraints,None,estimator default; None may delegate to backend
+round3,xgboost,learning_rate,0.05,explicit selected parameter
+round3,xgboost,max_bin,None,estimator default; None may delegate to backend
+round3,xgboost,max_cat_threshold,None,estimator default; None may delegate to backend
+round3,xgboost,max_cat_to_onehot,None,estimator default; None may delegate to backend
+round3,xgboost,max_delta_step,None,estimator default; None may delegate to backend
+round3,xgboost,max_depth,3,explicit selected parameter
+round3,xgboost,max_leaves,None,estimator default; None may delegate to backend
+round3,xgboost,min_child_weight,5,explicit selected parameter
+round3,xgboost,missing,nan,estimator default; None may delegate to backend
+round3,xgboost,monotone_constraints,None,estimator default; None may delegate to backend
+round3,xgboost,multi_strategy,None,estimator default; None may delegate to backend
+round3,xgboost,n_estimators,600,explicit selected parameter
+round3,xgboost,n_jobs,4,explicit selected parameter
+round3,xgboost,num_parallel_tree,None,estimator default; None may delegate to backend
+round3,xgboost,objective,binary:logistic,explicit selected parameter
+round3,xgboost,random_state,4145,explicit selected parameter
+round3,xgboost,reg_alpha,None,estimator default; None may delegate to backend
+round3,xgboost,reg_lambda,1.0,explicit selected parameter
+round3,xgboost,sampling_method,None,estimator default; None may delegate to backend
+round3,xgboost,scale_pos_weight,None,estimator default; None may delegate to backend
+round3,xgboost,subsample,0.6,explicit selected parameter
+round3,xgboost,tree_method,hist,explicit selected parameter
+round3,xgboost,validate_parameters,None,estimator default; None may delegate to backend
+round3,xgboost,verbosity,None,estimator default; None may delegate to backend

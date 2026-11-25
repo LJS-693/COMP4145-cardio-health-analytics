@@ -1,3 +1,26 @@
+2026-11-26 七项特征 model training2
+已从七项输入完整重跑：baseline 三模型、round1 三模型、round2 RF/XGB、round3 XGB。
+输入：年龄、性别、BMI、收缩压、舒张压、胆固醇、血糖。54,855条开发数据，同一分组五折。
+报告入口：reports/model training2/overall_report.html
+Excel：outputs/model training2/workbook/seven_feature_all_rounds_comparison.xlsx
+模型：models/model training2/<baseline|round1|round2|round3>/<model>/
+代码：src/model training2/train_all.py；只读核对：src/model training2/verify_outputs.py。
+配置及参数网格：config/model training2/training_plan.json
+round1/round2 按验证 AUC 选参；round3 XGB 按五项指标平均名次选参。
+验证AUC最高为 XGB round2（0.800734）；Accuracy最高为 RF round1（73.6432%）。
+55组网格、9个保存阶段，详细指标和完整参数见总报告及Excel。
+本次未预测评估测试集，未 commit/push；model training1 归档与数据文件保留。
+下方为历史工作说明，其中旧路径及旧状态不代表本轮文件位置。
+
+2026-11-26 历史预测实验归档
+此前模型、调参代码、报告及预测结果已归入各对应目录的 model training1 子文件夹。
+请先阅读 reports/model training1/归档说明.txt；下文旧预测路径均指归档前布局。
+models/model training1/：历史模型；reports/model training1/：报告和参数。
+src/model training1/：原始代码；outputs/model training1/：模型图表、折外预测和对比 Excel。
+只检查归档：python3 src/replay_model_training1.py --check
+历史重跑入口：src/replay_model_training1.py，必须另给新的空输出目录。
+新的七项特征训练已在 model training2 完成。数据、清洗及描述性分析位置未改变。
+
 当前逻辑回归版本更新
 使用新版 data/processed/caroline_cleaned version/cardio_train_80.csv（54,855条）。
 模型、OOF预测、系数、评估图和报告均已重训覆盖；最终测试集尚未评估。

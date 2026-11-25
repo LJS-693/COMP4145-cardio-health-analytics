@@ -1,0 +1,1 @@
+PASS: search rank/AUC heatmaps and selected OOF ROC/confusion matrix PNGs visually inspected; titles, annotations, axes, legends and footers readable without clipping.

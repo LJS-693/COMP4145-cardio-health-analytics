@@ -1,0 +1,1779 @@
+{
+  "root": "/Users/liujueshan/Desktop/comp4145/final project",
+  "archive_name": "model training1",
+  "archive_date": "2026-11-26",
+  "timezone": "Asia/Hong_Kong",
+  "operations": [
+    {
+      "source": "models/logistic_regression",
+      "destination": "models/model training1/logistic_regression"
+    },
+    {
+      "source": "models/random_forest",
+      "destination": "models/model training1/random_forest"
+    },
+    {
+      "source": "models/random_forest_gridsearch",
+      "destination": "models/model training1/random_forest_gridsearch"
+    },
+    {
+      "source": "models/random_forest_gridsearch_round2",
+      "destination": "models/model training1/random_forest_gridsearch_round2"
+    },
+    {
+      "source": "models/random_forest_seven_features",
+      "destination": "models/model training1/random_forest_seven_features"
+    },
+    {
+      "source": "models/svm",
+      "destination": "models/model training1/svm"
+    },
+    {
+      "source": "models/xgboost",
+      "destination": "models/model training1/xgboost"
+    },
+    {
+      "source": "models/xgboost_gridsearch",
+      "destination": "models/model training1/xgboost_gridsearch"
+    },
+    {
+      "source": "models/xgboost_gridsearch_round2",
+      "destination": "models/model training1/xgboost_gridsearch_round2"
+    },
+    {
+      "source": "models/xgboost_multimetric_gridsearch",
+      "destination": "models/model training1/xgboost_multimetric_gridsearch"
+    },
+    {
+      "source": "models/xgboost_seven_features",
+      "destination": "models/model training1/xgboost_seven_features"
+    },
+    {
+      "source": "models/使用说明.txt",
+      "destination": "models/model training1/使用说明.txt"
+    },
+    {
+      "source": "reports/logistic_regression",
+      "destination": "reports/model training1/logistic_regression"
+    },
+    {
+      "source": "reports/model_comparison",
+      "destination": "reports/model training1/model_comparison"
+    },
+    {
+      "source": "reports/random_forest",
+      "destination": "reports/model training1/random_forest"
+    },
+    {
+      "source": "reports/random_forest_gridsearch",
+      "destination": "reports/model training1/random_forest_gridsearch"
+    },
+    {
+      "source": "reports/random_forest_gridsearch_round2",
+      "destination": "reports/model training1/random_forest_gridsearch_round2"
+    },
+    {
+      "source": "reports/random_forest_seven_features",
+      "destination": "reports/model training1/random_forest_seven_features"
+    },
+    {
+      "source": "reports/seven_feature_comparison",
+      "destination": "reports/model training1/seven_feature_comparison"
+    },
+    {
+      "source": "reports/svm",
+      "destination": "reports/model training1/svm"
+    },
+    {
+      "source": "reports/xgboost",
+      "destination": "reports/model training1/xgboost"
+    },
+    {
+      "source": "reports/xgboost_gridsearch",
+      "destination": "reports/model training1/xgboost_gridsearch"
+    },
+    {
+      "source": "reports/xgboost_gridsearch_round2",
+      "destination": "reports/model training1/xgboost_gridsearch_round2"
+    },
+    {
+      "source": "reports/xgboost_multimetric_gridsearch",
+      "destination": "reports/model training1/xgboost_multimetric_gridsearch"
+    },
+    {
+      "source": "reports/xgboost_seven_features",
+      "destination": "reports/model training1/xgboost_seven_features"
+    },
+    {
+      "source": "outputs/figures/random_forest",
+      "destination": "outputs/model training1/figures/random_forest"
+    },
+    {
+      "source": "outputs/figures/random_forest_gridsearch",
+      "destination": "outputs/model training1/figures/random_forest_gridsearch"
+    },
+    {
+      "source": "outputs/figures/random_forest_gridsearch_round2",
+      "destination": "outputs/model training1/figures/random_forest_gridsearch_round2"
+    },
+    {
+      "source": "outputs/figures/random_forest_seven_features",
+      "destination": "outputs/model training1/figures/random_forest_seven_features"
+    },
+    {
+      "source": "outputs/figures/seven_feature_comparison",
+      "destination": "outputs/model training1/figures/seven_feature_comparison"
+    },
+    {
+      "source": "outputs/figures/svm",
+      "destination": "outputs/model training1/figures/svm"
+    },
+    {
+      "source": "outputs/figures/xgboost",
+      "destination": "outputs/model training1/figures/xgboost"
+    },
+    {
+      "source": "outputs/figures/xgboost_gridsearch",
+      "destination": "outputs/model training1/figures/xgboost_gridsearch"
+    },
+    {
+      "source": "outputs/figures/xgboost_gridsearch_round2",
+      "destination": "outputs/model training1/figures/xgboost_gridsearch_round2"
+    },
+    {
+      "source": "outputs/figures/xgboost_multimetric_gridsearch",
+      "destination": "outputs/model training1/figures/xgboost_multimetric_gridsearch"
+    },
+    {
+      "source": "outputs/figures/xgboost_seven_features",
+      "destination": "outputs/model training1/figures/xgboost_seven_features"
+    },
+    {
+      "source": "outputs/predictions/logistic_regression",
+      "destination": "outputs/model training1/predictions/logistic_regression"
+    },
+    {
+      "source": "outputs/predictions/random_forest",
+      "destination": "outputs/model training1/predictions/random_forest"
+    },
+    {
+      "source": "outputs/predictions/random_forest_seven_features",
+      "destination": "outputs/model training1/predictions/random_forest_seven_features"
+    },
+    {
+      "source": "outputs/predictions/svm",
+      "destination": "outputs/model training1/predictions/svm"
+    },
+    {
+      "source": "outputs/predictions/xgboost",
+      "destination": "outputs/model training1/predictions/xgboost"
+    },
+    {
+      "source": "outputs/predictions/xgboost_multimetric_gridsearch",
+      "destination": "outputs/model training1/predictions/xgboost_multimetric_gridsearch"
+    },
+    {
+      "source": "outputs/predictions/xgboost_seven_features",
+      "destination": "outputs/model training1/predictions/xgboost_seven_features"
+    },
+    {
+      "source": "outputs/rf_xgb_all_rounds_20261125",
+      "destination": "outputs/model training1/rf_xgb_all_rounds_20261125"
+    },
+    {
+      "source": "src/predict_logistic.py",
+      "destination": "src/model training1/predict_logistic.py"
+    },
+    {
+      "source": "src/predict_svm.py",
+      "destination": "src/model training1/predict_svm.py"
+    },
+    {
+      "source": "src/rf_tuning_data.py",
+      "destination": "src/model training1/rf_tuning_data.py"
+    },
+    {
+      "source": "src/train_logistic.py",
+      "destination": "src/model training1/train_logistic.py"
+    },
+    {
+      "source": "src/train_seven_feature_models.py",
+      "destination": "src/model training1/train_seven_feature_models.py"
+    },
+    {
+      "source": "src/train_svm.py",
+      "destination": "src/model training1/train_svm.py"
+    },
+    {
+      "source": "src/train_tree_models.py",
+      "destination": "src/model training1/train_tree_models.py"
+    },
+    {
+      "source": "src/tune_random_forest.py",
+      "destination": "src/model training1/tune_random_forest.py"
+    },
+    {
+      "source": "src/tune_random_forest_round2.py",
+      "destination": "src/model training1/tune_random_forest_round2.py"
+    },
+    {
+      "source": "src/tune_xgboost.py",
+      "destination": "src/model training1/tune_xgboost.py"
+    },
+    {
+      "source": "src/tune_xgboost_multimetric.py",
+      "destination": "src/model training1/tune_xgboost_multimetric.py"
+    },
+    {
+      "source": "src/tune_xgboost_round2.py",
+      "destination": "src/model training1/tune_xgboost_round2.py"
+    },
+    {
+      "source": "src/xgb_tuning_data.py",
+      "destination": "src/model training1/xgb_tuning_data.py"
+    }
+  ],
+  "files": [
+    {
+      "original": "models/logistic_regression/使用说明.txt",
+      "archived": "models/model training1/logistic_regression/使用说明.txt",
+      "size": 1884,
+      "sha256": "1549819019db415557bc674317e53f2a308b14785bba862306ded0efeae54cc6"
+    },
+    {
+      "original": "models/logistic_regression/logistic_pipeline.joblib",
+      "archived": "models/model training1/logistic_regression/logistic_pipeline.joblib",
+      "size": 4765,
+      "sha256": "7132fb5d2ee397633bbfe2d60a792c1ee8afddb74ad3ed3e239b00b6ac79f913"
+    },
+    {
+      "original": "models/random_forest/model_pipeline.joblib",
+      "archived": "models/model training1/random_forest/model_pipeline.joblib",
+      "size": 66130528,
+      "sha256": "2bb7f722ea843bc81bb63ec5b9d07f1816305de47fa3e2c5244016566b4004ff"
+    },
+    {
+      "original": "models/random_forest/使用说明.txt",
+      "archived": "models/model training1/random_forest/使用说明.txt",
+      "size": 679,
+      "sha256": "9a691e3271939c0e7dda055f3619d0e704e568d213882d91e640ceffa82be382"
+    },
+    {
+      "original": "models/random_forest_gridsearch/model_pipeline.joblib",
+      "archived": "models/model training1/random_forest_gridsearch/model_pipeline.joblib",
+      "size": 6515160,
+      "sha256": "d31d8857bc982c8ded5054fa7d288b6932914c7c918d086878e7d5abedc40574"
+    },
+    {
+      "original": "models/random_forest_gridsearch_round2/model_pipeline.joblib",
+      "archived": "models/model training1/random_forest_gridsearch_round2/model_pipeline.joblib",
+      "size": 5050168,
+      "sha256": "d499c1140b14654bf542209923e6efb841faa5596f52c2268c8773f1cb9ae781"
+    },
+    {
+      "original": "models/random_forest_seven_features/model_pipeline.joblib",
+      "archived": "models/model training1/random_forest_seven_features/model_pipeline.joblib",
+      "size": 5594028,
+      "sha256": "1dee45222030253136214b9159d55b298cf3d084f296fccdec3a2eb7e40082bb"
+    },
+    {
+      "original": "models/svm/model_pipeline.joblib",
+      "archived": "models/model training1/svm/model_pipeline.joblib",
+      "size": 311516,
+      "sha256": "ee728b3271ea1d8724b0a1d8eda9a2b26fd28677ea04843a30a6c8b942554d2b"
+    },
+    {
+      "original": "models/xgboost/model_pipeline.joblib",
+      "archived": "models/model training1/xgboost/model_pipeline.joblib",
+      "size": 67066,
+      "sha256": "5726c9a568661c6aa9fc71452fe160733ce85784f15dfdb365e52971d24c4f9c"
+    },
+    {
+      "original": "models/xgboost/使用说明.txt",
+      "archived": "models/model training1/xgboost/使用说明.txt",
+      "size": 667,
+      "sha256": "b0bfaee121187411ce08eeae87b739fc7be8a0ba31db92d7367dc163fb6e1370"
+    },
+    {
+      "original": "models/xgboost/xgboost_booster.json",
+      "archived": "models/model training1/xgboost/xgboost_booster.json",
+      "size": 363279,
+      "sha256": "40e37b2e6c31533b5bad50ec4a50aa4b248501507e699e2e63041e9ecb822804"
+    },
+    {
+      "original": "models/xgboost_gridsearch/model_pipeline.joblib",
+      "archived": "models/model training1/xgboost_gridsearch/model_pipeline.joblib",
+      "size": 56104,
+      "sha256": "b68c9e1a0e26b81c4dcc6718ed64f35f7014784bf3a026a3cafa6f7ea3f77e84"
+    },
+    {
+      "original": "models/xgboost_gridsearch/xgboost_booster.json",
+      "archived": "models/model training1/xgboost_gridsearch/xgboost_booster.json",
+      "size": 354646,
+      "sha256": "746076c06d821178fa18dbde7fe56741a7ea6988a7f0862d5b790cf534d1859a"
+    },
+    {
+      "original": "models/xgboost_gridsearch_round2/model_pipeline.joblib",
+      "archived": "models/model training1/xgboost_gridsearch_round2/model_pipeline.joblib",
+      "size": 56620,
+      "sha256": "539fe4a104d689cafb140676544e2b3055d455774b8e2ab2957af211e175e8be"
+    },
+    {
+      "original": "models/xgboost_gridsearch_round2/xgboost_booster.json",
+      "archived": "models/model training1/xgboost_gridsearch_round2/xgboost_booster.json",
+      "size": 354156,
+      "sha256": "ade254af3e273d3d1fe494ae2206dc5dd1aacc0497b89fd2729298560345cd36"
+    },
+    {
+      "original": "models/xgboost_multimetric_gridsearch/model_pipeline.joblib",
+      "archived": "models/model training1/xgboost_multimetric_gridsearch/model_pipeline.joblib",
+      "size": 164508,
+      "sha256": "d043631d65b8b61a534296d682dba47d9b4c80305393127e4548719d8176d6ca"
+    },
+    {
+      "original": "models/xgboost_multimetric_gridsearch/xgboost_booster.json",
+      "archived": "models/model training1/xgboost_multimetric_gridsearch/xgboost_booster.json",
+      "size": 1178256,
+      "sha256": "a6cefcf402ab4ff4f65855310123f95a24e834b5e21b09d16b41e097036bcd58"
+    },
+    {
+      "original": "models/xgboost_seven_features/model_pipeline.joblib",
+      "archived": "models/model training1/xgboost_seven_features/model_pipeline.joblib",
+      "size": 56248,
+      "sha256": "ea6105d9de8ec32a766e3e06f5b591d5d29168ba52d6103a587bc36b2352453e"
+    },
+    {
+      "original": "models/xgboost_seven_features/xgboost_booster.json",
+      "archived": "models/model training1/xgboost_seven_features/xgboost_booster.json",
+      "size": 353192,
+      "sha256": "5faa898468c466311a77719e2228a758300bad55662fe8e547c4eba85b7433f7"
+    },
+    {
+      "original": "models/使用说明.txt",
+      "archived": "models/model training1/使用说明.txt",
+      "size": 319,
+      "sha256": "6fbc37d8f25c6feb7a34c71c2f7de3e6a47b41f38753804285e2eb762d0f3784"
+    },
+    {
+      "original": "reports/logistic_regression/coefficients.csv",
+      "archived": "reports/model training1/logistic_regression/coefficients.csv",
+      "size": 1606,
+      "sha256": "d9e44dc40d156293c599d769b2ff8a166c028de9837d8849c4e9447a3b7f9d87"
+    },
+    {
+      "original": "reports/logistic_regression/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/logistic_regression/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "69e1720b34ab4db20b578f0f32e9d547cd877205d1c66fcb3d1b97dda67a6d39"
+    },
+    {
+      "original": "reports/logistic_regression/model_metadata.json",
+      "archived": "reports/model training1/logistic_regression/model_metadata.json",
+      "size": 2664,
+      "sha256": "e6e704ac8c270374d9621189e0073ae2e4392ba8c3bcbb6e5a56e9b38189705e"
+    },
+    {
+      "original": "reports/logistic_regression/scaling_parameters.csv",
+      "archived": "reports/model training1/logistic_regression/scaling_parameters.csv",
+      "size": 223,
+      "sha256": "bf0662e45b7138fff3b6027f03321f8c1fba40497edd7480b581e55ce8e7ac29"
+    },
+    {
+      "original": "reports/logistic_regression/validation.txt",
+      "archived": "reports/model training1/logistic_regression/validation.txt",
+      "size": 534,
+      "sha256": "cb776d99d95e01022e05e40e91e3b774d00781e5d7b35b4fca7148e6e93a3399"
+    },
+    {
+      "original": "reports/logistic_regression/logistic_report_zh.txt",
+      "archived": "reports/model training1/logistic_regression/logistic_report_zh.txt",
+      "size": 3469,
+      "sha256": "12be8766aa370ebd0cd8c1e7ee29ea26475a993ef280c32dd6546d2103c0c915"
+    },
+    {
+      "original": "reports/logistic_regression/cv_summary.csv",
+      "archived": "reports/model training1/logistic_regression/cv_summary.csv",
+      "size": 1067,
+      "sha256": "0bcada712e40672dba1e4d49c44b99c89d77372525c9461df5431e6c15c0ba78"
+    },
+    {
+      "original": "reports/logistic_regression/logistic_report.html",
+      "archived": "reports/model training1/logistic_regression/logistic_report.html",
+      "size": 174254,
+      "sha256": "0d59c405ceaec8480d5743ac90b2350e300f88e2e92926efe46093cf0f07bfe3"
+    },
+    {
+      "original": "reports/logistic_regression/cv_fold_metrics.csv",
+      "archived": "reports/model training1/logistic_regression/cv_fold_metrics.csv",
+      "size": 1806,
+      "sha256": "06907d6499538187d3b835d314488d2daebe14f69b4b97ec7ebab47cfbb67431"
+    },
+    {
+      "original": "reports/model_comparison/使用说明.txt",
+      "archived": "reports/model training1/model_comparison/使用说明.txt",
+      "size": 2181,
+      "sha256": "f3d865ab505efa54224756488640f1b3d1ced4de88bec5f0d985270b4426caa6"
+    },
+    {
+      "original": "reports/model_comparison/baseline_roc_comparison.png",
+      "archived": "reports/model training1/model_comparison/baseline_roc_comparison.png",
+      "size": 130588,
+      "sha256": "8b48f0679b70cb491c43a4422697e0c49168856c1f24f89767b13e654fed2b00"
+    },
+    {
+      "original": "reports/model_comparison/baseline_comparison.html",
+      "archived": "reports/model training1/model_comparison/baseline_comparison.html",
+      "size": 175285,
+      "sha256": "637b276759128acbd39b664291824a9a09864ff107239565f94e2237835feffc"
+    },
+    {
+      "original": "reports/model_comparison/baseline_comparison.csv",
+      "archived": "reports/model training1/model_comparison/baseline_comparison.csv",
+      "size": 646,
+      "sha256": "461ed3bf1e2f29ed1b4179099b54dce93ad388ab7e04819d1fec9f4b4bffee58"
+    },
+    {
+      "original": "reports/random_forest/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/random_forest/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "8e89a1774cc9379c02b679cc60711bba4e49094110ea9922ca4443590ad33e99"
+    },
+    {
+      "original": "reports/random_forest/report_zh.txt",
+      "archived": "reports/model training1/random_forest/report_zh.txt",
+      "size": 1174,
+      "sha256": "e4acd4e809d2f7f7fba15c95d7032536fce260a8eb41da3346241e17f0ed639a"
+    },
+    {
+      "original": "reports/random_forest/model_metadata.json",
+      "archived": "reports/model training1/random_forest/model_metadata.json",
+      "size": 1535,
+      "sha256": "eac1c4979280ff0150e16e027b0b32271c1644ded1920853b6139e3f6de05578"
+    },
+    {
+      "original": "reports/random_forest/visual_review.txt",
+      "archived": "reports/model training1/random_forest/visual_review.txt",
+      "size": 93,
+      "sha256": "2e906c3b44a5876a72ab49e05dfe37b4e44458a15f95a14a90be5499cf13ac7a"
+    },
+    {
+      "original": "reports/random_forest/validation.txt",
+      "archived": "reports/model training1/random_forest/validation.txt",
+      "size": 348,
+      "sha256": "b2e5850eede59b12c6f135dac73b5b0f51289e32b4df9efdbbe1dd28e81397dc"
+    },
+    {
+      "original": "reports/random_forest/cv_summary.csv",
+      "archived": "reports/model training1/random_forest/cv_summary.csv",
+      "size": 538,
+      "sha256": "41c1940bbe371a290093fce0cc203e3187ef6125dfa4c0eccc8666aaeec98345"
+    },
+    {
+      "original": "reports/random_forest/cv_fold_metrics.csv",
+      "archived": "reports/model training1/random_forest/cv_fold_metrics.csv",
+      "size": 1179,
+      "sha256": "b70a6d2f519db64741727f247d8c7be049a0b4274a1bbb4c7dc869d0cc8b549b"
+    },
+    {
+      "original": "reports/random_forest/report.html",
+      "archived": "reports/model training1/random_forest/report.html",
+      "size": 156296,
+      "sha256": "a08e833938bd12f1e7ab771b6652d183164051b1b9ce813d3fa9fa7b9782b78b"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/baseline_vs_selected.csv",
+      "archived": "reports/model training1/random_forest_gridsearch/baseline_vs_selected.csv",
+      "size": 401,
+      "sha256": "946508a7ec75b57e009f0d2d8f97df00e10a332d48dd929b66f993ae5c1cd5af"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/report_zh.txt",
+      "archived": "reports/model training1/random_forest_gridsearch/report_zh.txt",
+      "size": 2366,
+      "sha256": "4680a6632939b099d247f903a31fef2de8ec551d4e9d7b64c625c1a7123e342f"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/search_metadata.json",
+      "archived": "reports/model training1/random_forest_gridsearch/search_metadata.json",
+      "size": 1711,
+      "sha256": "e080bd4d25bd799fc2337ec62f66c10c844e1190a6875470e10bbffb301e54aa"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/gridsearch_results.csv",
+      "archived": "reports/model training1/random_forest_gridsearch/gridsearch_results.csv",
+      "size": 4505,
+      "sha256": "8c1cab7b1c8e19a2cf7823380193f28b8f49f9f2ce609af832af7735f35423bd"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/visual_review.txt",
+      "archived": "reports/model training1/random_forest_gridsearch/visual_review.txt",
+      "size": 86,
+      "sha256": "bcdb4f94e45b9e1c695b753ce0e5fe013ae6a155a760456dcf673ec8b047dd2a"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/validation.txt",
+      "archived": "reports/model training1/random_forest_gridsearch/validation.txt",
+      "size": 390,
+      "sha256": "30ad0506420b938f2c1b244592ff0503b44bd6eb1d42c9b0986775a97d468daf"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/report.html",
+      "archived": "reports/model training1/random_forest_gridsearch/report.html",
+      "size": 105709,
+      "sha256": "7a1e298428ef2f436c5801f7736ef97f1408d8c411f1a00bd38c0427e5cec0e7"
+    },
+    {
+      "original": "reports/random_forest_gridsearch/best_cv_fold_metrics.csv",
+      "archived": "reports/model training1/random_forest_gridsearch/best_cv_fold_metrics.csv",
+      "size": 1144,
+      "sha256": "ebac34fdb5b850183039979633d957aceb4064ab00fc52f61cfc4082f9f66ef7"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/report_zh.txt",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/report_zh.txt",
+      "size": 2431,
+      "sha256": "c4caf2c2aa96a94b5ee75b9c55f0f37a3a44d2ddecbc82db5182be268d28da67"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/search_metadata.json",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/search_metadata.json",
+      "size": 2048,
+      "sha256": "e95e54f6b092e2bacb5e015f125b32bc706123e986f004f8f5af5d2e48b657b4"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/gridsearch_results.csv",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/gridsearch_results.csv",
+      "size": 4527,
+      "sha256": "0fa9e0e8a903f010f04c0f979322440f07164487383a368c43a52179c4c28053"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/all_cv_fold_metrics.csv",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/all_cv_fold_metrics.csv",
+      "size": 9299,
+      "sha256": "aa191eca407b8a17bbcfdde2afeeae99e16d93d8214a8ffcb3a8372a22059c34"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/visual_review.txt",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/visual_review.txt",
+      "size": 134,
+      "sha256": "66c75fbc43f8a9c18c3a17ff55e4a9c10dd09fd12ac9f74b9e09aac1cb6b05ad"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/validation.txt",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/validation.txt",
+      "size": 406,
+      "sha256": "e931b3c5fca1c040b2f507265484d2d00d9b63713564069ba2a033c50c941c58"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/round_comparison.csv",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/round_comparison.csv",
+      "size": 554,
+      "sha256": "407e0473ebb66470a98aacc852c681c45eb4a182e711e5fdccf32f56be9c310d"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/report.html",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/report.html",
+      "size": 118204,
+      "sha256": "7cbc4660d2a9dd946296218025951c78d5a233b648ee236639dc5389942f00cc"
+    },
+    {
+      "original": "reports/random_forest_gridsearch_round2/best_cv_fold_metrics.csv",
+      "archived": "reports/model training1/random_forest_gridsearch_round2/best_cv_fold_metrics.csv",
+      "size": 1237,
+      "sha256": "83ed971609178bf71ea40afdbcc495dc575c7be011f540226f02ea35944a1ec5"
+    },
+    {
+      "original": "reports/random_forest_seven_features/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/random_forest_seven_features/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "6087063b2f7a2becfc954d658bc42f220bf2b2909eb5a41db4162c1017d88f25"
+    },
+    {
+      "original": "reports/random_forest_seven_features/metric_changes.csv",
+      "archived": "reports/model training1/random_forest_seven_features/metric_changes.csv",
+      "size": 473,
+      "sha256": "05704d7fab678ff8c6fab65620de416add190ec4048043ff76793a71f4ee27c8"
+    },
+    {
+      "original": "reports/random_forest_seven_features/report_zh.txt",
+      "archived": "reports/model training1/random_forest_seven_features/report_zh.txt",
+      "size": 2116,
+      "sha256": "e6d0e6b92d6c4c4c21d2fe56bb650028b5fa9af8075344927afc2d9a7e82fbcc"
+    },
+    {
+      "original": "reports/random_forest_seven_features/model_metadata.json",
+      "archived": "reports/model training1/random_forest_seven_features/model_metadata.json",
+      "size": 2890,
+      "sha256": "00d982821de74077efe7aecdc83539513af39ce49a081ab198d3b263c423684c"
+    },
+    {
+      "original": "reports/random_forest_seven_features/visual_review.txt",
+      "archived": "reports/model training1/random_forest_seven_features/visual_review.txt",
+      "size": 118,
+      "sha256": "86ec140f4f244d38d3176b265c54228f1da980a487a7e1b8b3f6d4701af6360b"
+    },
+    {
+      "original": "reports/random_forest_seven_features/validation.txt",
+      "archived": "reports/model training1/random_forest_seven_features/validation.txt",
+      "size": 654,
+      "sha256": "c822c07ceb8a8fb391cc6711c005a3036766905d28e119f739d60abac0fa26ee"
+    },
+    {
+      "original": "reports/random_forest_seven_features/ten_vs_seven_fold_means.csv",
+      "archived": "reports/model training1/random_forest_seven_features/ten_vs_seven_fold_means.csv",
+      "size": 285,
+      "sha256": "6194adf145adea56e6c7bfe75a664bc3437c4503eb48da2ab6c3a71ca6b6d61c"
+    },
+    {
+      "original": "reports/random_forest_seven_features/cv_summary.csv",
+      "archived": "reports/model training1/random_forest_seven_features/cv_summary.csv",
+      "size": 534,
+      "sha256": "45184f0d8fa791b3770f5237967d9fc0c4a2e9ec796bc53ef86562582a0a70d0"
+    },
+    {
+      "original": "reports/random_forest_seven_features/cv_fold_metrics.csv",
+      "archived": "reports/model training1/random_forest_seven_features/cv_fold_metrics.csv",
+      "size": 1177,
+      "sha256": "7568f8af91b3d153ef7c87949744056517b7d1caf56d07107874f0760adc10b9"
+    },
+    {
+      "original": "reports/random_forest_seven_features/report.html",
+      "archived": "reports/model training1/random_forest_seven_features/report.html",
+      "size": 158982,
+      "sha256": "3fe0db41f873c81ceb9d1896dd5d8f5f84df768a93cc38f75181c0c134c21692"
+    },
+    {
+      "original": "reports/seven_feature_comparison/training.log",
+      "archived": "reports/model training1/seven_feature_comparison/training.log",
+      "size": 3771,
+      "sha256": "f7fa84d58d097c613ebe96b3ed80f5b2467dac45058a68af2f705f015c927547"
+    },
+    {
+      "original": "reports/seven_feature_comparison/metric_changes.csv",
+      "archived": "reports/model training1/seven_feature_comparison/metric_changes.csv",
+      "size": 856,
+      "sha256": "1fcaabe7ff349fca5bd25de5e01846d6630c4c2725b59c34347e8ca97119e418"
+    },
+    {
+      "original": "reports/seven_feature_comparison/report_zh.txt",
+      "archived": "reports/model training1/seven_feature_comparison/report_zh.txt",
+      "size": 872,
+      "sha256": "b02b84bfb8f15ab7cfa416c1d4ba703bdccfc8de0f4b4e13f5af9dde4ecf4c0f"
+    },
+    {
+      "original": "reports/seven_feature_comparison/visual_review.txt",
+      "archived": "reports/model training1/seven_feature_comparison/visual_review.txt",
+      "size": 103,
+      "sha256": "7c0cb35b7f6c0a9ab0cf53cbcb648c1941816775fd17b2f26995ce965508c49a"
+    },
+    {
+      "original": "reports/seven_feature_comparison/validation.txt",
+      "archived": "reports/model training1/seven_feature_comparison/validation.txt",
+      "size": 319,
+      "sha256": "77f278121aabaa28285efaa8189bc2b61930ef8d31beb7f3e4accb4b2c15a301"
+    },
+    {
+      "original": "reports/seven_feature_comparison/ten_vs_seven_fold_means.csv",
+      "archived": "reports/model training1/seven_feature_comparison/ten_vs_seven_fold_means.csv",
+      "size": 494,
+      "sha256": "8df75ffd51d16a43936925d39775d84c7916dcfc77ab0c7406438aae6994a9f4"
+    },
+    {
+      "original": "reports/seven_feature_comparison/report.html",
+      "archived": "reports/model training1/seven_feature_comparison/report.html",
+      "size": 137778,
+      "sha256": "cc51171fee4835a6e12e366657fd348c741662e7f98068f1b70b3281a8b00bc3"
+    },
+    {
+      "original": "reports/seven_feature_comparison/experiment_metadata.json",
+      "archived": "reports/model training1/seven_feature_comparison/experiment_metadata.json",
+      "size": 1858,
+      "sha256": "5999523ff6b65f7d1b7486d53c975a68ec01642bdce44636bc3b4278fda7bb8e"
+    },
+    {
+      "original": "reports/svm/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/svm/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "a3b7387432ce2279c1dfec9973889b13c47f516a1a47153ccf47535e17ba723e"
+    },
+    {
+      "original": "reports/svm/training.log",
+      "archived": "reports/model training1/svm/training.log",
+      "size": 2727,
+      "sha256": "e30e2b8a2d81640f3c079842f8d02dbe58b06e25e81974515cd6a4fddff30af6"
+    },
+    {
+      "original": "reports/svm/report_zh.txt",
+      "archived": "reports/model training1/svm/report_zh.txt",
+      "size": 1834,
+      "sha256": "7912aca8130f375c903e8f87634fbdd90b738eac9b942d2908f8986b1b67f2d3"
+    },
+    {
+      "original": "reports/svm/model_metadata.json",
+      "archived": "reports/model training1/svm/model_metadata.json",
+      "size": 3746,
+      "sha256": "2fb2b730958ae5d96ec49ec3d7874e1170c25ca581388a2bec53ee87ef72e587"
+    },
+    {
+      "original": "reports/svm/model_comparison_fold_means.csv",
+      "archived": "reports/model training1/svm/model_comparison_fold_means.csv",
+      "size": 967,
+      "sha256": "286b5e02329425219f49f7879f77da73de13d9b211f73645cf21cadaebfdae4c"
+    },
+    {
+      "original": "reports/svm/scaling_parameters.csv",
+      "archived": "reports/model training1/svm/scaling_parameters.csv",
+      "size": 223,
+      "sha256": "bf0662e45b7138fff3b6027f03321f8c1fba40497edd7480b581e55ce8e7ac29"
+    },
+    {
+      "original": "reports/svm/visual_review.txt",
+      "archived": "reports/model training1/svm/visual_review.txt",
+      "size": 133,
+      "sha256": "83de9a6aaa3303848e0102df3d6e5f4ade057140557311cfd3965057f0dba2a1"
+    },
+    {
+      "original": "reports/svm/validation.txt",
+      "archived": "reports/model training1/svm/validation.txt",
+      "size": 519,
+      "sha256": "20be64d4048cf93c17c23a46500c90a2a57038702df6e88451b5488aec531e58"
+    },
+    {
+      "original": "reports/svm/cv_summary.csv",
+      "archived": "reports/model training1/svm/cv_summary.csv",
+      "size": 528,
+      "sha256": "4e56ad6f75c47c520ef9432c9063f322ee201cc59dce329338e047730911c504"
+    },
+    {
+      "original": "reports/svm/cv_fold_metrics.csv",
+      "archived": "reports/model training1/svm/cv_fold_metrics.csv",
+      "size": 1002,
+      "sha256": "d88438dfd1707e0a15feeb82030f77dfe5a2af9103f5f4abb94e4da2ba08f91b"
+    },
+    {
+      "original": "reports/svm/report.html",
+      "archived": "reports/model training1/svm/report.html",
+      "size": 161249,
+      "sha256": "ffaa2c144548bca3e7cb67ce3d5634dc501056769652dfdf351a8604758c7506"
+    },
+    {
+      "original": "reports/xgboost/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/xgboost/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "8ed4457b9b5c7a586fb1e4273fc15eb9bcc36d36d5bbaee3fe991481d2c24571"
+    },
+    {
+      "original": "reports/xgboost/report_zh.txt",
+      "archived": "reports/model training1/xgboost/report_zh.txt",
+      "size": 1262,
+      "sha256": "80907a1a413ccfa8ada8fedeab1617beb06681c265cfc14fdfb5fc114f1846c7"
+    },
+    {
+      "original": "reports/xgboost/model_metadata.json",
+      "archived": "reports/model training1/xgboost/model_metadata.json",
+      "size": 1639,
+      "sha256": "b2f1cd1fd5c84be0729cfc5f40d391c1ac6fbcbf63e59caea889d38c5cda836e"
+    },
+    {
+      "original": "reports/xgboost/visual_review.txt",
+      "archived": "reports/model training1/xgboost/visual_review.txt",
+      "size": 93,
+      "sha256": "2e906c3b44a5876a72ab49e05dfe37b4e44458a15f95a14a90be5499cf13ac7a"
+    },
+    {
+      "original": "reports/xgboost/validation.txt",
+      "archived": "reports/model training1/xgboost/validation.txt",
+      "size": 348,
+      "sha256": "b2e5850eede59b12c6f135dac73b5b0f51289e32b4df9efdbbe1dd28e81397dc"
+    },
+    {
+      "original": "reports/xgboost/cv_summary.csv",
+      "archived": "reports/model training1/xgboost/cv_summary.csv",
+      "size": 536,
+      "sha256": "0f170bd7af2f06baf59bf33791f913748788c56c16e2a2644fc5f2092ee6fc02"
+    },
+    {
+      "original": "reports/xgboost/cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost/cv_fold_metrics.csv",
+      "size": 1178,
+      "sha256": "86d8d86eb77ab8925999a982acfdfb137cb1f756c907aa906c4255f49a3ff267"
+    },
+    {
+      "original": "reports/xgboost/report.html",
+      "archived": "reports/model training1/xgboost/report.html",
+      "size": 152220,
+      "sha256": "5ec1cfd19a7bd9cfad2f71d30857e1e8ff0790da2dd05284fed546e48cdc34d2"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/baseline_vs_selected.csv",
+      "archived": "reports/model training1/xgboost_gridsearch/baseline_vs_selected.csv",
+      "size": 410,
+      "sha256": "8dcf1507fb1d677513a46abe8912c2a6fe5338dfc816d827e741ac820c0a21aa"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/report_zh.txt",
+      "archived": "reports/model training1/xgboost_gridsearch/report_zh.txt",
+      "size": 2557,
+      "sha256": "06e29aff8276e30b40e38bbb817fa25b097ad9728e5377128cb770d8c55b8b9c"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/search_metadata.json",
+      "archived": "reports/model training1/xgboost_gridsearch/search_metadata.json",
+      "size": 1892,
+      "sha256": "eca3b0b50d763bd25d0ab09f6e03a07097f32795ccb227781a434c4a8c8ecc52"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/gridsearch_results.csv",
+      "archived": "reports/model training1/xgboost_gridsearch/gridsearch_results.csv",
+      "size": 4500,
+      "sha256": "6ceaea3116dd60113db96c0d1a70544ac01ae8c1516336ed2c94933e0f0517d5"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/visual_review.txt",
+      "archived": "reports/model training1/xgboost_gridsearch/visual_review.txt",
+      "size": 97,
+      "sha256": "72bf0aacc401be6f41e5f2b96b0c98a6f9d6d6aed8aaef459579779c4ecf8158"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/validation.txt",
+      "archived": "reports/model training1/xgboost_gridsearch/validation.txt",
+      "size": 477,
+      "sha256": "b13f83046cdb959661dfde845fc9c8fe8e3e3831b768f7eaf8fb14b9aead46f2"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/report.html",
+      "archived": "reports/model training1/xgboost_gridsearch/report.html",
+      "size": 102594,
+      "sha256": "c1ccb4c63e2e2cb17c03b2886b4f59bb3f74be0c314dfa953f5d00eaae6e44f3"
+    },
+    {
+      "original": "reports/xgboost_gridsearch/best_cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost_gridsearch/best_cv_fold_metrics.csv",
+      "size": 1144,
+      "sha256": "0eb19924bf5f331fb9f513e8d2d927999f5f79f2844e5dea6f8189a22b40c929"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/report_zh.txt",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/report_zh.txt",
+      "size": 2405,
+      "sha256": "f7c7445daa67523d5279cdb417713c31186b202b3b169117e1bdf568509dc63a"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/search_metadata.json",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/search_metadata.json",
+      "size": 2421,
+      "sha256": "4099984cc1167f14b757e3b92c3c4c38e443df54d959f7b612c8f9e8f1fda3a7"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/gridsearch_results.csv",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/gridsearch_results.csv",
+      "size": 4567,
+      "sha256": "1318c2fdbb75d6b383a0ebe008b576fd40c1ececf3457d9ec93437dd821d3962"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/all_cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/all_cv_fold_metrics.csv",
+      "size": 9296,
+      "sha256": "e74cda3d23cbbedcc7450d7d21bf47a702f525a2086d0f24e1e3f52cd867b406"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/visual_review.txt",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/visual_review.txt",
+      "size": 138,
+      "sha256": "5f8b4f32b8f58333be96a5fd13eae06632ec7500fd1afb3a215aab977c02c05c"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/validation.txt",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/validation.txt",
+      "size": 406,
+      "sha256": "01551198cd741d2f111e1917b24717cb50b1d88927e5e5e3f24a81577d5abd8b"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/round_comparison.csv",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/round_comparison.csv",
+      "size": 542,
+      "sha256": "c8348c7e2aca6212e57a88a4967a08a0f1ff64cfc4c4d8cfba976a55be97357b"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/report.html",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/report.html",
+      "size": 113688,
+      "sha256": "61dc0484a2f8c2b88e4437c5bf599e67fcc69dd15b9f377de6db6d2fc344a226"
+    },
+    {
+      "original": "reports/xgboost_gridsearch_round2/best_cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost_gridsearch_round2/best_cv_fold_metrics.csv",
+      "size": 1233,
+      "sha256": "ee7faebcca51a406ecffed5813614cf34dcb3ed6be5e27659d984acf16e8f5c2"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "e32aab28b4e33a66f6f87d674bafd05cb1fe71ef513f135f7eb1b228b16ddf44"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/training.log",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/training.log",
+      "size": 8104,
+      "sha256": "8ab3614dc7c85a066ace06bee1f1930b1f1ff5170460efc78b2e08b742b1ddcb"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/report_zh.txt",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/report_zh.txt",
+      "size": 3285,
+      "sha256": "b87752fb6a971d848e32c8b1d728a15cbed8ddc4c68969a9aec878480c06eea5"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/metric_winners.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/metric_winners.csv",
+      "size": 421,
+      "sha256": "b7c9436d9d30661a38cf54bd6b022f5195a035b182e093a09e801ec9b9e86241"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/search_metadata.json",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/search_metadata.json",
+      "size": 3750,
+      "sha256": "88c492107055c39b0d64ba867855b21c77d80e3f0b342e5bdfa48440c09e7aa1"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/gridsearch_results.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/gridsearch_results.csv",
+      "size": 8623,
+      "sha256": "86a5ec5319f11ddcc991c6008b306388b30a03ae80f80407c66894f4302b4fcf"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/all_cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/all_cv_fold_metrics.csv",
+      "size": 17001,
+      "sha256": "ebbc1eb13515d2e67221f6094614f03296fbf0dee4f31dd7cc2c3f1758e6798c"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/visual_review.txt",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/visual_review.txt",
+      "size": 168,
+      "sha256": "c174a9eb43a6318de59d6d0e81251191b3f9374d7bca051a68f84f0f05e3a383"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/validation.txt",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/validation.txt",
+      "size": 792,
+      "sha256": "6b72a63124c254ca71d2a0788ce8c66408bdc0a717418d2c19e54b7e7b9313b9"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/cv_summary.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/cv_summary.csv",
+      "size": 538,
+      "sha256": "e9c2d812a0cfc2afb107958c6f05d6381449bc20e60e43e6d9e7f980b3692d5e"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/previous_vs_selected.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/previous_vs_selected.csv",
+      "size": 403,
+      "sha256": "294414102aed46565ceba78c21c548e276f8c944a9786a38d8a2671d252bd8ad"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/report.html",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/report.html",
+      "size": 334565,
+      "sha256": "de77247c7fb93e8be727d80028719b776532eacedb1558809db9438c4c130fe4"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/best_cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/best_cv_fold_metrics.csv",
+      "size": 961,
+      "sha256": "1f9056480f5272163a83d10883ca6fec36b3128da5b4fdf1f6d7be111f0d973c"
+    },
+    {
+      "original": "reports/xgboost_multimetric_gridsearch/pareto_candidates.csv",
+      "archived": "reports/model training1/xgboost_multimetric_gridsearch/pareto_candidates.csv",
+      "size": 7986,
+      "sha256": "b7ff5cf79f0e673fa877ef765fcf3ffb68c725f5cac6500241e38340a77c824b"
+    },
+    {
+      "original": "reports/xgboost_seven_features/oof_confusion_matrix.csv",
+      "archived": "reports/model training1/xgboost_seven_features/oof_confusion_matrix.csv",
+      "size": 70,
+      "sha256": "c91a323ac63cc18415180de5099803a9a389b52999dd480e67bd19fda2f7cdc5"
+    },
+    {
+      "original": "reports/xgboost_seven_features/metric_changes.csv",
+      "archived": "reports/model training1/xgboost_seven_features/metric_changes.csv",
+      "size": 444,
+      "sha256": "394521dfd3e993bb8a2818a2fcc76363bf94c8d73e31231444f7525da84021be"
+    },
+    {
+      "original": "reports/xgboost_seven_features/report_zh.txt",
+      "archived": "reports/model training1/xgboost_seven_features/report_zh.txt",
+      "size": 2190,
+      "sha256": "14bd93b41d89314fda18393d90cea06e460e22bb25109dc260c353d63a6ce0d7"
+    },
+    {
+      "original": "reports/xgboost_seven_features/model_metadata.json",
+      "archived": "reports/model training1/xgboost_seven_features/model_metadata.json",
+      "size": 2971,
+      "sha256": "f78655a5fcbbc91162766efb765561fb7683449dde21021737f8b76879885a7a"
+    },
+    {
+      "original": "reports/xgboost_seven_features/visual_review.txt",
+      "archived": "reports/model training1/xgboost_seven_features/visual_review.txt",
+      "size": 118,
+      "sha256": "86ec140f4f244d38d3176b265c54228f1da980a487a7e1b8b3f6d4701af6360b"
+    },
+    {
+      "original": "reports/xgboost_seven_features/validation.txt",
+      "archived": "reports/model training1/xgboost_seven_features/validation.txt",
+      "size": 654,
+      "sha256": "c822c07ceb8a8fb391cc6711c005a3036766905d28e119f739d60abac0fa26ee"
+    },
+    {
+      "original": "reports/xgboost_seven_features/ten_vs_seven_fold_means.csv",
+      "archived": "reports/model training1/xgboost_seven_features/ten_vs_seven_fold_means.csv",
+      "size": 270,
+      "sha256": "9aa813332967a0f09d6e89129794437de5c8df1d326a52555656501cd98f394f"
+    },
+    {
+      "original": "reports/xgboost_seven_features/cv_summary.csv",
+      "archived": "reports/model training1/xgboost_seven_features/cv_summary.csv",
+      "size": 538,
+      "sha256": "7e8c0bc1e9484e60036ab94497f23ee7e4f677d66dccbcec285da488bb9b4c6d"
+    },
+    {
+      "original": "reports/xgboost_seven_features/cv_fold_metrics.csv",
+      "archived": "reports/model training1/xgboost_seven_features/cv_fold_metrics.csv",
+      "size": 1180,
+      "sha256": "39c9f5be758f8132a91aadc783ae0efbb666e65e1cfe48a3f6916d77ed9f489e"
+    },
+    {
+      "original": "reports/xgboost_seven_features/report.html",
+      "archived": "reports/model training1/xgboost_seven_features/report.html",
+      "size": 159398,
+      "sha256": "8ed1b5403f3dac602be1ea8c8fc94804c51cb0208ea599b59dcbe5174e6f4e5f"
+    },
+    {
+      "original": "outputs/figures/random_forest/oof_evaluation.svg",
+      "archived": "outputs/model training1/figures/random_forest/oof_evaluation.svg",
+      "size": 54586,
+      "sha256": "6816ce620919ece1b1b6498e143df23cfd3c6f8b326822a1150bc675e1d6ad1d"
+    },
+    {
+      "original": "outputs/figures/random_forest/oof_evaluation.png",
+      "archived": "outputs/model training1/figures/random_forest/oof_evaluation.png",
+      "size": 116019,
+      "sha256": "50b4e2d4b4d0690ed40946bb9a0b1f60040685dfb53ab04c918eabd2fe84c0ba"
+    },
+    {
+      "original": "outputs/figures/random_forest_gridsearch/gridsearch_auc.svg",
+      "archived": "outputs/model training1/figures/random_forest_gridsearch/gridsearch_auc.svg",
+      "size": 47798,
+      "sha256": "f53c056e9bda62ee4940e2104185afeac5f60aa34e557681782013eb581fba10"
+    },
+    {
+      "original": "outputs/figures/random_forest_gridsearch/gridsearch_auc.png",
+      "archived": "outputs/model training1/figures/random_forest_gridsearch/gridsearch_auc.png",
+      "size": 76391,
+      "sha256": "bb68206b2c845016a1071cc2ff0aa10beda319cfb1fe87cb23eaa7308f696311"
+    },
+    {
+      "original": "outputs/figures/random_forest_gridsearch_round2/gridsearch_auc.svg",
+      "archived": "outputs/model training1/figures/random_forest_gridsearch_round2/gridsearch_auc.svg",
+      "size": 52460,
+      "sha256": "9096a6b91dcda1f6398756bdc9d40718f78a1f81910ee7989d34cd13e0f1a265"
+    },
+    {
+      "original": "outputs/figures/random_forest_gridsearch_round2/gridsearch_auc.png",
+      "archived": "outputs/model training1/figures/random_forest_gridsearch_round2/gridsearch_auc.png",
+      "size": 85814,
+      "sha256": "d136acf426f8607000c47205003c99bdccb57e9b8eaf0980724a9168e9c2b56b"
+    },
+    {
+      "original": "outputs/figures/random_forest_seven_features/oof_evaluation.svg",
+      "archived": "outputs/model training1/figures/random_forest_seven_features/oof_evaluation.svg",
+      "size": 105038,
+      "sha256": "e9e51340eefb0ddbc8139c5393e846042bafb5566587869e8bdd30fe5b15f84c"
+    },
+    {
+      "original": "outputs/figures/random_forest_seven_features/oof_evaluation.png",
+      "archived": "outputs/model training1/figures/random_forest_seven_features/oof_evaluation.png",
+      "size": 116851,
+      "sha256": "f984d68c7de245f83281bd5c41c9b55bece3238d41cf113d05751cec5505a37f"
+    },
+    {
+      "original": "outputs/figures/seven_feature_comparison/seven_feature_roc.png",
+      "archived": "outputs/model training1/figures/seven_feature_comparison/seven_feature_roc.png",
+      "size": 101802,
+      "sha256": "e4f7f3bfd8a29e68148935b4f219b6ff1c373528d01f9cbb4643bf4f6fcb4c69"
+    },
+    {
+      "original": "outputs/figures/seven_feature_comparison/seven_feature_roc.svg",
+      "archived": "outputs/model training1/figures/seven_feature_comparison/seven_feature_roc.svg",
+      "size": 142705,
+      "sha256": "2ed8a70062339778e166988952b0374a86e6b195e40fa2cacfcde768f0243a6f"
+    },
+    {
+      "original": "outputs/figures/svm/svm_oof_evaluation.svg",
+      "archived": "outputs/model training1/figures/svm/svm_oof_evaluation.svg",
+      "size": 110344,
+      "sha256": "b1a1583e6d19521f1cf5039784590376695a656c93a79bda1a9ae6535ff5b32d"
+    },
+    {
+      "original": "outputs/figures/svm/svm_oof_evaluation.png",
+      "archived": "outputs/model training1/figures/svm/svm_oof_evaluation.png",
+      "size": 118507,
+      "sha256": "6e59395a0aacacd776c6b0a32147fd22f33318238c3c706eaa32f8d0c4fd66c4"
+    },
+    {
+      "original": "outputs/figures/xgboost/oof_evaluation.svg",
+      "archived": "outputs/model training1/figures/xgboost/oof_evaluation.svg",
+      "size": 88852,
+      "sha256": "801db2027af5e5a20fa73dc3433dcf1dd6feaf29094bbddb512e3b46b5a62847"
+    },
+    {
+      "original": "outputs/figures/xgboost/oof_evaluation.png",
+      "archived": "outputs/model training1/figures/xgboost/oof_evaluation.png",
+      "size": 112858,
+      "sha256": "1d924734ca19ca65b77f130f093849f41695419e162548067f3aff7fa868bc40"
+    },
+    {
+      "original": "outputs/figures/xgboost_gridsearch/gridsearch_auc.svg",
+      "archived": "outputs/model training1/figures/xgboost_gridsearch/gridsearch_auc.svg",
+      "size": 49809,
+      "sha256": "51e5014fa60b296c2c9629069541abdf32748e222eeddf7da6bf134cd06398ca"
+    },
+    {
+      "original": "outputs/figures/xgboost_gridsearch/gridsearch_auc.png",
+      "archived": "outputs/model training1/figures/xgboost_gridsearch/gridsearch_auc.png",
+      "size": 73929,
+      "sha256": "1b00e37ecc0cbaec87db751a7acbcb38794f91cd996f13b6a91564c401cea822"
+    },
+    {
+      "original": "outputs/figures/xgboost_gridsearch_round2/gridsearch_auc.svg",
+      "archived": "outputs/model training1/figures/xgboost_gridsearch_round2/gridsearch_auc.svg",
+      "size": 57016,
+      "sha256": "72ae718caadc08af8d2d705d725d831238cabc406fe6e787c81fdbb091847e77"
+    },
+    {
+      "original": "outputs/figures/xgboost_gridsearch_round2/gridsearch_auc.png",
+      "archived": "outputs/model training1/figures/xgboost_gridsearch_round2/gridsearch_auc.png",
+      "size": 82459,
+      "sha256": "04afbe210b09714174b79b652040456bbc912f33b50b4b94ce2945f3d5220024"
+    },
+    {
+      "original": "outputs/figures/xgboost_multimetric_gridsearch/search_summary.svg",
+      "archived": "outputs/model training1/figures/xgboost_multimetric_gridsearch/search_summary.svg",
+      "size": 84445,
+      "sha256": "204ca075fdb8005284df3be0cc7dc870a7b0e7cf53a1c066adc8ac3e452a89fb"
+    },
+    {
+      "original": "outputs/figures/xgboost_multimetric_gridsearch/selected_oof_evaluation.png",
+      "archived": "outputs/model training1/figures/xgboost_multimetric_gridsearch/selected_oof_evaluation.png",
+      "size": 115285,
+      "sha256": "fc94700d0e29a2069deb0cce2a0a5d1b4dacf6151b6a0a832ba23b9668a857ea"
+    },
+    {
+      "original": "outputs/figures/xgboost_multimetric_gridsearch/selected_oof_evaluation.svg",
+      "archived": "outputs/model training1/figures/xgboost_multimetric_gridsearch/selected_oof_evaluation.svg",
+      "size": 99545,
+      "sha256": "edddfa13a02a14b54df4d0e85b9022ed0a6816eb74dffe8240a0b08cb8d07a24"
+    },
+    {
+      "original": "outputs/figures/xgboost_multimetric_gridsearch/search_summary.png",
+      "archived": "outputs/model training1/figures/xgboost_multimetric_gridsearch/search_summary.png",
+      "size": 131398,
+      "sha256": "129946978d24414483d652cab2d508716023683a4f6ace96d5adf0c912c92b12"
+    },
+    {
+      "original": "outputs/figures/xgboost_seven_features/oof_evaluation.svg",
+      "archived": "outputs/model training1/figures/xgboost_seven_features/oof_evaluation.svg",
+      "size": 94780,
+      "sha256": "1e3108dd3bba9962297c51afc4bad3fc7154f3fa0835d943a776c829650991bb"
+    },
+    {
+      "original": "outputs/figures/xgboost_seven_features/oof_evaluation.png",
+      "archived": "outputs/model training1/figures/xgboost_seven_features/oof_evaluation.png",
+      "size": 117089,
+      "sha256": "080936da355da30f47f719bb11db237268eb54bcb4f4f7776e1d5f47aac5355f"
+    },
+    {
+      "original": "outputs/predictions/logistic_regression/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/logistic_regression/development_oof_predictions.csv",
+      "size": 5656557,
+      "sha256": "5dba757daebb9d8fea6b79619efd090179e3a66191cefdc7d5a17b0b9423002e"
+    },
+    {
+      "original": "outputs/predictions/random_forest/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/random_forest/development_oof_predictions.csv",
+      "size": 5071562,
+      "sha256": "19247d04aec4a2b991c2c9db64545641ce262b2a90241a65cf13daddf6af5d85"
+    },
+    {
+      "original": "outputs/predictions/random_forest_seven_features/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/random_forest_seven_features/development_oof_predictions.csv",
+      "size": 5327989,
+      "sha256": "347998df18f3438b62141eac02432d1372b5cd66634b64dd5f5f1f999d6a4bf2"
+    },
+    {
+      "original": "outputs/predictions/svm/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/svm/development_oof_predictions.csv",
+      "size": 5341756,
+      "sha256": "a82e83a8fa3448656405bfd2279272e4b8e94f3ce9d5e76809f12b3c2784d3d7"
+    },
+    {
+      "original": "outputs/predictions/xgboost/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/xgboost/development_oof_predictions.csv",
+      "size": 5327788,
+      "sha256": "0fa08ab599f1fa7efcb6682877907597522b40a92e53bfefc388b9822857ef32"
+    },
+    {
+      "original": "outputs/predictions/xgboost_multimetric_gridsearch/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/xgboost_multimetric_gridsearch/development_oof_predictions.csv",
+      "size": 5327769,
+      "sha256": "55b273257f8c9a7c1ef39d66c78a70079da65171f689acaccca560bfb00f1491"
+    },
+    {
+      "original": "outputs/predictions/xgboost_seven_features/development_oof_predictions.csv",
+      "archived": "outputs/model training1/predictions/xgboost_seven_features/development_oof_predictions.csv",
+      "size": 5327384,
+      "sha256": "60e0320d9dfa654e73a94d971e3ae6fae1c3339b562b9e1c6cb5015964d09c75"
+    },
+    {
+      "original": "outputs/rf_xgb_all_rounds_20261125/rf_xgboost_comparison.xlsx",
+      "archived": "outputs/model training1/rf_xgb_all_rounds_20261125/rf_xgboost_comparison.xlsx",
+      "size": 42399,
+      "sha256": "c3dab9759629f029b776bc70744b2f2759f92187cfa34257070d93abebb7a21f"
+    },
+    {
+      "original": "src/predict_logistic.py",
+      "archived": "src/model training1/predict_logistic.py",
+      "size": 1452,
+      "sha256": "afdd7197b780f2b814fe77786882480f203ca9cb542aef0d4d363826c8d7f03e"
+    },
+    {
+      "original": "src/predict_svm.py",
+      "archived": "src/model training1/predict_svm.py",
+      "size": 1588,
+      "sha256": "de3825756c9a6ac89c6e4d675a70221263b8b3ab5b2fe85a72c71e7b50d07eaf"
+    },
+    {
+      "original": "src/rf_tuning_data.py",
+      "archived": "src/model training1/rf_tuning_data.py",
+      "size": 2504,
+      "sha256": "607bc70d8da24803fd474db14ba07ce454648480a23ea4bf37a1fe18b97dfa8f"
+    },
+    {
+      "original": "src/train_logistic.py",
+      "archived": "src/model training1/train_logistic.py",
+      "size": 20552,
+      "sha256": "724efb17811d090e1da3cd70213c47b8e6c3a988f7a83ad94c3fc24b19a005fa"
+    },
+    {
+      "original": "src/train_seven_feature_models.py",
+      "archived": "src/model training1/train_seven_feature_models.py",
+      "size": 20494,
+      "sha256": "14d227dc40f49943316204845076f5ea44e10660f9d9b7b5cf69148ba4ea6bed"
+    },
+    {
+      "original": "src/train_svm.py",
+      "archived": "src/model training1/train_svm.py",
+      "size": 15861,
+      "sha256": "e858baedd14ef317a60a5859b4c50e510ac3c17dd26cd8a882f79b459d8efbbf"
+    },
+    {
+      "original": "src/train_tree_models.py",
+      "archived": "src/model training1/train_tree_models.py",
+      "size": 14562,
+      "sha256": "5e4416fac731d37cab019a250b0876be03a4e5cc60a4cfe7916a26871310bff7"
+    },
+    {
+      "original": "src/tune_random_forest.py",
+      "archived": "src/model training1/tune_random_forest.py",
+      "size": 13884,
+      "sha256": "3dde43b8ab41cfe5f0b1bed4416caf5735fd8ea0706d220ac1f8c03142a7df71"
+    },
+    {
+      "original": "src/tune_random_forest_round2.py",
+      "archived": "src/model training1/tune_random_forest_round2.py",
+      "size": 12816,
+      "sha256": "a91c87d2ea222fe0530970e956fc80d0e8b0c750f6a4bfe045de24b884405a74"
+    },
+    {
+      "original": "src/tune_xgboost.py",
+      "archived": "src/model training1/tune_xgboost.py",
+      "size": 14491,
+      "sha256": "57f0ff060ef181a3ccd5d8faced98abbc0943fc4d770577f6bf138b7f82a4844"
+    },
+    {
+      "original": "src/tune_xgboost_multimetric.py",
+      "archived": "src/model training1/tune_xgboost_multimetric.py",
+      "size": 21056,
+      "sha256": "c0cdf38b2def42a823e5af7b93f0a3539ac5d42d3759cdb067d4a1a71bc11661"
+    },
+    {
+      "original": "src/tune_xgboost_round2.py",
+      "archived": "src/model training1/tune_xgboost_round2.py",
+      "size": 14627,
+      "sha256": "b803f1284c6041e4d877546e183f9f1bfc133804cafa66630e5550770a4c46e2"
+    },
+    {
+      "original": "src/xgb_tuning_data.py",
+      "archived": "src/model training1/xgb_tuning_data.py",
+      "size": 2573,
+      "sha256": "09fee62187256996d2e386bf5b63509721f7b2bf72b0e474a73ad349059972fb"
+    }
+  ],
+  "historical_file_count": 181,
+  "snapshot_count": 6,
+  "total_historical_bytes": 128786572,
+  "snapshots": [
+    {
+      "original": "config/feature_sets.json",
+      "archived": "config/model training1/feature_sets.json",
+      "size": 1005,
+      "sha256": "6935bf664c6d066b103acf6cba17be6ddf7bf66f6af8f3ba53ed17cf5d149937"
+    },
+    {
+      "original": "requirements_logistic.txt",
+      "archived": "config/model training1/requirements_logistic.txt",
+      "size": 89,
+      "sha256": "6596b7af0d087b5eac5916a3b8acadbf240a23ef05ae3cb452077d82a8bdfc26"
+    },
+    {
+      "original": "requirements_logistic_locked.txt",
+      "archived": "config/model training1/requirements_logistic_locked.txt",
+      "size": 137,
+      "sha256": "07da9d5dca0ff9dcbe083f76138dd545815a36102c49bbfc21d1a38db232f607"
+    },
+    {
+      "original": "requirements_tree_models.txt",
+      "archived": "config/model training1/requirements_tree_models.txt",
+      "size": 83,
+      "sha256": "379960f0922a89cb556ef656260e743f2c239fe840436be039f2c20dd1eecab1"
+    },
+    {
+      "original": "requirements_tree_models_locked.txt",
+      "archived": "config/model training1/requirements_tree_models_locked.txt",
+      "size": 152,
+      "sha256": "f5ba6f7940baaac6199d66dc9bbe76e00545616937e221aefb00cbaa5da86c66"
+    },
+    {
+      "original": "README_使用说明.txt",
+      "archived": "config/model training1/README_使用说明.before_archive.txt",
+      "size": 5023,
+      "sha256": "186c43f0d9e7e4043156d0a30348d50eee334df69c3bb4a81ff2085ab0c24cfb"
+    }
+  ],
+  "data_references": [
+    {
+      "path": "data/raw/cardio_train.csv",
+      "sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+      "sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/denormalization_params.json",
+      "sha256": "1fa845eb4f5c2e98f2f408117194eae493fc5bf0476abf180d320fc64eff9155"
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "requirements_tree_models.txt",
+      "sha256": "379960f0922a89cb556ef656260e743f2c239fe840436be039f2c20dd1eecab1"
+    },
+    {
+      "path": "CLEANING_COMPARISON_ANALYSIS.md",
+      "sha256": "a5b443bd50c070d16f467b8e26f1a18d392f148de31881c15d22cc11a9b1679d"
+    },
+    {
+      "path": "requirements_logistic_locked.txt",
+      "sha256": "07da9d5dca0ff9dcbe083f76138dd545815a36102c49bbfc21d1a38db232f607"
+    },
+    {
+      "path": "requirements_tree_models_locked.txt",
+      "sha256": "f5ba6f7940baaac6199d66dc9bbe76e00545616937e221aefb00cbaa5da86c66"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "364d696af42754ef01aed618f9a7e5bef33853efe6016cc576c933b077a1eab9"
+    },
+    {
+      "path": "requirements_descriptive.txt",
+      "sha256": "ec2f25fc4cffdf24c31071a8412aba3fd1c1abe6247a269db30c414dfbd0aa8a"
+    },
+    {
+      "path": "requirements_logistic.txt",
+      "sha256": "6596b7af0d087b5eac5916a3b8acadbf240a23ef05ae3cb452077d82a8bdfc26"
+    },
+    {
+      "path": "ENHANCEMENT_SUMMARY.md",
+      "sha256": "6539673c88e0aa70930b6406a37e6cefcf39d57ba3c2cd71524d44ec43a810cf"
+    },
+    {
+      "path": "config/feature_sets.json",
+      "sha256": "6935bf664c6d066b103acf6cba17be6ddf7bf66f6af8f3ba53ed17cf5d149937"
+    },
+    {
+      "path": "references/original_cardio-master/bp_and_bmi.ipynb",
+      "sha256": "02a1bbf62eca0b202e0454a2432b72e23ddfe036f37a5bb7dd12f99cb8680e39"
+    },
+    {
+      "path": "references/original_cardio-master/eda.ipynb",
+      "sha256": "30936919766e7267ef2a0d97ce433f6436ac1b6bde763f8fba5331091e77731d"
+    },
+    {
+      "path": "references/original_cardio-master/heart.csv",
+      "sha256": "7c3014365675306819510a49ff289efbec1d1a6a666a2dc7652f1547b383d859"
+    },
+    {
+      "path": "references/original_cardio-master/bp_bmi_preprocessing.ipynb",
+      "sha256": "af0433b509999943c23529d6aa63dac0882cb3a0a7ac118d505c1309ef868fec"
+    },
+    {
+      "path": "references/original_cardio-master/Predicting Heart Disease (Binary Classifiers).ipynb",
+      "sha256": "d042bd37fd78685cc6ca28418bad193128cb1f439c7a6bd19d5f3dff556bdc07"
+    },
+    {
+      "path": "references/original_cardio-master/README.md",
+      "sha256": "76dc2584fa6d89d0bce6b2d4fd55ab1627855bffa4db90f20bff31a10583ee01"
+    },
+    {
+      "path": "references/original_cardio-master/normalized_data.csv",
+      "sha256": "d095929255f274b272fbbac15114b87db720acd49804427c859e141345d3b0b7"
+    },
+    {
+      "path": "references/original_cardio-master/lr.ipynb",
+      "sha256": "dcb9818e26f1722f6eddb452e975757e045070ea914c6d3feee9007a839e4046"
+    },
+    {
+      "path": "references/original_cardio-master/preprocessed_data.csv",
+      "sha256": "64556492bea0c73f55a1ee80196d3d6ec3ffa873042060ddad97ec89cacf3cc1"
+    },
+    {
+      "path": "references/original_cardio-master/cardio_train.csv",
+      "sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c"
+    },
+    {
+      "path": "references/original_cardio-master/cardio_cleaned.csv",
+      "sha256": "e36a1b6d953bc1c2c96e0be4779f27130956a64f6a96c6bc95fe80ec5674801a"
+    },
+    {
+      "path": "dashboard/dashboard_prompt.txt",
+      "sha256": "639298015c8ca37e81ec5f41c22698dd8759f54972880e03bc9cd01049b19cfa"
+    },
+    {
+      "path": "dashboard/requirements.txt",
+      "sha256": "e5bf2e25d4253e4dde22875f2c183d299f47f65b974343f7a939bb935a5b313a"
+    },
+    {
+      "path": "dashboard/README.md",
+      "sha256": "fe5fba65cc479e9bd3b32db33377ce1720ac142a540fc9736bf601a13759d881"
+    },
+    {
+      "path": "dashboard/app.py",
+      "sha256": "63929ff88d995537ed9f8fbe0f5ed80f65f81ff7c7d6e0bbfb900620c5376538"
+    },
+    {
+      "path": "dashboard/figures/lifestyle_dumbbell_preview.png",
+      "sha256": "4f869c7ac9a39e89a3b34ff882a4345583a76d4441af1948779b553092e5fe64"
+    },
+    {
+      "path": "dashboard/figures/categorical_factors.png",
+      "sha256": "11e821e41dd1bc7633ff6c44063dfe6f89181d6fba29503062a3e25703785fa3"
+    },
+    {
+      "path": "powerbi/使用说明.txt",
+      "sha256": "2e3a7af144071ac0c2a849cf5956d5b5cc6cbc7cbc08d3da389a831f6c7c87d1"
+    },
+    {
+      "path": "powerbi/Descriptive_导入与图表说明.txt",
+      "sha256": "57a599bd486fe0eb4648407163e6424b71c8d800c7ab6b718f3f17381c64e63b"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+      "sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/denormalization_params.json",
+      "sha256": "1fa845eb4f5c2e98f2f408117194eae493fc5bf0476abf180d320fc64eff9155"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/cleaning_stats.json",
+      "sha256": "270d5049596fef4b7badf0adaef88a278a5f2ae5e6de18698f1ab77ad477e777"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/cardio_test_20.csv",
+      "sha256": "26528e69d13881084ea2960f637628f1ca47f2b94246018b7093600b9a76a723"
+    },
+    {
+      "path": "data/processed/caroline_cleaned version/cardio_fully_cleaned.csv",
+      "sha256": "dd27dff4d88d0b7f2a98883f42ec1727bf2b345d52b8a103600fbfaddbde598b"
+    },
+    {
+      "path": "data/raw/cardio_train.csv",
+      "sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/age_standardization.csv",
+      "sha256": "e5a67956f5e4e7f1d67d13b23ebad9e15879fdd3aa291bc174382ce589316512"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/lifestyle_age_composition.csv",
+      "sha256": "b960bb98222743abef0e7d7b043de32a588dc02c5079c39edd3cdbd24547bb88"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/systolic_cholesterol.csv",
+      "sha256": "56fd538ac1c7761299b8c386c5463bd8bb6ff5a92a149200b2c8f8e9ec80db60"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/lifestyle_rate_differences.csv",
+      "sha256": "23a5f028bb3290dce2cb8eed378eeb2086a70c6e405572542e7e3b8505e9b06e"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/age_lifestyle_strata.csv",
+      "sha256": "6fedfdf37268b12c6638063b17f92b50aca186bec35b2541cd85b1f145d3c91c"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/standardization_contributions.csv",
+      "sha256": "219107d3c9f61d914f87dad748595815e075c02e25e83aef6de0609fb7e585b4"
+    },
+    {
+      "path": "outputs/descriptive_deep/tables/standard_population_weights.csv",
+      "sha256": "68a963265f4a72d528ab1997f5b5b14d0b124a0907198c3e44d3e55336bfe054"
+    },
+    {
+      "path": "outputs/figures/descriptive/06_lifestyle_label_rates.svg",
+      "sha256": "dc10b4336abda4da239d90001c468385725cc7088e9a08d1d8938f30cc84bf3d"
+    },
+    {
+      "path": "outputs/figures/descriptive/04_numeric_by_label.svg",
+      "sha256": "65565c3882484205330d502c081e0fa1ca32a4de8d74aa025afcd15fb79f24e8"
+    },
+    {
+      "path": "outputs/figures/descriptive/09_spearman_correlations.svg",
+      "sha256": "1790cc8f3266b1af74e0d22ca49049f904b9b1389e55ed3dad510e9f7998b406"
+    },
+    {
+      "path": "outputs/figures/descriptive/03_bmi_label_rates.png",
+      "sha256": "3795b325b63394c19905add4ec0816e05c79b5d2a8135f691d3e8853bfa3fa80"
+    },
+    {
+      "path": "outputs/figures/descriptive/01_age_bmi_distributions.svg",
+      "sha256": "f1961e9d8b83e8e194ffe5567762c3f24621fb62fe8615afd241124ac246c192"
+    },
+    {
+      "path": "outputs/figures/descriptive/08_age_bmi_heatmap.svg",
+      "sha256": "9fe2a768d0944d725c1efb7a8e4b2a51e712722a53fa8efdea226225b0e50899"
+    },
+    {
+      "path": "outputs/figures/descriptive/01_age_bmi_distributions.png",
+      "sha256": "685b700658afcb2a223ec80b92b7616d6ac5bc914593a42d4463c3090196a1e3"
+    },
+    {
+      "path": "outputs/figures/descriptive/08_age_bmi_heatmap.png",
+      "sha256": "12f48d805412d8b33b09bc9b26bbcdf8d1409e65bafe67193996d1f3cb657667"
+    },
+    {
+      "path": "outputs/figures/descriptive/03_bmi_label_rates.svg",
+      "sha256": "51fcd44ca6738f7ddf7f8d1b88ce0d204dfa932c7e0d5f698571c1d423b42700"
+    },
+    {
+      "path": "outputs/figures/descriptive/09_spearman_correlations.png",
+      "sha256": "42475dbe1b276f8450d10cdaa01cb18206def7f26b66761d3a50bbf4f970610c"
+    },
+    {
+      "path": "outputs/figures/descriptive/06_lifestyle_label_rates.png",
+      "sha256": "89142d4b72f29ad7c6e3f0f8ac6beb8bebf68dd5ca60f374a921cd5c459d449f"
+    },
+    {
+      "path": "outputs/figures/descriptive/04_numeric_by_label.png",
+      "sha256": "63dd7f2fff9a54788ca3164d4a5fb0da8246b9e83c0c0ea863b2945e9522c6ef"
+    },
+    {
+      "path": "outputs/figures/descriptive/02_age_label_rates.png",
+      "sha256": "1f37a4fcc9d07e7b366fa4eb7c60b7775b362142e3e62f76a56926c6a2604051"
+    },
+    {
+      "path": "outputs/figures/descriptive/07_gender_code_comparison.png",
+      "sha256": "92b3ce7dd4e6b21ca4044dbe4378b825550fd0fadeb1edd2466913e7aa1e04fe"
+    },
+    {
+      "path": "outputs/figures/descriptive/05_cholesterol_glucose.png",
+      "sha256": "c5f5e95acc3c54e1b16f8aa3e3ee51a7cfe717d32f0829044fbb3070b5971fa0"
+    },
+    {
+      "path": "outputs/figures/descriptive/lifestyle_dumbbell_preview.png",
+      "sha256": "4f869c7ac9a39e89a3b34ff882a4345583a76d4441af1948779b553092e5fe64"
+    },
+    {
+      "path": "outputs/figures/descriptive/categorical_factors.png",
+      "sha256": "11e821e41dd1bc7633ff6c44063dfe6f89181d6fba29503062a3e25703785fa3"
+    },
+    {
+      "path": "outputs/figures/descriptive/05_cholesterol_glucose.svg",
+      "sha256": "c4fb121503515b792a6cbf04f5f8f9decb373461313b9cb48f53903b123dee7b"
+    },
+    {
+      "path": "outputs/figures/descriptive/07_gender_code_comparison.svg",
+      "sha256": "ca6c66a7a21365ba7137cdfc3de8a5c945a69168181cb3e26661a10f554d17db"
+    },
+    {
+      "path": "outputs/figures/descriptive/02_age_label_rates.svg",
+      "sha256": "c12954b787eb2b24dddca13343c249d378da6e385a92dcfb23a80e314dad8063"
+    },
+    {
+      "path": "outputs/descriptive/tables/age_bmi.csv",
+      "sha256": "b39e02a69c90583edfa7f6613386a8acd4f8bba441b4f9c071f6fc0b40f7368a"
+    },
+    {
+      "path": "outputs/descriptive/tables/alco.csv",
+      "sha256": "09f80241334c3cdd4b5121d5d899411d5a884ad70e31948b65875577caffa609"
+    },
+    {
+      "path": "outputs/descriptive/tables/spearman_correlations.csv",
+      "sha256": "528b4044dd89cbc66d47d5682249e60cdfab7d55bb8278e0c6f8b03627d365e1"
+    },
+    {
+      "path": "outputs/descriptive/tables/active.csv",
+      "sha256": "0df10ec610879ecb7b22b41eedfc5bef46bf6ad00776cc7042078424e7a76d85"
+    },
+    {
+      "path": "outputs/descriptive/tables/gender.csv",
+      "sha256": "6dd462f9a012f9b2a843e973a4422022d4141d22c7c0408d10ed64f23784bd58"
+    },
+    {
+      "path": "outputs/descriptive/tables/label_distribution.csv",
+      "sha256": "260545c0b9d961a1a28e3b9f2a5c47dfa64afc9329424f43fc49a7b396a51573"
+    },
+    {
+      "path": "outputs/descriptive/tables/numeric_summary.csv",
+      "sha256": "8003f35b03aae9f9e81244fb25a3e224eabb99361c18c8a94d3e824fd9586255"
+    },
+    {
+      "path": "outputs/descriptive/tables/cholesterol.csv",
+      "sha256": "9523db22a22a889d46c1589dd23be778791fb7d7c8ee199d1f44245cda979803"
+    },
+    {
+      "path": "outputs/descriptive/tables/gluc.csv",
+      "sha256": "41002c95d077f555d86429cdab75529f4a692992a96bb54486ef609479d3aa1a"
+    },
+    {
+      "path": "outputs/descriptive/tables/smoke.csv",
+      "sha256": "e7aa55bab3ee57702a694fbcda2559654a26d6f2f19ff9bedb672c6eb563b2b6"
+    },
+    {
+      "path": "outputs/descriptive/tables/bmi_band.csv",
+      "sha256": "2bbace031ad415f4dd13f210ee412dcb162c43eed702bdc058bbbd4435ce4df2"
+    },
+    {
+      "path": "outputs/descriptive/tables/age_group.csv",
+      "sha256": "587a48c18d9369a36bf59e092bc63e93e95e1e373324081266173358ddc4d0a6"
+    },
+    {
+      "path": "outputs/descriptive/tables/age_activity.csv",
+      "sha256": "cb6ce2312d619e2a671fdfb3ed53a7d70e9cddf9f8ae0998e18e0994b851e7c3"
+    },
+    {
+      "path": "outputs/descriptive/tables/powerbi_group_rates.csv",
+      "sha256": "c6b6d7228c0e95f7958816d23f4a1c50a858cc924e03ea7e60d37dfbc4dbc37b"
+    },
+    {
+      "path": "notebooks/使用说明.txt",
+      "sha256": "003dbea8af0176ee4e9a7281ed5f7d026be1b037647ec4ccdef85d57b6f5cb81"
+    },
+    {
+      "path": "notebooks/descriptive_analysis.ipynb",
+      "sha256": "441b284f4eea0738f5ad848aeb9a0e002e9b52a1c0e46652a9f930f73e938007"
+    },
+    {
+      "path": "reports/descriptive_deep/presentation_notes_zh.txt",
+      "sha256": "59d1e060679613e7897af2db62be4d66618ab81c9e08b2bba2bc75a01dc9ffe8"
+    },
+    {
+      "path": "reports/descriptive_deep/visual_review.txt",
+      "sha256": "c1c9a66c31e5f0c5d4a8df9767d313a8ef201404ad765aa3c0c61241d2d15b9e"
+    },
+    {
+      "path": "reports/descriptive_deep/analysis_manifest.json",
+      "sha256": "d57703bbda2acf47e68cb5c267b527652d08d209d148f829e425e3b31ca8b731"
+    },
+    {
+      "path": "reports/descriptive_deep/deep_descriptive_report.html",
+      "sha256": "ec7ba48b388543cae034b1e8300cb8951af932ea9074c72e33c5c351fb683323"
+    },
+    {
+      "path": "reports/descriptive_deep/validation.txt",
+      "sha256": "97956a99bcf371e37eccbb11cca1f6434d591141bf5cae3ea0bbb2b86e23b21b"
+    },
+    {
+      "path": "reports/descriptive_deep/阅读说明.txt",
+      "sha256": "b04d95609ec57c2b4745183541abad3cc14bad0c14d48b7e895bf36e03cbf449"
+    },
+    {
+      "path": "reports/descriptive_deep/deep_descriptive_zh.txt",
+      "sha256": "df0a6e3c3f02b820d32411aa3169eaf90ffcc7e477f715ace5e0aa006a75988f"
+    },
+    {
+      "path": "reports/caroline_cleaning_methodology/README_CLEANING.md",
+      "sha256": "d1bcabff5f198d86c82f9b81bdbbc5f151cddad6f2dc2632db6962fa8c4e81c7"
+    },
+    {
+      "path": "reports/caroline_cleaning_methodology/data_cleaning_code.py",
+      "sha256": "927962cfdc2e4d8875680bf107cf418333bedf6a451c1b50bcdc3cec56b18f99"
+    },
+    {
+      "path": "reports/caroline_cleaning_methodology/DATA_CLEANING_PLAN.md",
+      "sha256": "af7734afcd299fbd17995228df8c04266819ee39b9890e21345e9c0b57722007"
+    },
+    {
+      "path": "reports/caroline_cleaning_methodology/DELIVERABLES.md",
+      "sha256": "7392f4fa13a3c6a8e67d194270e0f4bd82719b8ca5774c2b4177d3d4d15ef76a"
+    },
+    {
+      "path": "reports/caroline_cleaning_methodology/data_cleaning_report.md",
+      "sha256": "a54a0a6b77d587be183ea13d2f88743b571b759b426a5fec9f0ae391ef99edc2"
+    },
+    {
+      "path": "reports/descriptive/presentation_notes_zh.txt",
+      "sha256": "d56302fb8a1b99afc069e953915f94d77b075525c862f2675222324644291897"
+    },
+    {
+      "path": "reports/descriptive/descriptive_report_zh.txt",
+      "sha256": "b71028fc0e15614f8c14f96d19adb4702477c3227e8dcc9298b2588a9b406e18"
+    },
+    {
+      "path": "reports/descriptive/visual_review.txt",
+      "sha256": "1cf2d6e05317f2fb4658b80b7b11b76407a27537a6733b65807e85fce1d11e33"
+    },
+    {
+      "path": "reports/descriptive/analysis_manifest.json",
+      "sha256": "ac0c25adbe809de3782bd1aa6713d666ce06f8fa20513d94ecb923208ebecca7"
+    },
+    {
+      "path": "reports/descriptive/validation.txt",
+      "sha256": "709d333f97226c432ca8e49850835d79dd8bb65f8e130d89de5456232799616a"
+    },
+    {
+      "path": "reports/descriptive/阅读说明.txt",
+      "sha256": "3420f17d1972e5d6a7d12542b92a7c6f3eaed71ef13bd7b0eb69199f8511de4b"
+    },
+    {
+      "path": "reports/descriptive/descriptive_report.html",
+      "sha256": "4efd9d76941e0d0ff59da179095cfac954e76f0faff9bc3176aee7eefff41b23"
+    },
+    {
+      "path": "src/descriptive_analysis.py",
+      "sha256": "6f976699b8d4a16083a0e7e816bf0042b70dd83f489e9d5f1213fb49c7fa79b4"
+    },
+    {
+      "path": "src/clean_data.py",
+      "sha256": "63b3178e5aa3fba3a6222a840657d8f9d3373cb7628f7dd27efc702ac88d7a28"
+    },
+    {
+      "path": "src/descriptive_deep.py",
+      "sha256": "f8141445e7cce948a47fc9e0aaf54ba4fa922dee7dc2367a216e72bac2bb8e07"
+    }
+  ],
+  "new_training_performed": false,
+  "git_committed": false
+}

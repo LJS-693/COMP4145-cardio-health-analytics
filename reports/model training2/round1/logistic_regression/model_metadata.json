@@ -1,0 +1,103 @@
+{
+  "run": "model training2",
+  "stage": "round1",
+  "model": "logistic_regression",
+  "training_source": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+  "training_sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
+  "raw_sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c",
+  "adapter_sha256": "1fa845eb4f5c2e98f2f408117194eae493fc5bf0476abf180d320fc64eff9155",
+  "records": 54855,
+  "positive_records": 27137,
+  "legacy_folds_verified": true,
+  "features": [
+    "age_years",
+    "gender",
+    "bmi",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc"
+  ],
+  "encoded_feature_count": 9,
+  "parameters": {
+    "C": 100.0,
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "class_weight": null,
+    "random_state": 4145
+  },
+  "parameter_grid": {
+    "C": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ]
+  },
+  "selection_rule": "highest mean validation ROC-AUC; exact ties use grid order",
+  "threshold": 0.5,
+  "classification_rule": "predict_proba[:,1] >= 0.5",
+  "threshold_tuning": false,
+  "early_stopping": false,
+  "cv_fold_means": {
+    "roc_auc": 0.7910585009882434,
+    "accuracy": 0.7275727655178195,
+    "precision": 0.7568980940504273,
+    "recall": 0.6619742725820663,
+    "f1": 0.706241004741409,
+    "specificity": 0.7917964795242443,
+    "average_precision": 0.7697960781414172
+  },
+  "pooled_oof_metrics": {
+    "roc_auc": 0.7910429675734149,
+    "accuracy": 0.7275726916416005,
+    "precision": 0.7568569622919739,
+    "recall": 0.6619744260603604,
+    "f1": 0.7062431199874194,
+    "specificity": 0.7917959448733675,
+    "average_precision": 0.7696439214751793,
+    "tn": 21947,
+    "fp": 5771,
+    "fn": 9173,
+    "tp": 17964
+  },
+  "mean_training_accuracy": 0.7276319406641555,
+  "mean_training_auc": 0.791178469001937,
+  "candidate_count": 7,
+  "grid_cv_fits": 35,
+  "selected_oof_fits": 5,
+  "full_development_refits": 1,
+  "previous_control_reproduced": true,
+  "test_evaluated": false,
+  "test_csv_read": false,
+  "fully_cleaned_csv_read": false,
+  "training_plan_sha256": "688527fce7fcad4540e7047d4b3dd070e4e2f4bb86ae03fd7b3716d5a27097d0",
+  "training_code_sha256": "34a098da3f6265a06f9647c9b6f8c4b6974c44365a68bd2ea48b9e2f8e2268fe",
+  "data_utils_sha256": "9589115fce9b4256fbffbe1ea16c92a8157287e288106c32bae1c98d57265bd2",
+  "previous_stage": "baseline",
+  "previous_parameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 1000,
+    "class_weight": null,
+    "random_state": 4145
+  },
+  "seconds": 1.74177575000067,
+  "limitations": [
+    "Repeated development-fold selection; no nested CV.",
+    "Full cleaned-cohort descriptive charts have previously been viewed.",
+    "Classification target is existing cardio label; scores are not validated clinical urgency or future-event probabilities."
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "full_refit_iterations": [
+    14
+  ]
+}

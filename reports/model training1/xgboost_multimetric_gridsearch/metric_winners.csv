@@ -1,0 +1,8 @@
+﻿metric,candidate_index,learning_rate,n_estimators,validation_mean,also_selected_by_composite
+roc_auc,3,0.02,1000,0.8024015214959471,True
+accuracy,9,0.1,300,0.7379455565997356,False
+precision,0,0.02,150,0.7665749227491248,False
+recall,11,0.1,1000,0.692744097683476,False
+f1,9,0.1,300,0.7230929207865138,False
+specificity,0,0.02,150,0.8017174984295676,False
+average_precision,3,0.02,1000,0.7827549860283368,True

@@ -1,0 +1,91 @@
+{
+  "model": "xgboost",
+  "experiment": "fixed-parameter seven-feature ablation",
+  "records": 54855,
+  "features": [
+    "age_years",
+    "gender",
+    "bmi",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc"
+  ],
+  "removed_features": [
+    "smoke",
+    "alco",
+    "active"
+  ],
+  "encoded_feature_count": 9,
+  "original_encoded_feature_count": 12,
+  "parameters": {
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "subsample": 1.0,
+    "colsample_bytree": 0.8,
+    "reg_lambda": 1.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "tree_method": "hist",
+    "random_state": 4145,
+    "n_jobs": 4,
+    "max_depth": 3,
+    "min_child_weight": 10
+  },
+  "source_parameter_metadata": "reports/xgboost_gridsearch_round2/search_metadata.json",
+  "source_parameter_metadata_sha256": "4099984cc1167f14b757e3b92c3c4c38e443df54d959f7b612c8f9e8f1fda3a7",
+  "selected_cv_fold_means": {
+    "roc_auc": 0.8004393694569225,
+    "accuracy": 0.7357579296002117,
+    "precision": 0.7580360068185582,
+    "recall": 0.6843053557779486,
+    "f1": 0.7192732875635486,
+    "specificity": 0.7861319308910867,
+    "average_precision": 0.7807716359774426
+  },
+  "pooled_oof_metrics": {
+    "accuracy": 0.7357579072099171,
+    "precision": 0.7580210629439138,
+    "recall": 0.684305560673619,
+    "specificity": 0.7861317555379176,
+    "f1": 0.7192795584390432,
+    "roc_auc": 0.800338928925477,
+    "average_precision": 0.7800608856757092,
+    "tn": 21790,
+    "fp": 5928,
+    "fn": 8567,
+    "tp": 18570
+  },
+  "mean_training_accuracy": 0.7388843327149333,
+  "threshold": 0.5,
+  "cv": "exact same original five StratifiedGroupKFold partitions",
+  "grouping": "unchanged raw 11-predictor profile groups; not regrouped after dropping features",
+  "cv_fits": 5,
+  "full_development_refits": 1,
+  "hyperparameter_tuning": false,
+  "threshold_tuning": false,
+  "early_stopping": false,
+  "test_evaluated": false,
+  "test_csv_read_this_run": false,
+  "subset_motivation": "Exploratory, pre-specified seven-feature subset after previously viewed full-cohort descriptive charts.",
+  "evaluation_limit": "Repeated development comparisons and prior full-cohort exploration; not independent final performance estimation.",
+  "training_source": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+  "training_sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
+  "code_sha256": "14d227dc40f49943316204845076f5ea44e10660f9d9b7b5cf69148ba4ea6bed",
+  "loader_code_sha256": "09fee62187256996d2e386bf5b63509721f7b2bf72b0e474a73ad349059972fb",
+  "preprocessing": "canonical original units, same categorical levels and drop-first encoding, no scaling",
+  "random_state": 4145,
+  "fold_seconds": [
+    0.116336750004848,
+    0.11487920799845597,
+    0.1146712919944548,
+    0.11401816600118764,
+    0.11610166699392721
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1",
+    "xgboost": "3.4.1"
+  }
+}

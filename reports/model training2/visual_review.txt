@@ -1,0 +1,2 @@
+Reviewed all six workbook sheets and overall comparison/ROC figures. No clipped headers, formulas or numeric cells in reviewed ranges.
+Workbook numeric AUC matches all nine report rows; delta formulas and six tables exported.

@@ -1,0 +1,354 @@
+START baseline logistic_regression parameters= {"C": 1.0, "solver": "lbfgs", "max_iter": 1000, "class_weight": null, "random_state": 4145}
+OOF baseline logistic_regression 1 AUC 0.791989 Acc 0.726005
+OOF baseline logistic_regression 2 AUC 0.791165 Acc 0.727853
+OOF baseline logistic_regression 3 AUC 0.791761 Acc 0.731905
+OOF baseline logistic_regression 4 AUC 0.792449 Acc 0.72956
+OOF baseline logistic_regression 5 AUC 0.787922 Acc 0.722632
+REFIT baseline logistic_regression
+DONE baseline logistic_regression {"roc_auc": 0.7910570387341062, "accuracy": 0.7275909953965907, "precision": 0.7568875271055316, "recall": 0.6620479713390253, "f1": 0.706277782295255, "specificity": 0.7917604044881692, "average_precision": 0.7697939134557787}
+START baseline random_forest parameters= {"n_estimators": 300, "max_depth": null, "min_samples_leaf": 1, "max_features": "sqrt", "max_samples": null, "bootstrap": true, "class_weight": null, "random_state": 4145, "n_jobs": 4}
+OOF baseline random_forest 1 AUC 0.763575 Acc 0.704767
+OOF baseline random_forest 2 AUC 0.762967 Acc 0.704521
+OOF baseline random_forest 3 AUC 0.761755 Acc 0.704102
+OOF baseline random_forest 4 AUC 0.766547 Acc 0.704676
+OOF baseline random_forest 5 AUC 0.765046 Acc 0.706043
+REFIT baseline random_forest
+DONE baseline random_forest {"roc_auc": 0.7639780710049007, "accuracy": 0.7048217953057831, "precision": 0.7050613314685131, "recall": 0.6934075154943914, "f1": 0.6991770100765832, "specificity": 0.7159967110084375, "average_precision": 0.7468820337429365}
+START baseline xgboost parameters= {"n_estimators": 300, "max_depth": 3, "min_child_weight": 1, "learning_rate": 0.05, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+OOF baseline xgboost 1 AUC 0.801948 Acc 0.736669
+OOF baseline xgboost 2 AUC 0.799424 Acc 0.736055
+OOF baseline xgboost 3 AUC 0.801215 Acc 0.740109
+OOF baseline xgboost 4 AUC 0.801342 Acc 0.734117
+OOF baseline xgboost 5 AUC 0.798765 Acc 0.732294
+REFIT baseline xgboost
+DONE baseline xgboost {"roc_auc": 0.8005388703203071, "accuracy": 0.7358491305072548, "precision": 0.7540201564279331, "recall": 0.6917123490329677, "f1": 0.7215193057248869, "specificity": 0.7790607487206801, "average_precision": 0.7816404397159469}
+START round1 logistic_regression parameters= {"C": 1.0, "solver": "lbfgs", "max_iter": 1000, "class_weight": null, "random_state": 4145}
+Fitting 5 folds for each of 7 candidates, totalling 35 fits
+[CV] END ................................classifier__C=0.001; total time=   0.0s
+[CV] END ................................classifier__C=0.001; total time=   0.0s
+[CV] END ................................classifier__C=0.001; total time=   0.0s
+[CV] END ................................classifier__C=0.001; total time=   0.0s
+[CV] END ................................classifier__C=0.001; total time=   0.0s
+[CV] END .................................classifier__C=0.01; total time=   0.0s
+[CV] END .................................classifier__C=0.01; total time=   0.0s
+[CV] END .................................classifier__C=0.01; total time=   0.0s
+[CV] END .................................classifier__C=0.01; total time=   0.0s
+[CV] END .................................classifier__C=0.01; total time=   0.0s
+[CV] END ..................................classifier__C=0.1; total time=   0.0s
+[CV] END ..................................classifier__C=0.1; total time=   0.0s
+[CV] END ..................................classifier__C=0.1; total time=   0.0s
+[CV] END ..................................classifier__C=0.1; total time=   0.0s
+[CV] END ..................................classifier__C=0.1; total time=   0.0s
+[CV] END ..................................classifier__C=1.0; total time=   0.0s
+[CV] END ..................................classifier__C=1.0; total time=   0.0s
+[CV] END ..................................classifier__C=1.0; total time=   0.0s
+[CV] END ..................................classifier__C=1.0; total time=   0.0s
+[CV] END ..................................classifier__C=1.0; total time=   0.0s
+[CV] END .................................classifier__C=10.0; total time=   0.0s
+[CV] END .................................classifier__C=10.0; total time=   0.0s
+[CV] END .................................classifier__C=10.0; total time=   0.0s
+[CV] END .................................classifier__C=10.0; total time=   0.0s
+[CV] END .................................classifier__C=10.0; total time=   0.0s
+[CV] END ................................classifier__C=100.0; total time=   0.0s
+[CV] END ................................classifier__C=100.0; total time=   0.0s
+[CV] END ................................classifier__C=100.0; total time=   0.0s
+[CV] END ................................classifier__C=100.0; total time=   0.0s
+[CV] END ................................classifier__C=100.0; total time=   0.0s
+[CV] END ...............................classifier__C=1000.0; total time=   0.0s
+[CV] END ...............................classifier__C=1000.0; total time=   0.0s
+[CV] END ...............................classifier__C=1000.0; total time=   0.0s
+[CV] END ...............................classifier__C=1000.0; total time=   0.0s
+[CV] END ...............................classifier__C=1000.0; total time=   0.0s
+SELECTED round1 logistic_regression {"C": 100.0, "solver": "lbfgs", "max_iter": 1000, "class_weight": null, "random_state": 4145}
+OOF round1 logistic_regression 1 AUC 0.791989 Acc 0.725914
+OOF round1 logistic_regression 2 AUC 0.791168 Acc 0.727853
+OOF round1 logistic_regression 3 AUC 0.79176 Acc 0.731905
+OOF round1 logistic_regression 4 AUC 0.792449 Acc 0.72956
+OOF round1 logistic_regression 5 AUC 0.787927 Acc 0.722632
+DONE round1 logistic_regression {"roc_auc": 0.7910585009882434, "accuracy": 0.7275727655178195, "precision": 0.7568980940504273, "recall": 0.6619742725820663, "f1": 0.706241004741409, "specificity": 0.7917964795242443, "average_precision": 0.7697960781414172}
+START round1 random_forest parameters= {"n_estimators": 300, "max_depth": null, "min_samples_leaf": 1, "max_features": "sqrt", "max_samples": null, "bootstrap": true, "class_weight": null, "random_state": 4145, "n_jobs": 4}
+Fitting 5 folds for each of 9 candidates, totalling 45 fits
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=10; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=10; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=10; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=10; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=10; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=30; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=30; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=30; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=30; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=30; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=60; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=60; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=60; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=60; total time=   0.7s
+[CV] END classifier__max_depth=6, classifier__min_samples_leaf=60; total time=   0.7s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=10; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=10; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=10; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=10; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=10; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=30; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=30; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=30; total time=   0.9s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=30; total time=   1.0s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=30; total time=   0.9s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=60; total time=   0.9s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=60; total time=   0.9s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=60; total time=   0.9s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=60; total time=   0.9s
+[CV] END classifier__max_depth=10, classifier__min_samples_leaf=60; total time=   0.9s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=10; total time=   1.2s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=10; total time=   1.2s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=10; total time=   1.2s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=10; total time=   1.2s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=10; total time=   1.2s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=30; total time=   1.1s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=30; total time=   1.1s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=30; total time=   1.1s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=30; total time=   1.1s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=30; total time=   1.1s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=60; total time=   1.0s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=60; total time=   1.0s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=60; total time=   1.0s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=60; total time=   1.0s
+[CV] END classifier__max_depth=14, classifier__min_samples_leaf=60; total time=   1.0s
+SELECTED round1 random_forest {"n_estimators": 300, "max_depth": 10, "min_samples_leaf": 30, "max_features": "sqrt", "max_samples": null, "bootstrap": true, "class_weight": null, "random_state": 4145, "n_jobs": 4}
+OOF round1 random_forest 1 AUC 0.801399 Acc 0.738492
+OOF round1 random_forest 2 AUC 0.798458 Acc 0.735235
+OOF round1 random_forest 3 AUC 0.800388 Acc 0.738924
+OOF round1 random_forest 4 AUC 0.801156 Acc 0.735029
+OOF round1 random_forest 5 AUC 0.799209 Acc 0.734482
+DONE round1 random_forest {"roc_auc": 0.800121955932914, "accuracy": 0.736432479978035, "precision": 0.7608386664865998, "recall": 0.6814679773978711, "f1": 0.7189563619835665, "specificity": 0.790244849463684, "average_precision": 0.7814070789418756}
+START round1 xgboost parameters= {"n_estimators": 300, "max_depth": 3, "min_child_weight": 1, "learning_rate": 0.05, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+Fitting 5 folds for each of 9 candidates, totalling 45 fits
+[CV] END classifier__max_depth=2, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=2, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=3, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=1; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=5; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=10; total time=   0.1s
+[CV] END classifier__max_depth=4, classifier__min_child_weight=10; total time=   0.1s
+SELECTED round1 xgboost {"n_estimators": 300, "max_depth": 3, "min_child_weight": 5, "learning_rate": 0.05, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+OOF round1 xgboost 1 AUC 0.801856 Acc 0.736123
+OOF round1 xgboost 2 AUC 0.799291 Acc 0.736329
+OOF round1 xgboost 3 AUC 0.801357 Acc 0.739562
+OOF round1 xgboost 4 AUC 0.801388 Acc 0.734573
+OOF round1 xgboost 5 AUC 0.799005 Acc 0.732385
+DONE round1 xgboost {"roc_auc": 0.8005793658557103, "accuracy": 0.7357944259157049, "precision": 0.7534831681597789, "recall": 0.692523001412599, "f1": 0.7217129444904973, "specificity": 0.7781588142448687, "average_precision": 0.7817096761963152}
+START round2 random_forest parameters= {"n_estimators": 300, "max_depth": 10, "min_samples_leaf": 30, "max_features": "sqrt", "max_samples": null, "bootstrap": true, "class_weight": null, "random_state": 4145, "n_jobs": 4}
+Fitting 5 folds for each of 9 candidates, totalling 45 fits
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.6; total time=   0.7s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.6; total time=   0.7s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.6; total time=   0.7s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.6; total time=   0.7s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.6; total time=   0.7s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.8; total time=   0.9s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.8; total time=   0.9s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.8; total time=   0.9s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.8; total time=   0.9s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=0.8; total time=   0.9s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=None; total time=   1.0s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=None; total time=   1.0s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=None; total time=   1.0s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=None; total time=   1.0s
+[CV] END classifier__max_features=sqrt, classifier__max_samples=None; total time=   1.0s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.6; total time=   1.2s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.6; total time=   1.2s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.6; total time=   1.2s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.6; total time=   1.2s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.6; total time=   1.2s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.8; total time=   1.5s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.8; total time=   1.5s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.8; total time=   1.5s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.8; total time=   1.5s
+[CV] END classifier__max_features=0.7, classifier__max_samples=0.8; total time=   1.5s
+[CV] END classifier__max_features=0.7, classifier__max_samples=None; total time=   1.7s
+[CV] END classifier__max_features=0.7, classifier__max_samples=None; total time=   1.7s
+[CV] END classifier__max_features=0.7, classifier__max_samples=None; total time=   1.7s
+[CV] END classifier__max_features=0.7, classifier__max_samples=None; total time=   1.7s
+[CV] END classifier__max_features=0.7, classifier__max_samples=None; total time=   1.7s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.6; total time=   1.7s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.6; total time=   1.8s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.6; total time=   1.8s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.6; total time=   1.7s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.6; total time=   1.7s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.8; total time= 2.6min
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.8; total time=   2.1s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.8; total time=   2.0s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.8; total time=   2.4s
+[CV] END classifier__max_features=1.0, classifier__max_samples=0.8; total time=   2.0s
+[CV] END classifier__max_features=1.0, classifier__max_samples=None; total time=   2.4s
+[CV] END classifier__max_features=1.0, classifier__max_samples=None; total time=   2.5s
+[CV] END classifier__max_features=1.0, classifier__max_samples=None; total time=   2.5s
+[CV] END classifier__max_features=1.0, classifier__max_samples=None; total time=   2.4s
+[CV] END classifier__max_features=1.0, classifier__max_samples=None; total time=   2.4s
+SELECTED round2 random_forest {"n_estimators": 300, "max_depth": 10, "min_samples_leaf": 30, "max_features": "sqrt", "max_samples": 0.8, "bootstrap": true, "class_weight": null, "random_state": 4145, "n_jobs": 4}
+OOF round2 random_forest 1 AUC 0.801732 Acc 0.738675
+OOF round2 random_forest 2 AUC 0.798281 Acc 0.735873
+OOF round2 random_forest 3 AUC 0.800439 Acc 0.738924
+OOF round2 random_forest 4 AUC 0.80097 Acc 0.733479
+OOF round2 random_forest 5 AUC 0.799203 Acc 0.734482
+DONE round2 random_forest {"roc_auc": 0.8001248527123345, "accuracy": 0.7362866293174278, "precision": 0.7601901495012199, "recall": 0.682131388419403, "f1": 0.719040990014729, "specificity": 0.7893067683614319, "average_precision": 0.7814665802291404}
+START round2 xgboost parameters= {"n_estimators": 300, "max_depth": 3, "min_child_weight": 5, "learning_rate": 0.05, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+Fitting 5 folds for each of 9 candidates, totalling 45 fits
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.6, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=0.8, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.6; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.8; total time=   0.2s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=0.8; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=1.0; total time=   0.1s
+[CV] END classifier__colsample_bytree=1.0, classifier__subsample=1.0; total time=   0.1s
+SELECTED round2 xgboost {"n_estimators": 300, "max_depth": 3, "min_child_weight": 5, "learning_rate": 0.05, "subsample": 0.6, "colsample_bytree": 0.8, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+OOF round2 xgboost 1 AUC 0.801813 Acc 0.738766
+OOF round2 xgboost 2 AUC 0.799785 Acc 0.736602
+OOF round2 xgboost 3 AUC 0.800922 Acc 0.737557
+OOF round2 xgboost 4 AUC 0.801867 Acc 0.736214
+OOF round2 xgboost 5 AUC 0.799282 Acc 0.731565
+DONE round2 xgboost {"roc_auc": 0.8007338752339495, "accuracy": 0.7361407520684217, "precision": 0.7560890573758344, "recall": 0.6888747601820044, "f1": 0.7209074075677504, "specificity": 0.7824160004206909, "average_precision": 0.7820782562831458}
+START round3 xgboost parameters= {"n_estimators": 300, "max_depth": 3, "min_child_weight": 5, "learning_rate": 0.05, "subsample": 0.6, "colsample_bytree": 0.8, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+Fitting 5 folds for each of 12 candidates, totalling 60 fits
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.02, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.05, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=150; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=300; total time=   0.1s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=600; total time=   0.2s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=1000; total time=   0.3s
+[CV] END classifier__learning_rate=0.1, classifier__n_estimators=1000; total time=   0.3s
+SELECTED round3 xgboost {"n_estimators": 600, "max_depth": 3, "min_child_weight": 5, "learning_rate": 0.05, "subsample": 0.6, "colsample_bytree": 0.8, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "random_state": 4145, "n_jobs": 4}
+OOF round3 xgboost 1 AUC 0.801011 Acc 0.737945
+OOF round3 xgboost 2 AUC 0.799309 Acc 0.736693
+OOF round3 xgboost 3 AUC 0.800592 Acc 0.738195
+OOF round3 xgboost 4 AUC 0.80174 Acc 0.735849
+OOF round3 xgboost 5 AUC 0.799159 Acc 0.733023
+DONE round3 xgboost {"roc_auc": 0.8003621991174127, "accuracy": 0.7363412907059722, "precision": 0.7554362968803913, "recall": 0.6906435575065528, "f1": 0.7215765517056564, "specificity": 0.7810810939216136, "average_precision": 0.7817029070519655}
+ALL_STAGES_COMPLETE [{"model": "logistic_regression", "stage": "baseline", "features": 7, "training_accuracy": 0.7276182682550675, "roc_auc": 0.7910570387341062, "accuracy": 0.7275909953965907, "precision": 0.7568875271055316, "recall": 0.6620479713390253, "f1": 0.706277782295255, "specificity": 0.7917604044881692, "average_precision": 0.7697939134557787, "selection_rule": "fixed parameters", "parameters": "{\"C\": 1.0, \"solver\": \"lbfgs\", \"max_iter\": 1000, \"class_weight\": null, \"random_state\": 4145}"}, {"model": "random_forest", "stage": "baseline", "features": 7, "training_accuracy": 0.9997128796169956, "roc_auc": 0.7639780710049007, "accuracy": 0.7048217953057831, "precision": 0.7050613314685131, "recall": 0.6934075154943914, "f1": 0.6991770100765832, "specificity": 0.7159967110084375, "average_precision": 0.7468820337429365, "selection_rule": "fixed parameters", "parameters": "{\"n_estimators\": 300, \"max_depth\": null, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\", \"max_samples\": null, \"bootstrap\": true, \"class_weight\": null, \"random_state\": 4145, \"n_jobs\": 4}"}, {"model": "xgboost", "stage": "baseline", "features": 7, "training_accuracy": 0.7392808300859348, "roc_auc": 0.8005388703203071, "accuracy": 0.7358491305072548, "precision": 0.7540201564279331, "recall": 0.6917123490329677, "f1": 0.7215193057248869, "specificity": 0.7790607487206801, "average_precision": 0.7816404397159469, "selection_rule": "fixed parameters", "parameters": "{\"n_estimators\": 300, \"max_depth\": 3, \"min_child_weight\": 1, \"learning_rate\": 0.05, \"subsample\": 1.0, \"colsample_bytree\": 1.0, \"reg_lambda\": 1.0, \"objective\": \"binary:logistic\", \"eval_metric\": \"logloss\", \"tree_method\": \"hist\", \"random_state\": 4145, \"n_jobs\": 4}"}, {"model": "logistic_regression", "stage": "round1", "features": 7, "training_accuracy": 0.7276319406641555, "roc_auc": 0.7910585009882434, "accuracy": 0.7275727655178195, "precision": 0.7568980940504273, "recall": 0.6619742725820663, "f1": 0.706241004741409, "specificity": 0.7917964795242443, "average_precision": 0.7697960781414172, "selection_rule": "highest mean validation ROC-AUC; exact ties use grid order", "parameters": "{\"C\": 100.0, \"solver\": \"lbfgs\", \"max_iter\": 1000, \"class_weight\": null, \"random_state\": 4145}"}, {"model": "random_forest", "stage": "round1", "features": 7, "training_accuracy": 0.7434782616471397, "roc_auc": 0.800121955932914, "accuracy": 0.736432479978035, "precision": 0.7608386664865998, "recall": 0.6814679773978711, "f1": 0.7189563619835665, "specificity": 0.790244849463684, "average_precision": 0.7814070789418756, "selection_rule": "highest mean validation ROC-AUC; exact ties use grid order", "parameters": "{\"n_estimators\": 300, \"max_depth\": 10, \"min_samples_leaf\": 30, \"max_features\": \"sqrt\", \"max_samples\": null, \"bootstrap\": true, \"class_weight\": null, \"random_state\": 4145, \"n_jobs\": 4}"}, {"model": "xgboost", "stage": "round1", "features": 7, "training_accuracy": 0.7392945027027328, "roc_auc": 0.8005793658557103, "accuracy": 0.7357944259157049, "precision": 0.7534831681597789, "recall": 0.692523001412599, "f1": 0.7217129444904973, "specificity": 0.7781588142448687, "average_precision": 0.7817096761963152, "selection_rule": "highest mean validation ROC-AUC; exact ties use grid order", "parameters": "{\"n_estimators\": 300, \"max_depth\": 3, \"min_child_weight\": 5, \"learning_rate\": 0.05, \"subsample\": 1.0, \"colsample_bytree\": 1.0, \"reg_lambda\": 1.0, \"objective\": \"binary:logistic\", \"eval_metric\": \"logloss\", \"tree_method\": \"hist\", \"random_state\": 4145, \"n_jobs\": 4}"}, {"model": "random_forest", "stage": "round2", "features": 7, "training_accuracy": 0.7429723853151036, "roc_auc": 0.8001248527123345, "accuracy": 0.7362866293174278, "precision": 0.7601901495012199, "recall": 0.682131388419403, "f1": 0.719040990014729, "specificity": 0.7893067683614319, "average_precision": 0.7814665802291404, "selection_rule": "highest mean validation ROC-AUC; exact ties use grid order", "parameters": "{\"n_estimators\": 300, \"max_depth\": 10, \"min_samples_leaf\": 30, \"max_features\": \"sqrt\", \"max_samples\": 0.8, \"bootstrap\": true, \"class_weight\": null, \"random_state\": 4145, \"n_jobs\": 4}"}, {"model": "xgboost", "stage": "round2", "features": 7, "training_accuracy": 0.7394403414212861, "roc_auc": 0.8007338752339495, "accuracy": 0.7361407520684217, "precision": 0.7560890573758344, "recall": 0.6888747601820044, "f1": 0.7209074075677504, "specificity": 0.7824160004206909, "average_precision": 0.7820782562831458, "selection_rule": "highest mean validation ROC-AUC; exact ties use grid order", "parameters": "{\"n_estimators\": 300, \"max_depth\": 3, \"min_child_weight\": 5, \"learning_rate\": 0.05, \"subsample\": 0.6, \"colsample_bytree\": 0.8, \"reg_lambda\": 1.0, \"objective\": \"binary:logistic\", \"eval_metric\": \"logloss\", \"tree_method\": \"hist\", \"random_state\": 4145, \"n_jobs\": 4}"}, {"model": "xgboost", "stage": "round3", "features": 7, "training_accuracy": 0.7418011139420877, "roc_auc": 0.8003621991174127, "accuracy": 0.7363412907059722, "precision": 0.7554362968803913, "recall": 0.6906435575065528, "f1": 0.7215765517056564, "specificity": 0.7810810939216136, "average_precision": 0.7817029070519655, "selection_rule": "lowest equal mean rank of AUC, accuracy, precision, recall, f1; ties: higher AUC, fewer trees, lower learning_rate", "parameters": "{\"n_estimators\": 600, \"max_depth\": 3, \"min_child_weight\": 5, \"learning_rate\": 0.05, \"subsample\": 0.6, \"colsample_bytree\": 0.8, \"reg_lambda\": 1.0, \"objective\": \"binary:logistic\", \"eval_metric\": \"logloss\", \"tree_method\": \"hist\", \"random_state\": 4145, \"n_jobs\": 4}"}]

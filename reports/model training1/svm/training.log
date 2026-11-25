@@ -1,0 +1,21 @@
+54,855 development records; same 10 inputs and grouped five-fold partitions.
+Fold 1/5: fitting 43,884 records...
+Fold 1/5: converged in 12.6s; support vectors=25,318.
+Fold 1/5 validation: {"roc_auc": 0.7898209037650719, "accuracy": 0.7381277914501868, "precision": 0.7654885654885655, "recall": 0.6784595540814446, "f1": 0.719351372472404, "specificity": 0.7965367965367965, "average_precision": 0.7703702304317899, "tn": 4416, "fp": 1128, "fn": 1745, "tp": 3682}
+Fold 2/5: fitting 43,883 records...
+Fold 2/5: converged in 12.6s; support vectors=25,337.
+Fold 2/5 validation: {"roc_auc": 0.7886997973470892, "accuracy": 0.7367845424717463, "precision": 0.760459392945037, "recall": 0.6831245394252027, "f1": 0.71972049689441, "specificity": 0.7893217893217893, "average_precision": 0.7653333672281145, "tn": 4376, "fp": 1168, "fn": 1720, "tp": 3708}
+Fold 3/5: fitting 43,885 records...
+Fold 3/5: converged in 12.6s; support vectors=25,327.
+Fold 3/5 validation: {"roc_auc": 0.7869339599700963, "accuracy": 0.7372835004557885, "precision": 0.765048948135805, "recall": 0.6768011792887415, "f1": 0.7182244818146265, "specificity": 0.7965000902038607, "average_precision": 0.7692350731485653, "tn": 4415, "fp": 1128, "fn": 1754, "tp": 3673}
+Fold 4/5: fitting 43,884 records...
+Fold 4/5: converged in 12.7s; support vectors=25,234.
+Fold 4/5 validation: {"roc_auc": 0.7884493790158832, "accuracy": 0.7344818156959256, "precision": 0.7654633734431074, "recall": 0.6680176860722181, "f1": 0.7134284308903099, "specificity": 0.7995670214685189, "average_precision": 0.7639608346547908, "tn": 4432, "fp": 1111, "fn": 1802, "tp": 3626}
+Fold 5/5: fitting 43,884 records...
+Fold 5/5: converged in 12.6s; support vectors=25,203.
+Fold 5/5 validation: {"roc_auc": 0.783920538135574, "accuracy": 0.7323853796372254, "precision": 0.7584561112263956, "recall": 0.6734844297033352, "f1": 0.7134491508881515, "specificity": 0.79004329004329, "average_precision": 0.7589606177016258, "tn": 4380, "fp": 1164, "fn": 1772, "tp": 3655}
+Full-development refit: fitting 54,855 records...
+Full-development refit: converged in 20.3s; support vectors=31,486.
+FOLD_MEANS {"roc_auc": 0.7875649156467428, "accuracy": 0.7358126059421746, "precision": 0.7629832782477821, "recall": 0.6759774777141885, "f1": 0.7168347865919804, "specificity": 0.7943937975148511, "average_precision": 0.7655720246329774}
+POOLED_OOF {"roc_auc": 0.7875373709075082, "accuracy": 0.735812596846231, "precision": 0.7629663519527513, "recall": 0.675977447765044, "f1": 0.71684251660805, "specificity": 0.794393534887077, "average_precision": 0.7653182720345725, "tn": 22019, "fp": 5699, "fn": 8793, "tp": 18344}
+SAVED_MODEL /private/tmp/cardio-svm-build/models/svm/model_pipeline.joblib

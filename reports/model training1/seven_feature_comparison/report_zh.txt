@@ -1,0 +1,13 @@
+七项特征消融实验
+
+输入：age_years, gender, bmi, ap_hi, ap_lo, cholesterol, gluc
+
+random_forest，10 项：AUC=0.801720；Accuracy=73.674%；Recall=68.991%；F1=72.167%
+random_forest，7 项：AUC=0.799488；Accuracy=73.499%；Recall=68.291%；F1=71.828%
+xgboost，10 项：AUC=0.802289；Accuracy=73.678%；Recall=68.703%；F1=72.086%
+xgboost，7 项：AUC=0.800439；Accuracy=73.576%；Recall=68.431%；F1=71.927%
+
+全部采用五折验证均值；本次总计 10 次 CV 拟合及 2 次全开发集重拟合。
+十项结果来自第二轮保存报告，七项结果来自本次相同折的固定参数实验。
+保留全部旧模型；未读取测试 CSV。本实验属于重复开发比较，且特征选择受已查看的全量描述性分析启发。
+小幅差异不能证明稳定提升；参数在十项特征上选中，七项特征没有重新调参。
