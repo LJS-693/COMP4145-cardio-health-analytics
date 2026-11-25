@@ -1,0 +1,6 @@
+PASS: source hash and feature list match current LR.
+PASS: all validation fold assignments exactly match LR OOF file.
+PASS: no profile group crosses training/validation folds.
+PASS: every record has one held-out prediction; exported counts reconcile.
+PASS: model reload reproduces predictions.
+PASS: test CSV not read; no tuning or early stopping.

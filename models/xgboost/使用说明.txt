@@ -1,0 +1,8 @@
+模型：xgboost
+完整预处理与模型保存为model_pipeline.joblib。
+输入采用与逻辑回归一致的10项原单位特征，类别保持原始1/2或1/2/3编码；不直接传入新版CSV的归一化数值。
+可复用评分入口（开发阶段不要对最终测试集调用）：
+python3 src/predict_logistic.py --model models/xgboost/model_pipeline.joblib --input INPUT.csv --output predictions.csv
+该入口会自动处理当前新版CSV的归一化和one-hot字段。
+模型已在全部开发数据重拟合；报告指标来自各折验证预测，不是保存模型的训练集成绩。
+当前仅运行固定初始参数，无调参或提前停止。

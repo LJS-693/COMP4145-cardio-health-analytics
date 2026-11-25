@@ -1,0 +1,57 @@
+{
+  "model": "random_forest",
+  "training_source": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+  "training_sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
+  "records": 54855,
+  "features": [
+    "age_years",
+    "gender",
+    "bmi",
+    "smoke",
+    "alco",
+    "active",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc"
+  ],
+  "parameters": {
+    "n_estimators": 300,
+    "max_depth": null,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "class_weight": null,
+    "random_state": 4145,
+    "n_jobs": 4
+  },
+  "threshold": 0.5,
+  "cv": "5-fold StratifiedGroupKFold",
+  "random_state": 4145,
+  "same_folds_as_logistic": true,
+  "pooled_oof_metrics": {
+    "accuracy": 0.7064989517819706,
+    "precision": 0.7067241056377599,
+    "recall": 0.6952131775804252,
+    "specificity": 0.7175481636481709,
+    "f1": 0.7009213850497845,
+    "roc_auc": 0.7662640288963796,
+    "average_precision": 0.7471745219203116,
+    "tn": 19889,
+    "fp": 7829,
+    "fn": 8271,
+    "tp": 18866
+  },
+  "hyperparameter_tuning": false,
+  "test_evaluated": false,
+  "threshold_tuning": false,
+  "early_stopping": false,
+  "preprocessing": "Restored original units and verified by raw ID; same fixed one-hot encoding as LR; no scaling.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "mean_training_accuracy": 0.9997994714373281,
+  "training_code_sha256": "5e4416fac731d37cab019a250b0876be03a4e5cc60a4cfe7916a26871310bff7"
+}
