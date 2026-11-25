@@ -1,13 +1,13 @@
 ﻿term,coefficient,conditional_odds_ratio,interpretation
-age_years_per_SD,0.34463962342806853,1.411481163258259,conditional association; numeric terms per training SD; not causal effects
-bmi_per_SD,0.13657650854820558,1.1463425794272597,conditional association; numeric terms per training SD; not causal effects
-ap_hi_per_SD,0.9410931321496857,2.562781346387122,conditional association; numeric terms per training SD; not causal effects
-ap_lo_per_SD,0.10605312676346824,1.111880945573443,conditional association; numeric terms per training SD; not causal effects
-gender_2_vs_1,0.031027415339614478,1.0315137827995553,conditional association; numeric terms per training SD; not causal effects
-cholesterol_2_vs_1,0.37689101076317466,1.4577454221518389,conditional association; numeric terms per training SD; not causal effects
-cholesterol_3_vs_1,1.1128842315144294,3.043122819783092,conditional association; numeric terms per training SD; not causal effects
-gluc_2_vs_1,-0.0014420268100440415,0.9985590124110282,conditional association; numeric terms per training SD; not causal effects
-gluc_3_vs_1,-0.35419133650837364,0.7017406858967078,conditional association; numeric terms per training SD; not causal effects
-smoke_1_vs_0,-0.14662096556205167,0.8636212575851427,conditional association; numeric terms per training SD; not causal effects
-alco_1_vs_0,-0.21876702508115528,0.8035088937684848,conditional association; numeric terms per training SD; not causal effects
-active_1_vs_0,-0.21853899239486682,0.8036921409523672,conditional association; numeric terms per training SD; not causal effects
+age_years_per_SD,0.34116612289455045,1.406586887739812,conditional association; numeric terms per training SD; not causal effects
+bmi_per_SD,0.15301389150778696,1.1653411671761964,conditional association; numeric terms per training SD; not causal effects
+ap_hi_per_SD,0.9414664585873528,2.5637382790307015,conditional association; numeric terms per training SD; not causal effects
+ap_lo_per_SD,0.09761299943738717,1.102536020474533,conditional association; numeric terms per training SD; not causal effects
+gender_2_vs_1,0.03151100799448059,1.0320127359236195,conditional association; numeric terms per training SD; not causal effects
+cholesterol_2_vs_1,0.38111170013378964,1.4639111153449578,conditional association; numeric terms per training SD; not causal effects
+cholesterol_3_vs_1,1.0920917858755959,2.980502128667159,conditional association; numeric terms per training SD; not causal effects
+gluc_2_vs_1,0.03427592011917207,1.0348701088221746,conditional association; numeric terms per training SD; not causal effects
+gluc_3_vs_1,-0.3432620112464333,0.7094523027240476,conditional association; numeric terms per training SD; not causal effects
+smoke_1_vs_0,-0.16103211300564582,0.8512647339990062,conditional association; numeric terms per training SD; not causal effects
+alco_1_vs_0,-0.21167507404976013,0.8092275938981743,conditional association; numeric terms per training SD; not causal effects
+active_1_vs_0,-0.21838617140849947,0.8038149713633764,conditional association; numeric terms per training SD; not causal effects

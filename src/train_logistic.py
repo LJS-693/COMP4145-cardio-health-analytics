@@ -1,6 +1,7 @@
 """Full-feature logistic baseline with five-fold grouped out-of-fold evaluation.
 
-Uses train.csv only. Fits preprocessing separately inside each training fold.
+Uses Caroline's current training split only. Reverses the previously applied
+MinMax mapping, verifies against raw records by ID, and fits scaling per fold.
 Run: python3 src/train_logistic.py
 """
 import argparse
@@ -32,6 +33,32 @@ ROOT = Path(__file__).resolve().parents[1]
 FEATURE_SET = 'complete_logistic_bmi_only'
 SEED = 4145
 THRESHOLD = .5
+DATA_DIR = Path('data/processed/caroline_cleaned version')
+
+
+def decode_records(source, params):
+    """Adapt current normalized/one-hot CSV to original-unit model inputs."""
+    with source.open(encoding='utf-8-sig', newline='') as f:
+        encoded = list(csv.DictReader(f))
+    decoded = []
+    for r in encoded:
+        out = {'id': r['id']}
+        if 'cardio' in r:
+            out['cardio'] = int(r['cardio'])
+        for field, bounds in params.items():
+            value = float(r[field])
+            if not np.isfinite(value):
+                raise ValueError(f'Nonfinite value in {field}')
+            out[field] = value * (bounds['max']-bounds['min']) + bounds['min']
+        for prefix in ['cholesterol', 'gluc']:
+            values = [str(r[f'{prefix}_{level}']).lower() in ('true', '1', '1.0') for level in [1,2,3]]
+            assert sum(values) == 1, f'Invalid one-hot group: {prefix}'
+            out[prefix] = values.index(True)+1
+        for field in ['gender', 'smoke', 'alco', 'active']:
+            value = int(r[field]); assert value in [0,1]
+            out[field] = value + 1 if field == 'gender' else value
+        decoded.append(out)
+    return decoded
 
 
 def write_csv(path, rows):
@@ -85,23 +112,37 @@ def main():
     config=json.loads(config_path.read_text(encoding='utf-8'))
     features=config[FEATURE_SET]
     assert not set(features)&set(config['exclude_from_X'])
-    source=project/'data/processed/train.csv'
-    with source.open(encoding='utf-8-sig',newline='') as f:
-        records=list(csv.DictReader(f))
-    assert all(r['split']=='train' for r in records)
+    source=project/DATA_DIR/'cardio_train_80.csv'
+    params_path=project/DATA_DIR/'denormalization_params.json'
+    params=json.loads(params_path.read_text(encoding='utf-8'))
+    records=decode_records(source,params)
+    # Check restoration against original observations, but never use held-out
+    # records for scaling, grouping decisions, modelling, or evaluation.
+    raw_path=project/'data/raw/cardio_train.csv'
+    with raw_path.open(encoding='utf-8-sig',newline='') as f:
+        raw_by_id={r['id']:r for r in csv.DictReader(f,delimiter=';')}
+    profile_cols=['age','gender','height','weight','ap_hi','ap_lo','cholesterol','gluc','smoke','alco','active']
+    max_restore_error=0.
+    for r in records:
+        raw=raw_by_id[r['id']]
+        expected={c:float(raw[c]) for c in ['height','weight','ap_hi','ap_lo']}
+        expected['age_years']=float(raw['age'])/365.25
+        expected['bmi']=float(raw['weight'])/(float(raw['height'])/100)**2
+        expected['pulse_pressure']=float(raw['ap_hi'])-float(raw['ap_lo'])
+        expected['map']=float(raw['ap_lo'])+expected['pulse_pressure']/3
+        for c,v in expected.items():
+            max_restore_error=max(max_restore_error,abs(r[c]-v))
+            assert abs(r[c]-v)<1e-8, (r['id'],c)
+            r[c]=v  # Canonical original units; no global scaling retained.
+        for c in ['gender','cholesterol','gluc','smoke','alco','active','cardio']:
+            assert r[c]==int(raw[c])
+        signature=json.dumps([float(raw[c]) for c in profile_cols],separators=(',',':'))
+        r['profile_group']=hashlib.sha256(signature.encode()).hexdigest()
     X=np.array([[float(r[c]) for c in features] for r in records],dtype=float)
     y=np.array([int(r[config['target']]) for r in records])
     groups=np.array([r[config['cross_validation_group']] for r in records])
     assert np.isfinite(X).all() and set(y)=={0,1}
     assert len({r['id'] for r in records})==len(records)
-    # Confirm profile groups truly correspond to the original predictor combinations.
-    signatures={}
-    profile_cols=['age','gender','height','weight','ap_hi','ap_lo','cholesterol','gluc','smoke','alco','active']
-    for r in records:
-        signature=tuple(float(r[c]) for c in profile_cols)
-        if r['profile_group'] in signatures:
-            assert signatures[r['profile_group']]==signature
-        signatures[r['profile_group']]=signature
     cv=StratifiedGroupKFold(n_splits=5,shuffle=True,random_state=SEED)
     oof=np.full(len(y),np.nan)
     base_oof=np.full(len(y),np.nan)
@@ -117,6 +158,8 @@ def main():
             model.fit(X[tr],y[tr])
         if any(issubclass(w.category,ConvergenceWarning) for w in caught):
             raise RuntimeError(f'Fold {fold} did not converge')
+        scaler=model.named_steps['preprocess'].named_transformers_['numeric']
+        assert np.allclose(scaler.mean_,X[tr][:,[features.index(c) for c in ['age_years','bmi','ap_hi','ap_lo']]].mean(axis=0))
         p=model.predict_proba(X[va])[:,1]
         dummy=DummyClassifier(strategy='most_frequent').fit(X[tr],y[tr])
         bp=dummy.predict_proba(X[va])[:,1]
@@ -162,7 +205,10 @@ def main():
     assert not any(issubclass(w.category,ConvergenceWarning) for w in caught)
     model_path=models/'logistic_pipeline.joblib'
     joblib.dump({'pipeline':final_model,'features':features,'threshold':THRESHOLD,
-                 'target':config['target'],'feature_set':FEATURE_SET},model_path)
+                 'target':config['target'],'feature_set':FEATURE_SET,
+                 'input_units':'original units; gender uses original 1/2 codes',
+                 'denormalization_params':params,
+                 'training_source':str(DATA_DIR/'cardio_train_80.csv')},model_path)
     loaded=joblib.load(model_path)
     assert np.allclose(loaded['pipeline'].predict_proba(X[:100]),final_model.predict_proba(X[:100]))
     names=['age_years_per_SD','bmi_per_SD','ap_hi_per_SD','ap_lo_per_SD',
@@ -210,7 +256,12 @@ def main():
         'parameters':{'solver':'lbfgs','C':1.0,'max_iter':1000,'class_weight':None},
         'categorical_encoding':'gender, cholesterol and gluc: one-hot; reference level 1',
         'scaling':'age_years,bmi,ap_hi,ap_lo standardized inside each training fold',
-        'training_source':'data/processed/train.csv',
+        'training_source':str(DATA_DIR/'cardio_train_80.csv'),
+        'data_version':'Caroline cleaned version; latest remote at retraining',
+        'input_adapter':'Reverse stored MinMax mapping and decode one-hot columns; verify every training row against raw ID; use canonical original values.',
+        'max_denormalization_error':max_restore_error,
+        'denormalization_sha256':hashlib.sha256(params_path.read_bytes()).hexdigest(),
+        'raw_source_sha256':hashlib.sha256(raw_path.read_bytes()).hexdigest(),
         'training_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
         'feature_config_sha256':hashlib.sha256(config_path.read_bytes()).hexdigest(),
         'test_evaluated':False,'hyperparameter_tuning':False,'threshold_tuning':False,
@@ -222,6 +273,10 @@ def main():
         '输入：'+', '.join(features),
         '输出：疾病状态标签cardio的模型概率估计与0/1分类；不是未来发病风险。','',
         '验证方法：五折StratifiedGroupKFold，按profile_group分组，尽量保持类别比例。',
+        '使用新版cardio_train_80.csv，旧版结果已替换。',
+        '连续字段先反归一化，逐条核对原始ID及测量值，再用原单位数据在训练折内拟合StandardScaler。',
+        '不会沿用全数据拟合的MinMax映射作为训练预处理。',
+        '新版one-hot胆固醇与血糖还原为1/2/3；性别0/1转回原始1/2，以保持原10项输入方案。',
         '每条记录的OOF预测都来自未用该记录或相同profile_group训练的模型。',
         '标准化只在每折训练部分拟合；类别编码采用预先定义的类别集合。',
         '没有调参、调整门槛、重采样或测试集评估。','',
@@ -238,7 +293,8 @@ def main():
         '血压、胆固醇等与疾病标签存在关联，不能据此证明临床筛查有效性。',
         '结果只适用于通过既定清洗规则的记录；保留的极端BMI可能影响线性模型稳定性。',
         '五折标准差仅表示折间波动，不是置信区间。描述性分析曾看过整个开发集，因此本次属于内部开发验证。','',
-        '后续：在相同交叉验证折上比较基础特征与树模型；最终方案确定后再使用test.csv。','',
+        '当前新版外部train/test是普通分层随机划分，不保证同健康资料组合不跨两集；内部交叉验证仍强制分组。',
+        '后续：在相同交叉验证折上比较基础特征与树模型；最终方案确定后再使用cardio_test_20.csv。','',
         '复现：python3 -m pip install -r requirements_logistic.txt；python3 src/train_logistic.py。',
         '模型加载：bundle = joblib.load("models/logistic_regression/logistic_pipeline.joblib")；',
         '按bundle["features"]顺序建立数值矩阵X，再用bundle["pipeline"].predict_proba(X)[:,1]。','',
@@ -263,10 +319,12 @@ def main():
     assert [observed[(0,0)],observed[(0,1)],observed[(1,0)],observed[(1,1)]]==[pooled[k] for k in ['tn','fp','fn','tp']]
     assert all(0<=float(r['predicted_score'])<=1 for r in saved)
     (report/'validation.txt').write_text(
-        'PASS: only train.csv read; feature whitelist excludes target and metadata.\n'
+        'PASS: current cardio_train_80.csv used; test CSV not opened or evaluated.\n'
+        'PASS: normalized values restored and verified against raw source by ID.\n'
+        'PASS: feature whitelist excludes target and metadata.\n'
         'PASS: each development record receives exactly one held-out prediction.\n'
         'PASS: no predictor-profile group overlaps between training/validation folds.\n'
-        'PASS: preprocessing fitted inside each fold; all six fits converged.\n'
+        'PASS: fold scalers match training-fold means; all six fits converged.\n'
         'PASS: exported prediction counts reconcile with confusion matrix.\n'
         'PASS: saved model reload reproduces predictions.\n',encoding='utf-8')
     print('POOLED_OOF',json.dumps(pooled),flush=True)

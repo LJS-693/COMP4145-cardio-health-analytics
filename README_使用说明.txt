@@ -1,3 +1,10 @@
+当前逻辑回归版本更新
+使用新版 data/processed/caroline_cleaned version/cardio_train_80.csv（54,855条）。
+模型、OOF预测、系数、评估图和报告均已重训覆盖；最终测试集尚未评估。
+输入连续值先还原并核对原始记录，再在每个交叉验证训练折内拟合StandardScaler。
+新版数据的预测入口：python3 src/predict_logistic.py --input INPUT.csv --output predictions.csv。
+下方原有数据目录和描述性分析说明保留为历史说明，其中旧train.csv路径及54,887条结果不代表当前数据版本。
+
 COMP4145 Cardio Final Project
 
 当前完成范围
