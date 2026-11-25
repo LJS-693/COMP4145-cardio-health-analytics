@@ -1,0 +1,114 @@
+You are a senior data visualization engineer and biostatistician. Refactor and upgrade my existing **Cardio Health Analytics** interactive dashboard using the attached source code, `cardio_fully_cleaned.csv` (68,569 rows), and `denormalization_params.json`.
+
+**Core Directive:** Preserve the exact tech stack/framework and clean visual identity of my attached dashboard (white rounded cards, soft drop shadows, top global filter panel, 4 gradient KPI cards, interactive Plotly charts), while implementing every statistical fix, layout upgrade, and new analytical panel specified below. Deliver complete, runnable code with zero placeholders.
+
+---
+
+### 1. Strict Data Pipeline & Feature Engineering Rules
+Implement the data loading step carefully to prevent silent bugs:
+1. **Denormalize Continuous Features:** Read `denormalization_params.json` and map all 8 normalized (`0–1`) columns (`age_years`, `height`, `weight`, `ap_hi`, `ap_lo`, `bmi`, `pulse_pressure`, `map`) back to their original clinical units using `val * (max - min) + min`. Never display 0–1 normalized numbers on any axis or KPI.
+2. **Cast Boolean Columns & Reconstruct Ordinal Features:**
+   - Explicitly cast `cholesterol_1`, `cholesterol_2`, `cholesterol_3`, `gluc_1`, `gluc_2`, `gluc_3` from boolean (`True`/`False`) to integer (`0`/`1`).
+   - Reconstruct `cholesterol` (`1`: Normal, `2`: Above Normal, `3`: Well Above Normal) and `gluc` (`1`: Normal, `2`: Above Normal, `3`: Well Above Normal).
+3. **Exact Categorical Encoding (Do NOT guess Kaggle raw codes):**
+   - `gender`: `0` = Female (`n=44,667`), `1` = Male (`n=23,902`).
+   - `smoke`, `alco`, `active`, `cardio`: `0` = No, `1` = Yes.
+4. **Clinically Accurate Binning (`right=False` so no boundary values drop):**
+   - **Age Group** (dataset spans `29.56–64.92` yrs; DO NOT label as `60–69`): `<40`, `40–44`, `45–49`, `50–54`, `55–59`, `60–64`.
+   - **BMI Category**: `Underweight (<18.5)`, `Normal (18.5–25)`, `Overweight (25–30)`, `Obese I (30–35)`, `Obese II+ (≥35)`.
+   - **Blood Pressure Stage (Systolic `ap_hi`)**: `Normal (<120)`, `Elevated (120–129)`, `Stage 1 (130–139)`, `Stage 2 (140–159)`, `Crisis (≥160)`.
+
+---
+
+### 2. Top Global Filter Bar & KPI Header (Upgraded Originals)
+Keep all original filter controls and KPI cards, with these mandatory fixes:
+- **Age Range Slider:** Set bounds and default range to `29` to `65` (so the 3 records aged 29.56–29.78 are not silently dropped on initial load), with synchronized numeric input boxes on both sides.
+- **BMI Categories Checkboxes:** ALL 5 categories—especially `Obese I (30–35)` (`n=11,936`)—MUST be **checked by default** on startup.
+- **Dropdown Filters:** `Gender` (All / Female / Male), `Smoking` (All / No / Yes), `Alcohol` (All / No / Yes), `Physical Activity` (All / No / Yes).
+- **Reset All Filters Button:** Resets every control above to full-dataset defaults (`N = 68,569`).
+- **4 Gradient KPI Cards** (reacting dynamically to filters):
+  1. `Total Records` (formatted with commas, plus `% of full dataset`)
+  2. `Disease Cases` (`cardio == 1`)
+  3. `Disease Prevalence` (`XX.X%` + signed percentage-point delta vs. unfiltered baseline `49.5%`)
+  4. `Avg Age / BMI` (`XX.X yrs` + subtitle `BMI: XX.X`)
+- **Empty-State Guard:** If filter selections yield 0 rows, display a clean placeholder message inside the filtered panels instead of throwing runtime errors.
+
+---
+
+### 3. Section A — Interactive Filtered Risk Exploration (4 Panels, 2×2 Grid)
+*All 4 panels below MUST respond dynamically to the top global filters. Remove the old standalone "Biomarker Risk Matrix" and "Classic Risk Trends" cards (their functionality is cleanly absorbed below).*
+
+#### Panel 1: Single-Category Risk Profile
+- **Purpose:** Inspect how **one single categorical/binned factor** influences cardiovascular disease prevalence.
+- **Controls:**
+  - `Select Feature` dropdown (single selection): `Blood Pressure Stage`, `Age Group`, `BMI Category`, `Cholesterol`, `Glucose`, `Physical Activity`, `Gender`, `Smoking`, `Alcohol` (default: `Blood Pressure Stage`).
+  - `Optional Split By` dropdown: `None` (default), `Gender`, `Smoking`, `Alcohol`, `Physical Activity`, `Cholesterol`, `Glucose`.
+- **Chart Design:**
+  - When `Split By == None`: Render a **Dual-Axis Combo Chart** — soft translucent bars on secondary Y-axis for **Sample Size (`n`)**, foreground bold line+markers (or bars) on primary Y-axis (`0%–100%`) for **Disease Rate (`%`)** with exact `%` data labels, plus a horizontal dashed reference line for the current filtered overall prevalence.
+  - When a `Split By` variable is selected: Render clean grouped bars with exact `%` labels and `n` in hover tooltips.
+- **Analytical Note/Tooltip:** When `Smoking` or `Alcohol` is selected, display a concise inline callout noting that lower raw disease prevalence in smokers/drinkers reflects age/gender confounding and reverse causality (patients quitting post-diagnosis) rather than a protective effect.
+
+#### Panel 2: Single-Measurement Clinical Comparator
+- **Purpose:** Compare the full distribution of **ONE continuous measurement at a time** between `No Disease` (`cardio=0`) and `Disease` (`cardio=1`).
+- **Controls:**
+  - Single dropdown (`Select Clinical Measurement`): `Systolic BP (mmHg)`, `Mean Arterial Pressure (mmHg)`, `Diastolic BP (mmHg)`, `Pulse Pressure (mmHg)`, `Age (years)`, `BMI (kg/m²)`, `Weight (kg)`, `Height (cm)` — default to `Systolic BP (mmHg)`.
+  - View toggle (radio/segmented control): `Violin + Boxplot` (default) vs. `Overlaid ECDF (Cumulative Distribution)`.
+- **Chart Design:**
+  - Strictly show **1 chart** comparing `No Disease` vs. `Disease` (do NOT render a 4-subplot grid).
+  - For `Violin + Boxplot`: Use Plotly `go.Violin` with `box_visible=True`, `meanline_visible=True`, `spanmode='hard'`, and **`points=False`** (critical for smooth rendering on 68k rows and because 97.1% of BP values are rounded to multiples of 10, making raw outlier dots cluttered and plain boxplots flat).
+  - Place a clean 4-item inline **Statistics Strip** above the chart showing: `No Disease Mean (Median)`, `Disease Mean (Median)`, `Mean Difference`, and `Effect Size (Cohen's d)` + `Mann-Whitney U p-value`.
+
+#### Panel 3: Multi-Dimensional Risk Explorer (2D Interaction Heatmap)
+- **Purpose:** Explore pairwise interactions, synergies, crossovers, and paradoxes between any two categorical/binned variables.
+- **Controls:**
+  - `X-Axis Variable` dropdown & `Y-Axis Variable` dropdown (all categorical/binned variables).
+  - **4 Quick-Select Preset Buttons** above the dropdowns that immediately configure the axes to showcase the dataset's strongest findings:
+    1. `BP Stage × Age Group` (default)
+    2. `Cholesterol × Glucose (Paradox)`
+    3. `BP Stage × Physical Activity`
+    4. `Gender × Age Group (Crossover)`
+- **Chart Design:**
+  - 2D diverging heatmap (`Blue → Light Neutral → Red`, fixed `0%–100%` color scale) with **two-line cell annotations** displaying both `XX.X%` and `(n=X,XXX)` inside every tile (auto-adjust text color black/white for contrast; mark cells with `n < 20` with a subtle `*` warning in hover text).
+
+#### Panel 4: Cumulative Risk Factor Builder
+- **Purpose:** Quantify how cardiovascular risk compounds when multiple modifiable/clinical risk factors stack in the same individual.
+- **Controls:** Interactive checklist allowing users to toggle which binary risk flags contribute to the patient's risk score (all 6 checked by default; enforce at least 1 selected):
+  - `Stage 2 Hypertension (ap_hi ≥ 140 or ap_lo ≥ 90)`
+  - `Elevated Cholesterol (Level ≥ 2)`
+  - `Elevated Glucose (Level ≥ 2)`
+  - `Obesity (BMI ≥ 30)`
+  - `Physically Inactive (active = 0)`
+  - `Older Age (age ≥ 55)`
+- **Chart Design:**
+  - Dynamically compute each filtered patient's total risk count (`0` to `k`) and render a **Dual-Axis Combo Chart**: light bars showing `Patient Count (n)` on the right axis, and a bold ascending line with markers showing `Disease Rate (%)` (with exact `%` labels) on the left axis (`0%–100%`).
+
+---
+
+### 4. Section B — Dataset-Wide Statistical Overview (2 Unfiltered Panels)
+*Place a clear section divider and header below Section A: **"Dataset-Wide Statistical Overview (Unfiltered Full Cohort, N = 68,569)"** with a subtitle badge stating **"Not affected by top filters"**. Precompute both figures ONCE at startup so they never recompute or shift when global filters change.*
+
+#### Panel 5: Full-Variable Spearman Rank Correlation Matrix
+- Compute pairwise **Spearman rank correlations ($\rho$)** on the full unfiltered dataset across all 15 variables: `cardio`, `ap_hi`, `map`, `pulse_pressure`, `ap_lo`, `age_years`, `cholesterol`, `bmi`, `weight`, `gluc`, `gender`, `alco`, `height`, `smoke`, `active`.
+- Sort rows and columns in descending order of their correlation with `cardio` (with `cardio` first) so strong predictors visually cluster in the top-left.
+- Use human-readable axis labels (e.g., `Cardio Disease`, `Systolic BP`, `MAP`, `Pulse Pressure`, `Diastolic BP`, `Age`, `Cholesterol`, `BMI`, `Weight`, `Glucose`, `Gender (Male)`, `Alcohol`, `Height`, `Smoking`, `Physical Activity`).
+- Render an annotated diverging heatmap (`RdBu_r`, fixed `zmin=-1, zmax=1`) displaying exact 2-decimal values (`0.45`, `-0.04`, etc.) inside every cell, with crisp hover tooltips showing exact $\rho$ to 3 decimals.
+
+#### Panel 6: Multivariate Adjusted Odds Ratios (Forest Plot)
+- **Model Specification (Critical — Avoid Multicollinearity):**
+  - Fit an **unregularized** Multivariate Logistic Regression predicting `cardio` on the full unfiltered dataset (`N = 68,569`).
+  - **DO NOT include** collinear derived features (`map`, `pulse_pressure`, `weight`, `height`) — keep only independent clinical predictors (all VIFs < 2.3):
+    - Standardized continuous features (z-scored, reported as **per +1 SD** with exact SD noted in label, e.g., `Systolic BP (+16.7 mmHg)`): `ap_hi`, `ap_lo`, `age_years`, `bmi`.
+    - Categorical dummy indicators (vs. Normal / No baseline): `Cholesterol: Well Above Normal (vs Normal)`, `Cholesterol: Above Normal (vs Normal)`, `Glucose: Well Above Normal (vs Normal)`, `Glucose: Above Normal (vs Normal)`, `Male (vs Female)`, `Smoking (Yes vs No)`, `Alcohol (Yes vs No)`, `Physically Active (Yes vs No)`.
+  - Use `statsmodels.api.Logit` to obtain exact maximum-likelihood Odds Ratios ($\exp(\beta)$), Wald **95% Confidence Intervals**, and p-values (if `statsmodels` is unavailable, compute unregularized MLE via `scipy.optimize` or `sklearn` with `penalty=None` and exact Wald SEs from the inverse Fisher information matrix `(X^T W X)^{-1}`).
+- **Chart Design:**
+  - Horizontal **Forest Plot** sorted from highest to lowest Adjusted Odds Ratio (putting top independent risk factors like `Cholesterol: Well Above Normal` and `Systolic BP` at the top, and protective/negative associations like `Physically Active` at the bottom).
+  - Include a vertical dashed reference line at `OR = 1.0` (`No Effect`).
+  - Color-code markers & 95% CI error bars into 3 clear categories: **Risk-Increasing (`OR > 1, p < 0.05`, Red/Coral)**, **Protective / Negative (`OR < 1, p < 0.05`, Teal/Blue)**, and **Not Statistically Significant (`p ≥ 0.05`, Neutral Gray)**.
+  - Annotate the right side of each row with `OR (95% CI)` (e.g., `2.98 (2.78–3.20)`) and add a brief 1–2 sentence caption explaining how this multivariate model complements Panel 5 by isolating each factor's independent effect when all other variables are held constant.
+
+---
+
+### 5. Visual Polish & Layout Checks
+- **Fix all title/legend overlaps:** Place chart titles in card headers (HTML/component headers) rather than crowding Plotly's internal `title` near legends, and set generous margins (`margin=dict(t=40, b=50, l=60, r=40)`) with horizontal legends positioned cleanly above or below plots (`orientation='h'`).
+- **Consistent Color Palette:** Use a cohesive clinical palette across all 6 panels (e.g., Teal/Slate Blue for `No Disease` / lower risk, Coral/Crimson for `Disease` / higher risk, Muted Gray for background counts and non-significant stats).
+- **Responsive Layout:** Use a 2-column grid for Section A (`Panel 1 | Panel 2`, then `Panel 3 | Panel 4`) and a 2-column (or stacked full-width if screen < 1200px) layout for Section B (`Panel 5 | Panel 6`) so the 15×15 Spearman matrix and Forest Plot labels never clip or crowd.

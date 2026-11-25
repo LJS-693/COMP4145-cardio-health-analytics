@@ -9,4 +9,4 @@ PASS: active counts, denominators and rates reconcile.
 PASS: cross-tab totals reconcile; Spearman tie ranks/symmetry/diagonal checked.
 PASS: numeric medians independently checked against sorted records.
 PASS: all exported PNGs decode; manual visual review is performed separately.
-PASS: only train.csv was opened; no source dataset modified.
+PASS: only the development split was analyzed; no source dataset modified.

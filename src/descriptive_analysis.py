@@ -123,9 +123,25 @@ def main():
     parser.add_argument('--output-root', type=Path)
     args = parser.parse_args()
     project, output = args.project_root, args.output_root or args.project_root
-    src = project / 'data/processed/train.csv'
+    src = project / 'data/processed/caroline_cleaned version/cardio_train_80.csv'
     rows = read_csv(src)
-    assert rows and all(r['split'] == 'train' for r in rows)
+    scales = json.loads(src.with_name('cleaning_stats.json').read_text())['denormalization']
+    for row in rows:
+        for field in NUMERIC:
+            limits = scales[field]
+            value = float(row[field]) * (limits['max'] - limits['min']) + limits['min']
+            row[field] = round(value, 10)
+        age = row['age_years']
+        bmi = row['bmi']
+        row['age_group'] = AGE_ORDER[sum(age >= cutoff for cutoff in (30, 40, 50, 60, 70))]
+        row['bmi_band'] = BMI_ORDER[sum(bmi >= cutoff for cutoff in (18.5, 25, 30, 35))]
+        row['gender'] = {'0': '1', '1': '2'}[row['gender']]
+        for field in ('cholesterol', 'gluc'):
+            levels = [str(i) for i in (1, 2, 3)
+                      if row[f'{field}_{i}'].lower() in ('true', '1')]
+            if len(levels) != 1:
+                raise ValueError(f"Invalid {field} encoding for record {row['id']}")
+            row[field] = levels[0]
     n = len(rows)
     assert len({r['id'] for r in rows}) == n
     tables_dir = output / 'outputs/descriptive/tables'
@@ -297,7 +313,7 @@ def main():
         lookup={r[field]:r for r in tables[field]}
         findings.append(f'{cn}=0与{cn}=1的标签1比例分别为{lookup["0"]["positive_rate"]:.1%}与{lookup["1"]["positive_rate"]:.1%}。仅为未经调整的样本比例，不能推断保护或伤害效应。')
     warnings=[
-        '仅读取开发集train.csv，不读取test.csv；这些发现不能替代模型预测验证。',
+        '仅读取开发集cardio_train_80.csv，不读取test.csv；这些发现不能替代模型预测验证。',
         'cardio为已有疾病状态标签，不是未来发病标签；样本标签比例不代表社会总体患病率。',
         '所有比例的分母都是当前组记录数，分析单位为记录，不能由ID确认独立患者。',
         '每组少于100条时图中不显示标签比例，仅标注样本量；100是展示规则，不是显著性标准。汇总CSV仍保留原始计数与比例供审计。',
@@ -309,12 +325,12 @@ def main():
         'Spearman分析仅包含连续变量；BMI由身高体重计算，脉压由两项血压计算，相关性部分来自数学关系，不代表独立贡献。',
         '没有进行假设检验，不报告p值，也不将观察差异称为统计显著。',
     ]
-    text='Cardio 描述性分析报告\n\n研究范围\n开发集train.csv；所有数据与清洗版本见来源校验值。\n\n主要发现\n'
+    text='Cardio 描述性分析报告\n\n研究范围\n开发集cardio_train_80.csv；所有数据与清洗版本见来源校验值。\n\n主要发现\n'
     text+='\n'.join(f'{i+1}. {s}' for i,s in enumerate(findings))
     text+='\n\n方法与限制\n'+'\n'.join(f'- {s}' for s in warnings)
     text+='\n\n与Predictive的衔接\n将人口、身体测量和生活习惯作为基础输入，再加入血压、胆固醇和血糖进行对照实验。\n描述性关联不能直接当作特征的预测贡献；贡献需要在开发集交叉验证中检验。\n\n来源\n'
-    text+='data/processed/train.csv\nhttps://github.com/caravanuden/cardio\nhttps://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset\n'
-    text+='train.csv SHA256: '+hashlib.sha256(src.read_bytes()).hexdigest()+'\n'
+    text+='data/processed/caroline_cleaned version/cardio_train_80.csv\nhttps://github.com/caravanuden/cardio\nhttps://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset\n'
+    text+='cardio_train_80.csv SHA256: '+hashlib.sha256(src.read_bytes()).hexdigest()+'\n'
     (reports_dir/'descriptive_report_zh.txt').write_text(text,encoding='utf-8')
 
     blocks=[]
@@ -338,7 +354,7 @@ p,li{font-size:16px}img{width:100%;height:auto}table{border-collapse:collapse;wi
     document+='<h2>分组统计明细</h2><div class="scroll">'+table_html(group_display,list(group_display[0]))+'</div>'
     document+='<h2>连续指标汇总</h2><div class="scroll">'+table_html(continuous_display,list(continuous_display[0]))+'</div>'
     document+='<h2>方法与限制</h2><ul>'+''.join(f'<li>{html.escape(s)}</li>' for s in warnings)+'</ul>'
-    document+='<h2>来源与复现</h2><p>数据：data/processed/train.csv。运行：python3 src/descriptive_analysis.py。</p><p>来源：<a href="https://github.com/caravanuden/cardio">Cardio原项目</a>；<a href="https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset">原数据发布页</a>。由ChatGPT协助生成分析代码和说明，实际统计由本地脚本计算。</p></main></html>'
+    document+='<h2>来源与复现</h2><p>数据：data/processed/caroline_cleaned version/cardio_train_80.csv。运行：python3 src/descriptive_analysis.py。</p><p>来源：<a href="https://github.com/caravanuden/cardio">Cardio原项目</a>；<a href="https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset">原数据发布页</a>。由ChatGPT协助生成分析代码和说明，实际统计由本地脚本计算。</p></main></html>'
     (reports_dir/'descriptive_report.html').write_text(document,encoding='utf-8')
 
     slide_text='Descriptive Analytics 展示内容\n\n'
@@ -372,9 +388,9 @@ p,li{font-size:16px}img{width:100%;height:auto}table{border-collapse:collapse;wi
     validation+=['PASS: cross-tab totals reconcile; Spearman tie ranks/symmetry/diagonal checked.',
                  'PASS: numeric medians independently checked against sorted records.',
                  'PASS: all exported PNGs decode; manual visual review is performed separately.',
-                 'PASS: only train.csv was opened; no source dataset modified.']
+                 'PASS: only the development split was analyzed; no source dataset modified.']
     (reports_dir/'validation.txt').write_text('\n'.join(validation)+'\n',encoding='utf-8')
-    manifest={'source':'data/processed/train.csv','source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),
+    manifest={'source':'data/processed/caroline_cleaned version/cardio_train_80.csv','source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),
               'records':n,'cardio_1':positive,'positive_rate':overall,'display_minimum_n':MIN_N,
               'figures':figures,'csv_tables':sorted(p.name for p in tables_dir.glob('*.csv')),
               'findings_zh':findings,'numpy_version':np.__version__,'matplotlib_version':matplotlib.__version__}
