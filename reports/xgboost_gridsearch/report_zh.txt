@@ -1,0 +1,40 @@
+XGBoost GridSearchCV 调参结果
+
+开发数据：54,855条；9种参数组合 × 五折分组验证＝45次拟合，选优后全部开发集重拟合1次。
+搜索范围：max_depth=[2,3,4]；min_child_weight=[1,5,10]。
+固定：300轮，learning_rate=0.05，subsample=1，colsample_bytree=1，reg_lambda=1，random_state=4145。
+min_child_weight限制子节点Hessian权重之和，不是最少记录人数。
+选优指标：五折验证ROC-AUC的算术平均值；其他指标仅作辅助。
+最优仅指本次9种组合之中，不是所有参数空间的全局最优。
+选中参数：{"classifier__max_depth": 3, "classifier__min_child_weight": 10}
+
+选中组合的五折验证均值：
+roc_auc: 0.802277
+accuracy: 0.736250
+precision: 0.754523
+recall: 0.692044
+f1: 0.721916
+
+选中组合的各折训练准确率均值：74.01%。
+与原基线的比较统一使用五折均值，而不是将折均值与合并OOF指标混比：
+roc_auc: 0.802176 -> 0.802277，差值+0.000100
+accuracy: 0.736524 -> 0.736250，差值-0.000273
+precision: 0.755182 -> 0.754523，差值-0.000659
+recall: 0.691675 -> 0.692044，差值+0.000368
+f1: 0.722014 -> 0.721916，差值-0.000098
+
+重要解释
+此验证分数参与了参数选择，可能偏乐观，不是调参流程的独立泛化成绩；未进行嵌套交叉验证。
+GridSearchCV的cv_results_里test字样指交叉验证的验证折，不是最终cardio_test_20.csv。
+所有候选使用同一数据、特征和分组；相同资料组合不跨训练和验证折。
+不需要缩放树模型；沿用原单位输入与既定类别编码，处理在Pipeline中。
+保存模型由GridSearchCV自动在全部开发集重拟合；保存模型的训练成绩不能作为独立成绩。
+最终测试CSV没有读取或评估；分类门槛仍为0.5，无过采样。
+未启用提前停止；基线max_depth=3/min_child_weight=1包含在搜索中，其验证指标已复现核对。
+保留原XGBoost基线，调参结果单独存于xgboost_gridsearch，方便写调参前后对比。
+全量清洗后按普通分层方法分出的train/test仍存在相同健康资料跨集的可能，本次未改变划分。
+原数据为疾病状态标签，模型评分不是临床诊断或未来发病风险。
+
+复现：python3 src/tune_xgboost.py；依赖沿用requirements_tree_models_locked.txt。
+评分：python3 src/predict_logistic.py --model models/xgboost_gridsearch/model_pipeline.joblib --input INPUT.csv --output predictions.csv
+ChatGPT协助编写并运行搜索代码，统计结果由本地程序计算和核验。

@@ -1,0 +1,5 @@
+PASS: source hash, features, exact XGBoost grouped folds, and fixed round-1 settings verified.
+PASS: 9 candidates, 45 fold results, one full-development refit; highest mean AUC selected.
+PASS: 1.0/1.0 control reproduces all round-1 validation metrics.
+PASS: reloaded Pipeline and native booster predictions reconcile; saved parameters verified.
+PASS: final test CSV not opened; previous results preserved.

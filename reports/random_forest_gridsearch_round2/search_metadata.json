@@ -1,0 +1,73 @@
+{
+  "search_round": 2,
+  "records": 54855,
+  "training_sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
+  "training_source": "data/processed/caroline_cleaned version/cardio_train_80.csv",
+  "features": [
+    "age_years",
+    "gender",
+    "bmi",
+    "smoke",
+    "alco",
+    "active",
+    "ap_hi",
+    "ap_lo",
+    "cholesterol",
+    "gluc"
+  ],
+  "round1_metadata_sha256": "e080bd4d25bd799fc2337ec62f66c10c844e1190a6875470e10bbffb301e54aa",
+  "parameter_grid": {
+    "classifier__max_features": [
+      "sqrt",
+      0.7,
+      1.0
+    ],
+    "classifier__max_samples": [
+      0.6,
+      0.8,
+      null
+    ]
+  },
+  "fixed_depth": 14,
+  "fixed_min_samples_leaf": 10,
+  "best_params": {
+    "classifier__max_features": "sqrt",
+    "classifier__max_samples": 0.6
+  },
+  "selected_full_parameters": {
+    "n_estimators": 300,
+    "max_depth": 14,
+    "min_samples_leaf": 10,
+    "max_features": "sqrt",
+    "class_weight": null,
+    "random_state": 4145,
+    "n_jobs": 4,
+    "bootstrap": true,
+    "max_samples": 0.6
+  },
+  "selection_metric": "mean five-fold validation ROC-AUC",
+  "best_mean_cv_auc": 0.8017203823568056,
+  "selected_cv_fold_means": {
+    "roc_auc": 0.8017203823568056,
+    "accuracy": 0.7367423563448809,
+    "precision": 0.7565158077755715,
+    "recall": 0.6899068483016833,
+    "f1": 0.721671780918211
+  },
+  "mean_training_accuracy": 0.7534864609405301,
+  "cv": "same five StratifiedGroupKFold partitions as original baseline and round 1",
+  "candidate_configurations": 9,
+  "cv_fits": 45,
+  "full_development_refits": 1,
+  "test_evaluated": false,
+  "threshold": 0.5,
+  "threshold_tuning": false,
+  "evaluation_limit": "Sequential selection on the same development folds; not independent performance estimation.",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "sklearn": "1.9.1"
+  },
+  "training_code_sha256": "a91c87d2ea222fe0530970e956fc80d0e8b0c750f6a4bfe045de24b884405a74",
+  "data_loader_code_sha256": "607bc70d8da24803fd474db14ba07ce454648480a23ea4bf37a1fe18b97dfa8f"
+}

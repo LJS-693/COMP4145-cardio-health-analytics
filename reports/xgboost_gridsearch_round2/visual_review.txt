@@ -1,0 +1,1 @@
+PASS: PNG visually inspected; all nine candidate values, selected marker, axes, title, colorbar and footer are readable without clipping.

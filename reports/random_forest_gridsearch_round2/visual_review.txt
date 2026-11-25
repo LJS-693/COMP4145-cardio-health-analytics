@@ -1,0 +1,1 @@
+PASS: rendered PNG inspected; title, all nine cell labels, axes, colorbar, selected marker, and footer are readable without clipping.
