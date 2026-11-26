@@ -1,0 +1,58 @@
+2026-11-26 实际执行完成
+三本Notebook已按顺序运行，模型比较表、网格结果、ROC曲线和混淆矩阵已嵌入输出。
+请刷新或重新打开Notebook查看磁盘上保存的结果。
+当前内核：Python 3.12 (Cardio Training)，内部名称cardio-training。
+环境位置：本目录.venv；已安装XGBoost及完整依赖，不再选择comp3066内核。
+本次运行：runs/seven_features_run_01；查看结果不必再次Run All。
+如需从头重新训练，把三本Notebook的RUN_NAME同时改成新的名称，避免覆盖已完成输出。
+执行前的Notebook已备份到execution_backups。未覆盖model training1或model training2原有结果。
+
+七项特征 Jupyter 训练入口
+
+三个Notebook按顺序运行，代码单元可见训练、GridSearchCV、逐折验证及模型保存过程。
+01_baseline.ipynb：三模型基线。
+02_optimization_round1.ipynb：LR调C，RF调深度/叶节点最少样本数，XGB调深度/min_child_weight。
+03_optimization_round2.ipynb：RF调max_features/max_samples，XGB调subsample/colsample_bytree，LR沿用上一轮。
+
+使用Python3.12，安装requirements-notebooks.txt，再用对应Python的Jupyter内核打开。
+从项目中打开Notebook会自动寻找项目根目录；否则在第二个代码单元设置PROJECT_ROOT。
+需要项目data/raw/cardio_train.csv及data/processed/caroline_cleaned version中的开发文件和反归一化参数。
+不依赖旧训练脚本、旧最优参数或旧训练输出。training_utils.py必须与三个Notebook一起保留。
+
+三个Notebook使用相同RUN_NAME。先完整运行01，再运行02和03；每个Notebook可使用独立内核。
+输出集中在本目录runs/<RUN_NAME>/<stage>，不会覆盖model training1或model training2。
+首次运行时不应已有对应stage文件夹；要从头再跑时，换一个RUN_NAME。
+若运行中断，请明确移动失败stage目录或改用新的RUN_NAME重新按顺序运行，不会默默覆盖已保存结果。
+
+每轮输出：已保存模型、参数JSON、七项验证指标、逐折分数、OOF预测、ROC比较、混淆矩阵。
+优化轮另有全部网格结果。GridSearchCV结果中的test字段指验证折，不是最终测试文件。
+显示表格为五折均值；ROC图为合并OOF。分类阈值固定0.5，未做early stopping。
+后续轮参数从本次上一轮结果加载；数据与折划分指纹不同会拒绝衔接。
+LR第二轮明确标为carried forward，没有再拟合或重复调参。
+
+第一轮：25个网格候选；第二轮：18个网格候选。计算量取决于电脑，可逐个模型运行循环。
+Mac上若XGBoost报缺少libomp，请在相应平台配置OpenMP运行库后重启内核。
+若改用其他依赖版本，请记录实际版本；边界浮点差异可能导致最优配置或结果略有差别。
+
+初次交付未执行；现已按用户要求执行全部三个Notebook，输出来自这次实际训练。执行前版本保留于execution_backups。
+先前项目测试成绩已被查看。本次是开发阶段流程的Notebook复现，不能将原测试集重新称为从未查看的测试集。
+课程要求的ChatGPT使用透明表应如实记录本次代码编写与整理协助。
+
+
+04_test_and_ranking.ipynb：最终 XGBoost round2 测试与排序评估（已执行并保存输出）。
+读取本次 runs/seven_features_run_01/03_round2/xgboost 的已训练模型，不重新拟合或调参。
+七项输入与训练保持一致，cardio 仅作评估答案，不进入模型。
+整体指标：ROC-AUC、Accuracy、Precision、Recall、F1、Specificity、Average Precision。
+包含测试 ROC、PR 曲线及固定 0.5 阈值混淆矩阵。
+排序按评分从高到低，展示 @10% 到 @100% 的 Precision@k、Recall@k、Lift@k、
+模型选中标签1人数、随机选择期望人数及人数差异；另附 F1、Specificity、Accuracy。
+保存全部 13,714 条排序；不含真实标签的名单和含真实标签的评估副本分别导出。
+主结果保留完整测试集；另附剔除10条跨集合重复健康资料后的13,704条敏感性分析。
+输出目录：runs/seven_features_run_01/04_test_and_ranking/xgboost_round2_test_01。
+查看已保存输出只需重新打开或刷新Notebook；再次执行需显式更换 EVALUATION_NAME。
+如重跑01–03并换RUN_NAME，04也应使用相同RUN_NAME读取新模型。
+该测试集此前已查看，本次为评估复现；排序用于回顾性审核名额模拟。
+
+GitHub交付范围：四本含运行输出的Notebook、training_utils.py和依赖说明。
+模型文件及runs内逐条预测、排序CSV等导出保留本地，未随本次Notebook提交上传。
+从GitHub克隆后如需重跑04，请先按01→02→03生成本地模型，保持同一RUN_NAME。
