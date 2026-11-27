@@ -1,1 +1,0 @@
-Reviewed 9 candidate AUC values, selected cell, axes and footer; no clipped or overlapping text.

@@ -1,8 +1,0 @@
-PASS: current cardio_train_80.csv used; test CSV not opened or evaluated.
-PASS: normalized values restored and verified against raw source by ID.
-PASS: feature whitelist excludes target and metadata.
-PASS: each development record receives exactly one held-out prediction.
-PASS: no predictor-profile group overlaps between training/validation folds.
-PASS: fold scalers match training-fold means; all six fits converged.
-PASS: exported prediction counts reconcile with confusion matrix.
-PASS: saved model reload reproduces predictions.

@@ -1,3 +1,0 @@
-此处用于保存Power BI的.pbix文件。
-描述性分析可导入data/processed/train.csv；清洗后总体展示可导入cardio_clean.csv。
-原始类别编码与原始单位见reports/data_dictionary.csv。

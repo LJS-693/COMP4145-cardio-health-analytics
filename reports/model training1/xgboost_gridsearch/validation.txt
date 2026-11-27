@@ -1,7 +1,0 @@
-PASS: nine configurations, five grouped folds, and one full-development refit.
-PASS: all folds exactly match baseline XGBoost; no profile group crosses folds.
-PASS: selected parameter score matches maximum candidate mean AUC.
-PASS: best-fold AUC mean and exported results reconcile.
-PASS: saved model reload reproduces predictions.
-PASS: final test CSV not opened; baseline artifacts preserved.
-PASS: original depth=3/child-weight=1 candidate reproduces baseline fold metrics.

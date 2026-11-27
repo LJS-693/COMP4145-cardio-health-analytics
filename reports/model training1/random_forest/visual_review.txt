@@ -1,1 +1,0 @@
-Reviewed final ROC and confusion-matrix PNG; labels and counts legible with separate footer.

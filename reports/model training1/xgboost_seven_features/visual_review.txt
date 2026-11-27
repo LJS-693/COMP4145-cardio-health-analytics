@@ -1,1 +1,0 @@
-PASS: ROC and confusion matrix PNG inspected; axes, labels, legend, four counts and footer readable without clipping.

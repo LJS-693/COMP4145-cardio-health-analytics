@@ -1,6 +1,0 @@
-PASS: original baseline source, features, and exact grouped fold assignments retained.
-PASS: fixed depth=14, leaf=10, bootstrap=True, and 300 trees.
-PASS: sqrt/None candidate reproduces all round-1 CV metrics.
-PASS: nine candidates and 45 exported fold results; best score matches highest mean AUC.
-PASS: saved model reload reproduces predictions.
-PASS: test CSV not read; no previous outputs overwritten.
