@@ -1,8 +1,7 @@
 # Descriptive analytics
 
-The final descriptive deliverable is the Streamlit dashboard in `dashboard/app.py`.
+The Streamlit dashboard is in `dashboard/app.py`.
 It reads the shared cleaned CSVs and normalization metadata from `data/processed/`.
-No static figure exports or predictive models are required to run the website.
 
 From the project root:
 
