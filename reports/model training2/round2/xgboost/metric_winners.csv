@@ -1,8 +1,0 @@
-﻿metric,candidate_index,score,parameters,selected
-roc_auc,4,0.8007338752339495,"{""subsample"": 0.6, ""colsample_bytree"": 0.8}",True
-accuracy,4,0.7361407520684217,"{""subsample"": 0.6, ""colsample_bytree"": 0.8}",True
-precision,6,0.7583351465963531,"{""subsample"": 1.0, ""colsample_bytree"": 0.8}",False
-recall,8,0.6932230411576497,"{""subsample"": 0.8, ""colsample_bytree"": 1.0}",False
-f1,7,0.722047856731051,"{""subsample"": 0.6, ""colsample_bytree"": 1.0}",False
-specificity,6,0.7864204986386116,"{""subsample"": 1.0, ""colsample_bytree"": 0.8}",False
-average_precision,4,0.7820782562831458,"{""subsample"": 0.6, ""colsample_bytree"": 0.8}",True

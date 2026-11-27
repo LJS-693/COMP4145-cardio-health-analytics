@@ -1,0 +1,74 @@
+{
+  "data_exports": {
+    "cardio_train_80.csv": {
+      "sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
+      "unchanged": true
+    },
+    "denormalization_params.json": {
+      "sha256": "1fa845eb4f5c2e98f2f408117194eae493fc5bf0476abf180d320fc64eff9155",
+      "unchanged": true
+    },
+    "cleaning_stats.json": {
+      "sha256": "270d5049596fef4b7badf0adaef88a278a5f2ae5e6de18698f1ab77ad477e777",
+      "unchanged": true
+    },
+    "cardio_test_20.csv": {
+      "sha256": "26528e69d13881084ea2960f637628f1ca47f2b94246018b7093600b9a76a723",
+      "unchanged": true
+    },
+    "cardio_fully_cleaned.csv": {
+      "sha256": "dd27dff4d88d0b7f2a98883f42ec1727bf2b345d52b8a103600fbfaddbde598b",
+      "unchanged": true
+    }
+  },
+  "predictive_notebooks": {
+    "02_optimization_round1.ipynb": {
+      "algorithm_unchanged": true,
+      "embedded_pngs": 2,
+      "error_outputs": 0
+    },
+    "04_test_and_ranking.ipynb": {
+      "algorithm_unchanged": true,
+      "embedded_pngs": 4,
+      "error_outputs": 0
+    },
+    "03_optimization_round2.ipynb": {
+      "algorithm_unchanged": true,
+      "embedded_pngs": 2,
+      "error_outputs": 0
+    },
+    "01_baseline.ipynb": {
+      "algorithm_unchanged": true,
+      "embedded_pngs": 3,
+      "error_outputs": 0
+    }
+  },
+  "checks": {
+    "raw_dataset_unchanged": true,
+    "existing_runtime_models_and_results_unchanged": true,
+    "shared_predictive_logic_unchanged": true,
+    "cleaning_algorithm_unchanged_except_paths": true,
+    "isolated_cleaning_run_five_exports_byte_identical": true,
+    "cleaning_stdout_identical": true,
+    "isolated_test_run_scores_ranking_metrics_identical": true,
+    "development_inputs_and_grouped_folds_identical": true,
+    "dashboard_full_cohort_passed": true,
+    "dashboard_development_cohort_passed": true
+  },
+  "test_metrics": {
+    "roc_auc": 0.793811376483841,
+    "accuracy": 0.7273589033104856,
+    "precision": 0.749467475012289,
+    "recall": 0.6742334905660378,
+    "f1": 0.7098626522852487,
+    "specificity": 0.7793650793650794,
+    "average_precision": 0.779073391478704,
+    "tn": 5401,
+    "fp": 1529,
+    "fn": 2210,
+    "tp": 4574
+  },
+  "date": "2026-11-27",
+  "scope": "Final directory reorganization; cleaning and training algorithms unchanged. Filesystem paths and documentation adapted; obsolete dependency-install output removed.",
+  "cleaning_source_sha256_before_migration": "927962cfdc2e4d8875680bf107cf418333bedf6a451c1b50bcdc3cec56b18f99"
+}

@@ -1,9 +1,0 @@
-{
-  "training_source": "data/processed/caroline_cleaned version/cardio_train_80.csv",
-  "training_sha256": "18373a55c8e6d3b9a7a50f102a98d72b930d523ccf1810759d7b38a81c392325",
-  "raw_sha256": "21a705d23381b0dfd6a6416da701b490744f1fc3b47e9ff3db3968c420ffa10c",
-  "adapter_sha256": "1fa845eb4f5c2e98f2f408117194eae493fc5bf0476abf180d320fc64eff9155",
-  "records": 54855,
-  "positive_records": 27137,
-  "legacy_folds_verified": true
-}

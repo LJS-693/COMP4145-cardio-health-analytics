@@ -1,1 +1,0 @@
-Reviewed all 9 final PNG figures. Checked titles, axes, group counts, labels, heatmap suppression and footer spacing. All chart values generated from validated tables.

@@ -1,4 +1,6 @@
+.DS_Store
+.venv/
 __pycache__/
 .ipynb_checkpoints/
-.venv/
-.DS_Store
+predictive_analytics/runs/
+*.log

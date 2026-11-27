@@ -1,4 +1,0 @@
-PASS: 9 stages, 55 grid candidates, 45 selected-fold rows and 329 total fits reconcile.
-PASS: all stages use identical seven features and grouped validation partitions.
-PASS: inherited parameters are tracked; individual OOF and saved-model checks passed.
-PASS: no final test data evaluated; training1 is not modified.

@@ -1,5 +1,0 @@
-PASS: canonical data, seven-feature whitelist, same profile groups and folds.
-PASS: fold metrics, OOF exports and saved models reconcile.
-PASS: selected parameters inherited from the immediately preceding seven-feature stage.
-PASS: LR scaling uses training fold only; all fits converged.
-PASS: no final test data read or evaluated; training1 preserved.

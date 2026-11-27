@@ -1,8 +1,0 @@
-PASS CLI round1 logistic_regression normalized 64 development rows, ids/scores/classes match
-PASS CLI round1 logistic_regression original_units 64 development rows, ids/scores/classes match
-PASS CLI round2 random_forest normalized 64 development rows, ids/scores/classes match
-PASS CLI round2 random_forest original_units 64 development rows, ids/scores/classes match
-PASS CLI round2 xgboost normalized 64 development rows, ids/scores/classes match
-PASS CLI round2 xgboost original_units 64 development rows, ids/scores/classes match
-PASS CLI round3 xgboost normalized 64 development rows, ids/scores/classes match
-PASS CLI round3 xgboost original_units 64 development rows, ids/scores/classes match
